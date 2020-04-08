@@ -1,13 +1,13 @@
-import React from "react"
-import "./App.css"
-import Quiz from "./components/Quiz"
+import React from 'react';
+import './App.css';
+import QuizWrapper from './components/QuizWrapper';
 
 function App() {
-  return (
-    <div className="App">
-      <Quiz></Quiz>
-    </div>
-  )
+	return (
+		<div className='App'>
+      <QuizWrapper/>
+		</div>
+	);
 }
 
-export default App
+export default App;

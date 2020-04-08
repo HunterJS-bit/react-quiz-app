@@ -1,29 +1,17 @@
 import React, { useState } from 'react';
 import Checkbox from './Checkbox';
 
-const checkboxes = [
-	{
-		name: 'check-1',
-		key: 'checkBox1',
-		label: 'униформисани комунални полицајци:',
-	},
-	{
-		name: 'check-2',
-		key: 'checkBox2',
-		label: 'униформисани полицијски службеници:',
-	},
-	{
-		name: 'check-3',
-		key: 'checkBox3',
-		label: 'инспектори за друмски саобраћај:',
-	},
-];
-
 const answer = 1;
 
 function Quiz(props) {
 
-	const [checkboxState, setCheckbox] = useState({ 'check-1': false,  'check-2': false,  'check-3': false });
+	const { questions } = props;
+	console.log('evo ga prop', questions);
+	const [checkboxState, setCheckbox] = useState({
+		'check-1': false,
+		'check-2': false,
+		'check-3': false,
+	});
 
 	const handleChange = (e) => {
 		const target = e.target;
@@ -36,7 +24,7 @@ function Quiz(props) {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		const correctAnswer = checkboxes[answer];
+		const correctAnswer = questions.options[answer];
 		if (checkboxState.hasOwnProperty(correctAnswer.name)) {
 			console.log('correct');
 		} else {
@@ -44,8 +32,8 @@ function Quiz(props) {
 		}
 	};
 
-	const buildCheckbox = (checkboxList) => {
-		return checkboxList.map((e) => {
+	const buildCheckbox = () => {
+		return questions.options.map((e) => {
 			return (
 				<Checkbox
 					onChange={handleChange}
@@ -61,11 +49,11 @@ function Quiz(props) {
 	return (
 		<div className='quiz-wrapper'>
 			<h3 className='question'>
-				Непосредно регулисање саобраћаја на путевима врше:
+				{ questions.question }
 			</h3>
 			<div className='answers'>
 				<form onSubmit={handleSubmit}>
-					{buildCheckbox(checkboxes)}
+					{buildCheckbox()}
 					<input type='submit' value='Check answer' />
 				</form>
 			</div>

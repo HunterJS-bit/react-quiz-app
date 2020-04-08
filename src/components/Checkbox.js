@@ -10,10 +10,12 @@ function Checkbox({
 }) {
 	console.log('checked', checked);
 	return (
-		<label>
-			{label}
-			<input type={type} name={name} checked={checked} onChange={onChange} />
-		</label>
+		<p className='input'>
+			<label>
+				{label}
+				<input type={type} name={name} checked={checked} onChange={onChange} />
+			</label>
+		</p>
 	);
 }
 
