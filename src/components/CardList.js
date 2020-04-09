@@ -10,7 +10,7 @@ const CardList = ({ history }) => {
 	return (
 		<div className='cardList'>
 			{[...Array(10)].map((e, i) => {
-				return <Card key={i} index={i} navigate={goToPage}></Card>;
+				return <Card key={i} index={i + 1} navigate={goToPage}></Card>;
 			})}
 		</div>
 	);
