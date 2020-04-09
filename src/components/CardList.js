@@ -3,7 +3,6 @@ import Card from './Card';
 
 const CardList = ({ history }) => {
 
-	console.log('history', history);
 	const goToPage = (index) => {
 		history.push(`/category/${index}`);
 	};

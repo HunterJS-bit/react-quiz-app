@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Home from './components/Home';
 import CardList from './components/CardList';
 import About from './components/About';
+import Topic from "./components/Topic";
+
 
 function App() {
 	return (
@@ -32,7 +34,8 @@ function App() {
 				<hr />
 				<Switch>
 					<Route exact path='/' component={Home} />
-					<Route path='/category' component={CardList} />
+					<Route exact path='/category' component={CardList} />
+					<Route path='/category/:id' component={Topic} />
 					<Route path='/about' component={About} />
 				</Switch>
 			</Router>

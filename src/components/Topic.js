@@ -1,9 +1,11 @@
 import React from 'react';
 
 
-const Topic = () => {
+const Topic = (props) => {
 
-    return (<h1>herere is topic</h1>);
+	const id = props.match.params.id;
+
+  return (<h1>herere is topic { id }</h1>);
 };
 
 export default Topic;
