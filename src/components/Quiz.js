@@ -4,9 +4,7 @@ import Checkbox from './Checkbox';
 const answer = 1;
 
 function Quiz(props) {
-
 	const { questions } = props;
-	console.log('evo ga prop', questions);
 	const [checkboxState, setCheckbox] = useState({
 		'check-1': false,
 		'check-2': false,
