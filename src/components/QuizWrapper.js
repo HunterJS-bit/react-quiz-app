@@ -8,9 +8,14 @@ const QuizWrapper = () => {
 	const totalQuestions = questions.length;
 
 	const changeQuestion = () => {
+		console.log(totalQuestions);
 		setIndex((prev) => {
 			return prev + 1;
 		});
+	};
+
+	const showResult = () => {
+		console.log('show rezult');
 	};
 
 	return (
@@ -20,7 +25,11 @@ const QuizWrapper = () => {
 				{qIndex + 1} / {totalQuestions}
 			</p>
 			<Quiz questions={question} />
-			<button onClick={changeQuestion}> Sledece pitanje</button>
+			{qIndex + 1 < totalQuestions ? (
+				<button onClick={changeQuestion}> Sledece pitanje</button>
+			) : (
+				<button onClick={showResult}> Prikazi Rezultat </button>
+			)}
 		</div>
 	);
 };
