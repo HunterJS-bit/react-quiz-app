@@ -1,17 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Checkbox from './Checkbox';
 
 function Quiz(props) {
 	const { questions } = props;
 	const { options, answers, question } = questions;
 
-	const [checkboxState, setCheckbox] = useState(
-		options.map((e, index) => {
+
+	const [checkboxState, setCheckbox] = useState({});
+
+	useEffect(() => {
+		const initState = options.map((e, index) => {
 			return {
 				[`check-${index}`]: false,
 			};
-		})
-	);
+		});
+		setCheckbox(initState);
+	}, [props.questions]);
 
 	const handleChange = (e) => {
 		const target = e.target;
