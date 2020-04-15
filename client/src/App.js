@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Home from './components/Home';
 import CardList from './components/CardList';
 import About from './components/About';
-import Topic from "./components/Topic";
+import Topic from './components/Topic';
+import CreateQuestion from "./components/CreateQuestion";
 
 
 function App() {
@@ -25,6 +26,11 @@ function App() {
 							</Link>
 						</li>
 						<li>
+							<Link to={'/create'} className='nav-link'>
+								Create Question
+							</Link>
+						</li>
+						<li>
 							<Link to={'/about'} className='nav-link'>
 								About
 							</Link>
@@ -36,6 +42,7 @@ function App() {
 					<Route exact path='/' component={Home} />
 					<Route exact path='/category' component={CardList} />
 					<Route path='/category/:id' component={Topic} />
+					<Route path='/create' component={CreateQuestion} />
 					<Route path='/about' component={About} />
 				</Switch>
 			</Router>

@@ -11,6 +11,7 @@ export class QuestionService {
 
   async create(createCatDto): Promise<QuestionInterface> {
     const createdCat = new this.questionModel(createCatDto);
+    console.log('kreiramo');
     return createdCat.save();
   }
 
