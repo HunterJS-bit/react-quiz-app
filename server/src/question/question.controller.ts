@@ -1,8 +1,12 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, Post } from '@nestjs/common';
 
 @Controller('question')
 export class QuestionController {
 
+  @Post()
+  createOne() {
+    console.log('create one');
+  }
 
   @Get(':id')
   findOne(@Param() params): string {
