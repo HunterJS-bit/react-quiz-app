@@ -9,10 +9,15 @@ export class QuestionService {
     private questionModel: Model<QuestionInterface>,
   ) {}
 
-  async create(createCatDto): Promise<QuestionInterface> {
-    const createdCat = new this.questionModel(createCatDto);
-    console.log('kreiramo');
-    return createdCat.save();
+  async create(createQuestion){
+    const options = createQuestion.options.map(e => e.name);
+    const question = {
+      question: createQuestion.question,
+      options: options,
+    };
+    const createdQuestion = new this.questionModel(question);
+
+    return createdQuestion.save();
   }
 
   async findAll(): Promise<QuestionInterface[]> {

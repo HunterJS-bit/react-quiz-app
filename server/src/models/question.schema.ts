@@ -1,7 +1,7 @@
 import * as mongoose from 'mongoose';
 
 export const QuestionSchema = new mongoose.Schema({
-  question: String,
-  options: Array,
+  question: { type:String, required:true },
+  options: [String],
   answers: Array,
 });
