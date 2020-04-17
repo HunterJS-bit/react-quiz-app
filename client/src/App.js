@@ -5,7 +5,8 @@ import Home from './components/Home';
 import CardList from './components/CardList';
 import About from './components/About';
 import Topic from './components/Topic';
-import CreateQuestion from "./components/CreateQuestion";
+import CreateQuestion from './components/CreateQuestion';
+import CreateCategory from './components/Category/CreateCategory';
 
 
 function App() {
@@ -31,6 +32,11 @@ function App() {
 							</Link>
 						</li>
 						<li>
+							<Link to={'/category/create'} className='nav-link'>
+								Create Category
+							</Link>
+						</li>
+						<li>
 							<Link to={'/about'} className='nav-link'>
 								About
 							</Link>
@@ -41,7 +47,8 @@ function App() {
 				<Switch>
 					<Route exact path='/' component={Home} />
 					<Route exact path='/category' component={CardList} />
-					<Route path='/category/:id' component={Topic} />
+					<Route exact path='/category/create' component={CreateCategory}></Route>
+					<Route exact path='/category/:id' component={Topic} />
 					<Route path='/create' component={CreateQuestion} />
 					<Route path='/about' component={About} />
 				</Switch>
