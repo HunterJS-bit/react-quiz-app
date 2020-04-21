@@ -19,4 +19,5 @@ export class CategoryController {
       const data = await this.categoryService.getMainCategories();
       return data;
   }
+
 }
