@@ -15,7 +15,6 @@ export class CategoryController {
 
   @Get('/main')
   async getAllCategories() {
-      console.log('Pokusavam da uzmem kategorije');
       const data = await this.categoryService.getMainCategories();
       return data;
   }

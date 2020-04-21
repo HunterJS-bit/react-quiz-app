@@ -1,11 +1,11 @@
 import React from 'react';
 
 const Card = (props) => {
-	const { index, navigate } = props;
+	const { index, navigate, name } = props;
 
 	return (
 		<div className='card card-1' onClick={() => navigate(index)}>
-			<h1> Test {index} </h1>
+			<h1> { name }</h1>
 		</div>
 	);
 };

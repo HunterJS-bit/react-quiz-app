@@ -6,8 +6,13 @@ import CardList from './components/CardList';
 import About from './components/About';
 import Topic from './components/Topic';
 import CreateQuestion from './components/CreateQuestion';
+
+/**  Category Components **/
 import CreateCategory from './components/Category/CreateCategory';
 
+/** Quiz List component */
+import CreateQuiz from "./components/Quiz/CreateQuiz";
+import QuizList from "./components/Quiz/QuizList";
 
 function App() {
 	return (
@@ -37,6 +42,11 @@ function App() {
 							</Link>
 						</li>
 						<li>
+							<Link to={'/quiz/create'} className='nav-link'>
+								Create Quiz
+							</Link>
+						</li>
+						<li>
 							<Link to={'/about'} className='nav-link'>
 								About
 							</Link>
@@ -48,6 +58,7 @@ function App() {
 					<Route exact path='/' component={Home} />
 					<Route exact path='/category' component={CardList} />
 					<Route exact path='/category/create' component={CreateCategory}></Route>
+					<Route exact path='/quiz/create' component={CreateQuiz} />
 					<Route exact path='/category/:id' component={Topic} />
 					<Route path='/create' component={CreateQuestion} />
 					<Route path='/about' component={About} />
