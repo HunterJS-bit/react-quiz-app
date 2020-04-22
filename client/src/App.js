@@ -58,6 +58,7 @@ function App() {
 					<Route exact path='/' component={Home} />
 					<Route exact path='/category' component={CardList} />
 					<Route exact path='/category/create' component={CreateCategory}></Route>
+					<Route exact path='/category/:id/quizList' component={QuizList} />
 					<Route exact path='/quiz/create' component={CreateQuiz} />
 					<Route exact path='/category/:id' component={Topic} />
 					<Route path='/create' component={CreateQuestion} />

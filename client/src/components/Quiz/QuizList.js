@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect} from 'react';
 
 {/* A Component to render Quiz List per Category */}
 

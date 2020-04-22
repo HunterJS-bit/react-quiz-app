@@ -6,8 +6,12 @@ const CardList = ({ history }) => {
 
 	const [categoryList, setCategoryList] = useState([]);
 
-	const goToPage = (index) => {
-		history.push(`/category/${index}`);
+	const goToPage = (category) => {
+		console.log('hererer', category);
+		const name = category.name;
+		history.push(
+			`/category/${name}/quizList`,
+			category);
 	};
 
 	useEffect(() => {
@@ -21,8 +25,8 @@ const CardList = ({ history }) => {
 
 	return (
 		<div className='cardList'>
-			{categoryList.map((e, i) => {
-				return <Card key={i} index={i + 1} name={e.name} navigate={goToPage}></Card>;
+			{categoryList.map((cat, i) => {
+				return <Card key={i} index={i + 1} category={cat} navigate={goToPage}></Card>;
 			})}
 		</div>
 	);

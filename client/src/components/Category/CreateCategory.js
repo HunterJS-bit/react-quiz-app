@@ -13,7 +13,7 @@ const CreateCategory = () => {
       const category = {
         name,
       };
-      const response = await axiosInstance.post('/category', category);
+      await axiosInstance.post('/category', category);
   };
 
   return (<div className="category-create">
