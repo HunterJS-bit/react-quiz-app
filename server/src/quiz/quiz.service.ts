@@ -13,4 +13,9 @@ export class QuizService {
     console.log('about to create', quizDTO);
      return this.questionModel.create(quizDTO);
   }
+
+  async getQuizTestsPerCategory(catID: number) {
+      console.log('about to fetch ', catID);
+      return this.questionModel.find({'category': catID }).sort({ name: 1 });
+  }
 }

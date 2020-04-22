@@ -1,4 +1,4 @@
-import { Controller, Post, Body, Get } from '@nestjs/common';
+import { Controller, Post, Body, Get, Param } from '@nestjs/common';
 import { QuizService } from "./quiz.service";
 
 @Controller('quiz')
@@ -12,7 +12,9 @@ export class QuizController {
   }
 
   @Get('/:catId/list')
-  async getQuizTestsPerCategory() {
-
+  async getQuizTestsPerCategory(@Param('catId') categoryId: number) {
+    
+      const data = await this.quizService.getQuizTestsPerCategory(categoryId);
+      console.log('Podaciii', data);
   }
 }
