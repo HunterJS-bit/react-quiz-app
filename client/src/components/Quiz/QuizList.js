@@ -1,5 +1,6 @@
 import React, { useState, useEffect} from 'react';
-import { axiosInstance } from '../../util/axios'
+import { axiosInstance } from '../../util/axios';
+import QuizCard from './QuizCard';
 
 {/* A Component to render Quiz List per Category */}
 
@@ -22,6 +23,11 @@ const QuizList = (props) => {
 
   return (<div className="quiz-list">
     <h3> Testovi iz {catName}</h3>
+    {
+      quizList.map((quiz) => {
+        return (<QuizCard key={quiz._id} quiz={quiz} ></QuizCard>)
+      })
+    }
   </div>);
 };
 

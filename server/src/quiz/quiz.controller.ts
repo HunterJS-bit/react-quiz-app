@@ -15,6 +15,6 @@ export class QuizController {
   async getQuizTestsPerCategory(@Param('catId') categoryId: number) {
     
       const data = await this.quizService.getQuizTestsPerCategory(categoryId);
-      console.log('Podaciii', data);
+      return data;
   }
 }
