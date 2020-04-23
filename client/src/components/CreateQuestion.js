@@ -3,11 +3,14 @@ import { axiosInstance } from "../util/axios";
 
 const CreateQuestion = () => {
 
-  const [question, setFirstName] = useState('');
+  const [question, setQuestion] = useState('');
   const [options, setOptions] = useState([]);
+  const [image, setImage] = useState('');
+
   const [searchFilter, setSearchFilter] = useState('');
   const [quizCatList, setQuizCatList] = useState([]);
   const [quizList, setQuizList] = useState([]);
+
 
   const addOption = (e) => {
     e.preventDefault();
@@ -54,15 +57,20 @@ const CreateQuestion = () => {
     setQuizList(list);
   };
 
+  const onFileChange = (e) => {
+    setImage(e.target.files[0]);
+  };
+
   const submitForm = async (e) => {
     console.log('submit form');
     e.preventDefault();
-    const questionObj = {
-      question: question,
-      options: options,
-      quizCategory: quizList
-    };
-    const data = await axiosInstance.post('/question', questionObj);
+    let formData = new FormData();
+    formData.append('file', image);
+    formData.append('question', question);
+    formData.append('options', JSON.stringify(options));
+    formData.append('quizCategory', JSON.stringify(quizList));
+
+    const data = await axiosInstance.post('/question', formData);
     console.log('evo ga response ');
     console.log(data);
   };
@@ -70,8 +78,8 @@ const CreateQuestion = () => {
 
   const showResults = (list) => {
     if (list.length) {
-      return list.map((q) => {
-        return <li key={q._id} onClick={() => setQuestionCategory(q)}> { q.name }</li>;
+      return list.map((q,index) => {
+        return <li key={q._id + index } onClick={() => setQuestionCategory(q)}> { q.name }</li>;
       })
     } else if (searchFilter && !list.length) {
        return <p>No items</p>;
@@ -95,9 +103,16 @@ const CreateQuestion = () => {
     <p>
       <label>
         Question:
-        <input type="text" value={question} onChange={e => setFirstName(e.target.value)} />
+        <input type="text" value={question} onChange={e => setQuestion(e.target.value)} />
       </label>
     </p>
+    <div className="form-group">
+       <input type="file"
+              name="file"
+              id="input-files"
+              onChange={onFileChange}
+              />
+    </div>
     {
       options.map((e, index) => {
         return <div key={index}>
@@ -110,7 +125,7 @@ const CreateQuestion = () => {
       })
     }
     <p>
-      <button onClick={addOption}>Add Option</button>
+      <button onClick={addOption}>Add Optional answers</button>
     </p>
     <p> Choosen Categories </p>
     <div className="quiz-tests">
