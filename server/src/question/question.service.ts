@@ -20,7 +20,7 @@ export class QuestionService {
     return createdQuestion.save();
   }
 
-  async findAll(): Promise<QuestionInterface[]> {
+  async findPerCategory(id: number): Promise<QuestionInterface[]> {
     return this.questionModel.find().exec();
   }
 

@@ -14,8 +14,8 @@ export class QuestionController {
   }
 
   @Get(':id')
-  findOne(@Param() params): string {
-    console.log(params.id);
-    return `This action returns a #${params.id} cat`;
+  findOne(@Param('id') qListID) {
+    console.log('Helloo', qListID);
+    this.questionService.findPerCategory(qListID);
   }
 }

@@ -2,7 +2,7 @@ import React, { useState, useEffect} from 'react';
 import { axiosInstance } from '../../util/axios';
 import QuizCard from './QuizCard';
 
-{/* A Component to render Quiz List per Category */}
+/* A Component to render Quiz List per Category */
 
 const QuizList = (props) => {
   const historyState = props.location.state;
@@ -14,8 +14,6 @@ const QuizList = (props) => {
   useEffect(()=>{
     const fetchData = async () => {
       const result = await axiosInstance.get(`/quiz/${id}/list`);
-      console.log('evo ih rezultati ');
-      console.log(result);
       setQuizList(result.data);
     };
     fetchData();
