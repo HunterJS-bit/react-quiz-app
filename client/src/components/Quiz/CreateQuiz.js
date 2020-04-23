@@ -7,6 +7,7 @@ const CreateQuiz = () => {
   const [categoryList, setCategories] = useState([]);
   const [category, setCategory] = useState(null);
   const [name, setName] = useState('');
+  const [slug, setSlug] = useState('');
 
   const selectChange = (e) => {
     const value = e.target.value || null;
@@ -26,7 +27,8 @@ const CreateQuiz = () => {
     e.preventDefault();
     const quiz = {
       name,
-      category
+      category,
+      slug
     };
     console.log('Form submited');
     const data = await axiosInstance.post('/quiz/create', quiz);
@@ -40,6 +42,12 @@ const CreateQuiz = () => {
         <label>
           Enter name of Test:
           <input  type="text" value={name} onChange={(e) => { setName(e.target.value)}} />
+        </label>
+      </p>
+      <p>
+        <label>
+          Slug of the Test:
+          <input  type="text" value={slug} onChange={(e) => { setSlug(e.target.value)}} />
         </label>
       </p>
       <p>

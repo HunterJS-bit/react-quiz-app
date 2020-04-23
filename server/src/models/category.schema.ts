@@ -6,5 +6,5 @@ export const CategorySchema = new mongoose.Schema({
     ref: "Category"
   },
   name: { type:String, required:true },
-  slug: String,
+  slug: { type:String, required:true },
 });
