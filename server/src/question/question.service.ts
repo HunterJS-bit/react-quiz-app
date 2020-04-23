@@ -11,9 +11,12 @@ export class QuestionService {
 
   async create(createQuestion){
     const options = createQuestion.options.map(e => e.name);
+    const quizCategory = createQuestion.quizCategory.map(e => e.id);
     const question = {
       question: createQuestion.question,
       options: options,
+      quizCategory,
+      answers: [1],
     };
     const createdQuestion = new this.questionModel(question);
 

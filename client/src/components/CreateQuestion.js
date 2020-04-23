@@ -59,9 +59,9 @@ const CreateQuestion = () => {
     e.preventDefault();
     const questionObj = {
       question: question,
-      options: options
+      options: options,
+      quizCategory: quizList
     };
-
     const data = await axiosInstance.post('/question', questionObj);
     console.log('evo ga response ');
     console.log(data);

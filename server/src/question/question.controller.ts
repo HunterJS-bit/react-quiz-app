@@ -10,7 +10,7 @@ export class QuestionController {
   @HttpCode(204)
   async createOne(@Body() data) {
     const created = await this.questionService.create(data);
-    console.log('creairano ', created);
+    // console.log('creairano ', created);
   }
 
   @Get(':id')
