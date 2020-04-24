@@ -19,16 +19,14 @@ export class QuestionController {
     })
   }))
   @HttpCode(204)
-  async createOne(@Body() reqBody, @UploadedFile() uploadedData) {
-    console.log(uploadedData);
+  async createOne(@Body() reqBody, @UploadedFile() uploadedImage) {
     const { options, question, quizCategory } = reqBody;
     const questionToCreate = {
       options: JSON.parse(options),
       question,
-      quizCategory: JSON.parse(quizCategory)
+      quizCategory: JSON.parse(quizCategory),
     }
-    console.log(questionToCreate);
-    // const created = await this.questionService.create(data);
+    const created = await this.questionService.create(questionToCreate, uploadedImage);
     // console.log('creairano ', created);
   }
 
