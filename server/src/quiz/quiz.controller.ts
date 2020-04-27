@@ -1,5 +1,7 @@
-import { Controller, Post, Body, Get, Param, Query } from '@nestjs/common';
-import { QuizService } from "./quiz.service";
+import { Controller, Post, Body, Get, Param, Query, UseInterceptors, HttpCode, UploadedFile } from '@nestjs/common';
+import { diskStorage } from 'multer';
+import { QuizService } from './quiz.service';
+import { FileInterceptor } from '@nestjs/platform-express';
 
 @Controller('quiz')
 export class QuizController {
@@ -22,5 +24,26 @@ export class QuizController {
   async searchQuiz(@Query('name') name: string) {
     const data = await this.quizService.searchQuizes(name);
     return data;
+  }
+
+  @Post('/create/question')
+  @UseInterceptors(FileInterceptor('file', {
+    storage: diskStorage({
+      destination: './uploads',
+      filename: (req, file, cb) => {
+        const randomName = Array(32).fill(null).map(() => (Math.round(Math.random() * 16)).toString(16)).join('')
+        return cb(null, `${file.originalname}`)
+      }
+    })
+  }))
+  @HttpCode(204)
+  async createQuestion(@Body() reqBody, @UploadedFile() uploadedImage) {
+    const { options, question, quizCategory } = reqBody;
+    const questionToCreate = {
+      options: JSON.parse(options),
+      question,
+      quizCategory: JSON.parse(quizCategory),
+    }
+    const created = await this.quizService.embedQuestions(questionToCreate, uploadedImage);
   }
 }

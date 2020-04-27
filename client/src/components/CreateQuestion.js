@@ -71,11 +71,9 @@ const CreateQuestion = () => {
     formData.append('options', JSON.stringify(options));
     formData.append('quizCategory', JSON.stringify(quizList));
 
-
-    console.log('Catt listtt ', quizList);
-    // const data = await axiosInstance.post('/question', formData);
-    // console.log('evo ga response ');
-    // console.log(data);
+    const data = await axiosInstance.post('/quiz/create/question', formData);
+    console.log('evo ga response ');
+    console.log(data);
   };
 
 
