@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { axiosInstance } from "../util/axios";
+import QuestionCategory from './Questions/QuestionCategory';
 
 const CreateQuestion = () => {
 
@@ -44,16 +45,16 @@ const CreateQuestion = () => {
 
   const setOption = (evt, index) => {
     console.log('about to set option');
-    const newShareholders = options.map((option, sidx) => {
+    const newOptions = options.map((option, sidx) => {
       if (index !== sidx) return option;
       return { ...option, name: evt.target.value };
     });
-    setOptions(newShareholders);
+    setOptions(newOptions);
   };
 
   const setQuestionCategory = (category) => {
     const list = [...quizList];
-    list.push({ name: category.name, id: category['_id'] });
+    list.push({ name: category.name, id: category['_id'], position: 0 });
     setQuizList(list);
   };
 
@@ -70,9 +71,11 @@ const CreateQuestion = () => {
     formData.append('options', JSON.stringify(options));
     formData.append('quizCategory', JSON.stringify(quizList));
 
-    const data = await axiosInstance.post('/question', formData);
-    console.log('evo ga response ');
-    console.log(data);
+
+    console.log('Catt listtt ', quizList);
+    // const data = await axiosInstance.post('/question', formData);
+    // console.log('evo ga response ');
+    // console.log(data);
   };
 
 
@@ -90,6 +93,23 @@ const CreateQuestion = () => {
     e.preventDefault(); 
     setSearchFilter('');
     setQuizCatList('');
+  };
+
+  const updateCategory = (catId, catPosition) => {
+      // console.log('Im hererererer', catId, catPosition);
+      const list = quizList.map(c => {
+        if (c.id === catId) {
+          return { ...c, position: catPosition };
+        }
+        return c;
+      });
+      setQuizList(list);
+  };
+
+  const removeCategory = (e,cat) => {
+      e.preventDefault();
+      const arr = quizList.filter(c => c.id != cat.id);
+      setQuizList(arr);
   };
 
   return( <form onSubmit={submitForm}>
@@ -130,8 +150,8 @@ const CreateQuestion = () => {
     <p> Choosen Categories </p>
     <div className="quiz-tests">
       {
-        quizList.map(e=> {
-        return (<span className="cat" key={e.id}>{ e.name }</span>);
+        quizList.map(cat=> {
+            return (<QuestionCategory key={cat.id} category={cat} updateCat={updateCategory} removeCat={removeCategory}></QuestionCategory>)
         })
       }
     </div>

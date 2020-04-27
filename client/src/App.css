@@ -53,10 +53,10 @@
   padding: 15px 5px;
 }
 
-.cat {
+.question-cat-wrapper {
   padding: 5px;
   border: 1px solid #eee;
-  background: gray;
-  max-width: 15px;
-  margin-left: 3px;;
+  background: #eee;
+  max-width: 30%;
+  margin: 0 auto;
 }
