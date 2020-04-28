@@ -1,5 +1,5 @@
 import { Model } from 'mongoose';
-import { Injectable, Inject } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { CategoryInterface } from '../interfaces/category.interface';
 import { InjectModel } from '@nestjs/mongoose';
 
