@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
 import { QuizController } from './quiz.controller';
 import { QuizService } from './quiz.service';
-import { DatabaseModule } from '../database/database.module';
-import { quizProviders } from './quiz.provider';
+import { MongooseModule } from '@nestjs/mongoose';
+import { QuizSchema } from 'src/models/quiz.schema';
 
 @Module({
-  imports: [DatabaseModule],
+  imports: [MongooseModule.forFeature([{ name: 'Quiz', schema: QuizSchema }])],
   controllers: [QuizController],
-  providers: [QuizService, ...quizProviders]
+  providers: [QuizService]
 })
 export class QuizModule {}

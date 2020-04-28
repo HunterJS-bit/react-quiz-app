@@ -2,12 +2,12 @@ import { Injectable, Inject } from '@nestjs/common';
 import { QuizInterface } from '../interfaces/quiz.interface';
 import { ConfigService } from '@nestjs/config';
 import { Model } from 'mongoose';
+import { InjectModel } from '@nestjs/mongoose';
 
 @Injectable()
 export class QuizService {
   constructor(
-    @Inject('QUIZ_MODEL')
-    private quizModel: Model<QuizInterface>,
+    @InjectModel('Quiz') private quizModel: Model<QuizInterface>,
     private configService: ConfigService,
   ) {}
 

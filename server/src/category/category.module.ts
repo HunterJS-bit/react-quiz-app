@@ -1,12 +1,12 @@
 import { Module } from '@nestjs/common';
 import { CategoryController } from './category.controller';
 import { CategoryService } from './category.service';
-import { DatabaseModule } from "../database/database.module";
-import { categoryProviders } from "./category.provider";
+import { MongooseModule } from '@nestjs/mongoose';
+import { CategorySchema } from 'src/models/category.schema';
 
 @Module({
-  imports: [DatabaseModule],
+  imports: [MongooseModule.forFeature([{ name: 'Category', schema: CategorySchema }])],
   controllers: [CategoryController],
-  providers: [CategoryService, ...categoryProviders]
+  providers: [CategoryService]
 })
 export class CategoryModule {}

@@ -1,13 +1,11 @@
 import { Model } from 'mongoose';
 import { Injectable, Inject } from '@nestjs/common';
 import { CategoryInterface } from '../interfaces/category.interface';
+import { InjectModel } from '@nestjs/mongoose';
 
 @Injectable()
 export class CategoryService {
-  constructor(
-    @Inject('CATEGORY_MODEL')
-    private categoryModel: Model<CategoryInterface>,
-  ) {}
+  constructor(@InjectModel('Category') private categoryModel: Model<CategoryInterface>) {}
 
   async create(category){
     const createdQuestion = new this.categoryModel(category);
