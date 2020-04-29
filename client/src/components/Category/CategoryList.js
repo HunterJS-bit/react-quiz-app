@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import Card from './Card';
-import { axiosInstance } from "../util/axios";
+import CategoryCard from './CategoryCard';
+import { axiosInstance } from '../../util/axios';
 
-const CardList = ({ history }) => {
+
+const CategoryList = ({ history }) => {
 
 	const [categoryList, setCategoryList] = useState([]);
 
 	const goToPage = (category) => {
-		console.log('hererer', category);
-		const name = category.name;
+		const { slug } = category;
 		history.push(
-			`/category/${name}/quizList`,
+			`/category/${slug}`,
 			category);
 	};
 
@@ -26,10 +26,10 @@ const CardList = ({ history }) => {
 	return (
 		<div className='cardList'>
 			{categoryList.map((cat, i) => {
-				return <Card key={i} index={i + 1} category={cat} navigate={goToPage}></Card>;
+				return <CategoryCard key={i} index={i + 1} category={cat} navigate={goToPage}></CategoryCard>;
 			})}
 		</div>
 	);
 };
 
-export default CardList;
+export default CategoryList;

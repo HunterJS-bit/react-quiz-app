@@ -106,7 +106,7 @@ const CreateQuestion = () => {
 
   const removeCategory = (e,cat) => {
       e.preventDefault();
-      const arr = quizList.filter(c => c.id != cat.id);
+      const arr = quizList.filter(c => c.id !== cat.id);
       setQuizList(arr);
   };
 

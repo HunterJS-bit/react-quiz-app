@@ -8,8 +8,8 @@ const QuizCard = (props) => {
     const history = useHistory();
     
     const goToQuestions = () => {
-        console.log('go to questions');;
-        history.push(`/quiz/${quiz.name}`, quiz);
+        console.log('go to quistion list');
+        history.push(`/quiz/${quiz.slug}`, quiz);
     }; 
 
     return (<div className="card card-1" onClick={goToQuestions}>

@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Home from './components/Home';
-import CardList from './components/CardList';
+import CategoryList from './components/Category/CategoryList';
 import About from './components/About';
 import Topic from './components/Topic';
 import CreateQuestion from './components/CreateQuestion';
@@ -59,12 +59,12 @@ function App() {
 				<hr />
 				<Switch>
 					<Route exact path='/' component={Home} />
-					<Route exact path='/category' component={CardList} />
+					<Route exact path='/category' component={CategoryList} />
 					<Route exact path='/category/create' component={CreateCategory}></Route>
-					<Route exact path='/category/:id/quizList' component={QuizList} />
+					<Route exact path='/category/:id' component={QuizList} />
 					<Route exact path='/quiz/create' component={CreateQuiz} />
 					<Route exact path='/quiz/:id' component={QuestionList} />
-					<Route exact path='/category/:id' component={Topic} />
+					{/* <Route exact path='/category/:id' component={Topic} /> */}
 					<Route path='/create' component={CreateQuestion} />
 					<Route path='/about' component={About} />
 				</Switch>
