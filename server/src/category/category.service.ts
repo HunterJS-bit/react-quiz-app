@@ -14,6 +14,10 @@ export class CategoryService {
   }
 
   async getMainCategories() {
-     return this.categoryModel.find( { parent: null } );
+    return this.categoryModel.find( { parent: null } );
+  }
+
+  async createMultipleCategories(categories) {
+    return this.categoryModel.insertMany(categories);
   }
 }

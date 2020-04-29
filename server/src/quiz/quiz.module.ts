@@ -7,6 +7,7 @@ import { QuizSchema } from 'src/models/quiz.schema';
 @Module({
   imports: [MongooseModule.forFeature([{ name: 'Quiz', schema: QuizSchema }])],
   controllers: [QuizController],
-  providers: [QuizService]
+  providers: [QuizService],
+  exports: [QuizService]
 })
 export class QuizModule {}
