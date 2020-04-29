@@ -52,4 +52,11 @@ export class QuizService {
     console.log('kreirano ', data, 'cat', quizCat.id);
   
   }
+
+  async createMultiple(quizData) {
+    return this.quizModel.insertMany(quizData);
+  }
+  async removeAll() {
+    return this.quizModel.deleteMany({});
+  }
 }

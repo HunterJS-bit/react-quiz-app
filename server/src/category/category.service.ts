@@ -20,4 +20,8 @@ export class CategoryService {
   async createMultipleCategories(categories) {
     return this.categoryModel.insertMany(categories);
   }
+
+  async removeAll() {
+    return this.categoryModel.deleteMany({});
+  }
 }
