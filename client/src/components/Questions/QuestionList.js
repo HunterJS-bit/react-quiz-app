@@ -10,13 +10,16 @@ const QuestionList = (props) => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const result = await axiosInstance.get(`question/${id}`);
-            setQuestions(result.data);
+            const result = await axiosInstance.get(`quiz/${id}`);
+            const { questions } = result.data;
+            setQuestions(questions);
         }
         fetchData();
     }, [])
 
-    return (<p>This is list of questionssss </p>);
+    return (<div className="quiz-wrapper">
+            <p>This is list of questionssss </p>
+        </div>);
 };
 
 export default QuestionList;

@@ -53,6 +53,10 @@ export class QuizService {
   
   }
 
+  async loadQuestions(id: number) {
+    return this.quizModel.findById(id);
+  }
+
   async createMultiple(quizData) {
     return this.quizModel.insertMany(quizData);
   }

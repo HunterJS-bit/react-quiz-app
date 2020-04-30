@@ -46,4 +46,11 @@ export class QuizController {
     }
     const created = await this.quizService.embedQuestions(questionToCreate, uploadedImage);
   }
+
+  @Get('/:id')
+  @HttpCode(200)
+  async loadQuiz(@Param('id') quizId: number) {
+    const data = await this.quizService.loadQuestions(quizId);
+    return data;
+  }
 }
