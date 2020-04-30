@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { axiosInstance } from '../../util/axios';
+import QuizWrapper from '../Quiz/QuizWrapper';
+
 
 const QuestionList = (props) => {
 
@@ -12,13 +14,22 @@ const QuestionList = (props) => {
         const fetchData = async () => {
             const result = await axiosInstance.get(`quiz/${id}`);
             const { questions } = result.data;
+            console.log('eheej', questions);
             setQuestions(questions);
         }
         fetchData();
     }, [])
 
+    const renderComponent = () => {
+        if (questions.length > 0) {
+
+            return <QuizWrapper questions={questions}></QuizWrapper>
+        }
+        return <p>Loading ....</p>
+    }
+
     return (<div className="quiz-wrapper">
-            <p>This is list of questionssss </p>
+            { renderComponent() }
         </div>);
 };
 

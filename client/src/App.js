@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Home from './components/Home';
 import CategoryList from './components/Category/CategoryList';
 import About from './components/About';
-import Topic from './components/Topic';
 import CreateQuestion from './components/CreateQuestion';
 
 /**  Category Components **/
@@ -64,7 +63,6 @@ function App() {
 					<Route exact path='/category/:id' component={QuizList} />
 					<Route exact path='/quiz/create' component={CreateQuiz} />
 					<Route exact path='/quiz/:id' component={QuestionList} />
-					{/* <Route exact path='/category/:id' component={Topic} /> */}
 					<Route path='/create' component={CreateQuestion} />
 					<Route path='/about' component={About} />
 				</Switch>
