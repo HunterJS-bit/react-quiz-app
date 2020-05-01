@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { axiosInstance } from "../util/axios";
-import QuestionCategory from './Questions/QuestionCategory';
+import QuestionCategory from './QuestionCategory';
+import { axiosInstance } from '../../util/axios';
 
 const CreateQuestion = () => {
 

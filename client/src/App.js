@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Home from './components/Home';
 import CategoryList from './components/Category/CategoryList';
 import About from './components/About';
-import CreateQuestion from './components/CreateQuestion';
+import CreateQuestion from './components/Questions/CreateQuestion';
 
 /**  Category Components **/
 import CreateCategory from './components/Category/CreateCategory';
