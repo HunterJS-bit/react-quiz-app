@@ -5,10 +5,13 @@ function Quiz(props) {
 	const { questions } = props;
 	const { options, answers, question } = questions;
 
-	console.log('quessss', answers);
-
-
 	const [checkboxState, setCheckbox] = useState({});
+
+	const showAdditionalInfo = () => {
+		if (answers.length > 1) {
+		return <p>{answers.length} odgovora je tacno </p>
+		}
+	}
 
 	useEffect(() => {
 		const initState = options.map((e, index) => {
@@ -29,9 +32,10 @@ function Quiz(props) {
 		});
 	};
 
-	const handleSubmit = (e) => {
+	const checkAnswers = (e) => {
 		e.preventDefault();
 		console.log(checkboxState);
+		console.log(answers);
 		// const correctAnswer = questions.options[answer];
 		//
 		// if (checkboxState.hasOwnProperty(correctAnswer.name)) {
@@ -58,8 +62,9 @@ function Quiz(props) {
 	return (
 		<div className='quiz-wrapper'>
 			<h3 className='question'>{question}</h3>
+			{ showAdditionalInfo() }
 			<div className='answers'>
-				<form onSubmit={handleSubmit}>
+				<form onSubmit={checkAnswers}>
 					{buildCheckbox()}
 					<input type='submit' value='Check answer' />
 				</form>
