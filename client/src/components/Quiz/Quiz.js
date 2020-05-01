@@ -9,16 +9,13 @@ function Quiz(props) {
 
 	const showAdditionalInfo = () => {
 		if (answers.length > 1) {
-		return <p>{answers.length} odgovora je tacno </p>
+		return <p>{answers.length} odgovora su tacna </p>
 		}
 	}
 
 	useEffect(() => {
-		const initState = options.map((e, index) => {
-			return {
-				[`check-${index}`]: false,
-			};
-		});
+		// todo check logic later
+		const initState = props.questions.options.reduce((a,b, index)=> (a[`check-${index}`]=false,a),{});
 		setCheckbox(initState);
 	}, [props.questions]);
 
@@ -26,10 +23,18 @@ function Quiz(props) {
 		const target = e.target;
 		const name = target.name;
 		const value = target.checked;
-		setCheckbox({
-			...checkboxState,
-			[name]: value,
-		});
+		if (answers.length > 1) {
+			setCheckbox((prevState) => {
+				return {
+					...prevState,
+					[name]: value,
+				}
+			})
+		} else {
+			setCheckbox({
+				[name]: value,
+			});
+		}
 	};
 
 	const checkAnswers = (e) => {

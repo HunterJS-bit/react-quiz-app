@@ -7,13 +7,13 @@ import QuizCard from './QuizCard';
 const QuizList = (props) => {
   const historyState = props.location.state;
 
-  const { _id: id, name: catName } = historyState;
+  const { name: catName } = historyState;
 
   const [quizList, setQuizList] = useState([]);
 
   useEffect(()=>{
     const fetchData = async () => {
-      const result = await axiosInstance.get(`/quiz/${id}/list`);
+      const result = await axiosInstance.get(`/quiz/${props.location.state['_id']}/list`);
       setQuizList(result.data);
     };
     fetchData();

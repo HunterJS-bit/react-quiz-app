@@ -12,9 +12,8 @@ const QuestionList = (props) => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const result = await axiosInstance.get(`quiz/${id}`);
+            const result = await axiosInstance.get(`quiz/${props.location.state['_id']}`);
             const { questions } = result.data;
-            console.log('eheej', questions);
             setQuestions(questions);
         }
         fetchData();

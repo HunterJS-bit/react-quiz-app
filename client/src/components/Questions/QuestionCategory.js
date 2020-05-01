@@ -8,7 +8,7 @@ const QuestionCategory = (props) => {
     const [position, setPosition] = useState(0);
 
     useEffect(() => {
-        setPosition(category.position);
+        setPosition(props.category.position);
     }, [props.category])
 
     const showEdit = (e) => {
