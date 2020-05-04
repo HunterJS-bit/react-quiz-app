@@ -9,7 +9,7 @@ function Quiz(props) {
 
 	const showAdditionalInfo = () => {
 		if (answers.length > 1) {
-		return <p>{answers.length} odgovora su tacna </p>
+			return <p>{answers.length} odgovora su tacna </p>
 		}
 	}
 
@@ -37,16 +37,59 @@ function Quiz(props) {
 		}
 	};
 
+
+	const IfMultiAnswer = () => {
+		return answers.length > 1;
+	}
+
+	const isEqual = (arr1, arr2) => {
+		if (arr1.length !== arr2.length) {
+			return false;
+		} else {
+			return arr1.some(item => arr2.includes(item)) 
+		}
+	};
 	const checkAnswers = (e) => {
 		e.preventDefault();
-		console.log(checkboxState);
-		console.log(answers);
-		// const correctAnswer = questions.options[answer];
-		//
-		// if (checkboxState.hasOwnProperty(correctAnswer.name)) {
-		// 	console.log('correct');
+		const atLeastOne = Object.values(checkboxState).some(e => !!e);
+		if (atLeastOne) {
+		
+			if (IfMultiAnswer()) {
+				var userAnswers = Object.entries(checkboxState).reduce(function(filtered, option, index) {
+					if (option[1]) {
+					   filtered.push(index);
+					}
+					return filtered;
+				  }, []);
+				const result = isEqual(userAnswers, answers);
+				if (result) {
+					alert('Correct');
+				} else {
+					alert('Not correct');
+				}
+
+			} else {
+				const userAnswer = parseInt(Object.keys(checkboxState)[0].slice(-1));
+				const correctAnswer = answers[0];
+				if (userAnswer !== correctAnswer) {
+					alert('Not correct');
+				} else {
+					alert('Correct');
+				}
+			}
+
+		} else {
+			alert('Chooose at least one answer');
+		}
+		// if (answers.length > 1) {
+
 		// } else {
-		// 	console.log('not correct');
+		// 	console.log('Ovde proveravaj ');
+		// 	const [ correctAnswer ] = answers;
+		// 	const index = checkboxState
+			
+		// 	console.log(correctAnswer); 
+		// 	console.log(Object.keys(checkboxState)[0]);
 		// }
 	};
 
