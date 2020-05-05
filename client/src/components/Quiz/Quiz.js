@@ -5,7 +5,7 @@ import QuizImage from './QuestionImage';
 
 function Quiz(props) {
 	const { questions } = props;
-	const { options, answers, question, image } = questions;
+	const { options, answers, question, image, points } = questions;
 
 	const [checkboxState, setCheckbox] = useState({});
 	const dispatch = useDispatch();
@@ -54,37 +54,38 @@ function Quiz(props) {
 	};
 	const checkAnswers = (e) => {
 		e.preventDefault();
-		// const atLeastOne = Object.values(checkboxState).some(e => !!e);
-		// if (atLeastOne) {
+		const atLeastOne = Object.values(checkboxState).some(e => !!e);
+		if (atLeastOne) {
 		
-		// 	if (IfMultiAnswer()) {
-		// 		var userAnswers = Object.entries(checkboxState).reduce(function(filtered, option, index) {
-		// 			if (option[1]) {
-		// 			   filtered.push(index);
-		// 			}
-		// 			return filtered;
-		// 		  }, []);
-		// 		const result = isEqual(userAnswers, answers);
-		// 		if (result) {
-		// 			alert('Correct');
-		// 		} else {
-		// 			alert('Not correct');
-		// 		}
+			if (IfMultiAnswer()) {
+				var userAnswers = Object.entries(checkboxState).reduce(function(filtered, option, index) {
+					if (option[1]) {
+					   filtered.push(index);
+					}
+					return filtered;
+				  }, []);
+				const result = isEqual(userAnswers, answers);
+				if (result) {
+					alert('Correct');
+					dispatch({ type: 'UPDATE_SCORE', points: points });
+				} else {
+					alert('Not correct');
+				}
 
-		// 	} else {
-		// 		const userAnswer = parseInt(Object.keys(checkboxState)[0].slice(-1));
-		// 		const correctAnswer = answers[0];
-		// 		if (userAnswer !== correctAnswer) {
-		// 			alert('Not correct');
-		// 		} else {
-		// 			alert('Correct');
-		// 		}
-		// 	}
+			} else {
+				const userAnswer = parseInt(Object.keys(checkboxState)[0].slice(-1));
+				const correctAnswer = answers[0];
+				if (userAnswer !== correctAnswer) {
+					alert('Not correct');
+				} else {
+					alert('Correct');
+					dispatch({ type: 'UPDATE_SCORE', points: points });
+				}
+			}
 
-		// } else {
-		// 	alert('Chooose at least one answer');
-		// }
-		dispatch({ type: 'UPDATE_SCORE' });
+		} else {
+			alert('Chooose at least one answer');
+		}
 	};
 
 	const buildCheckbox = () => {

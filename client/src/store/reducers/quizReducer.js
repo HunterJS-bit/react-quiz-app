@@ -2,7 +2,7 @@ import * as actions from '../actions/quizActions'
 
 export const initialState = {
     quizList: [],
-    result: 10,
+    result: 0,
     loading: false,
     hasErrors: false,
 }
@@ -12,8 +12,10 @@ export default function quizReducer(state = initialState, action) {
       case actions.GET_SCORE:
         return { ...state, loading: true }
       case actions.UPDATE_SCORE:
-        return { ...state, result: 30 }
+        return { 
+            result: state.result + action.points
+        }
       default:
         return state
     }
-  }
+}

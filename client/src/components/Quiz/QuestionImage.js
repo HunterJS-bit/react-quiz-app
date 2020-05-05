@@ -9,7 +9,7 @@ const QuestionImage = (props) => {
     const imgUrl = `http://localhost:3000/uploads${image}`;
 
     if (image) {
-        return (<img src={imgUrl}></img>)
+        return (<img alt="car-question" src={imgUrl}></img>)
     }
 
     return null;

@@ -1,6 +1,6 @@
-export const updateScore = number => ({
+export const updateScore = points => ({
     type: 'UPDATE_SCORE',
-    number
+    points
 });
 
 
