@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Checkbox from './Checkbox';
 import QuizImage from './QuestionImage';
 
@@ -8,11 +8,8 @@ function Quiz(props) {
 	const { options, answers, question, image, points } = questions;
 
 	const [checkboxState, setCheckbox] = useState({});
+	const [fieldset, setFieldset] = useState(false);
 	const dispatch = useDispatch();
-
-	const finalResult = useSelector(state => state.quiz.result);
-
-	console.log('Final ', finalResult);
 
 	const showAdditionalInfo = () => {
 		if (answers.length > 1) {
@@ -24,6 +21,7 @@ function Quiz(props) {
 		// todo check logic later
 		const initState = props.questions.options.reduce((a,b, index)=> (a[`check-${index}`]=false,a),{});
 		setCheckbox(initState);
+		setFieldset(false);
 	}, [props.questions]);
 
 	const handleChange = (e) => {
@@ -60,6 +58,7 @@ function Quiz(props) {
 		e.preventDefault();
 		const atLeastOne = Object.values(checkboxState).some(e => !!e);
 		if (atLeastOne) {
+			setFieldset(true); // disable all fields
 		
 			if (IfMultiAnswer()) {
 				const userAnswers = Object.entries(checkboxState).reduce(function(filtered, option, index) {
@@ -115,8 +114,10 @@ function Quiz(props) {
 			<QuizImage image={image}></QuizImage>
 			<div className='answers'>
 				<form onSubmit={checkAnswers}>
-					{buildCheckbox()}
-					<input type='submit' value='Check answer' />
+					<fieldset disabled={fieldset}>
+						{buildCheckbox()}
+						<input type='submit' value='Check answer' />
+					</fieldset>
 				</form>
 			</div>
 		</div>
