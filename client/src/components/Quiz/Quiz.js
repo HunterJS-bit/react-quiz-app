@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Checkbox from './Checkbox';
 import QuizImage from './QuestionImage';
 
@@ -9,6 +9,10 @@ function Quiz(props) {
 
 	const [checkboxState, setCheckbox] = useState({});
 	const dispatch = useDispatch();
+
+	const finalResult = useSelector(state => state.quiz.result);
+
+	console.log('Final ', finalResult);
 
 	const showAdditionalInfo = () => {
 		if (answers.length > 1) {
@@ -49,7 +53,7 @@ function Quiz(props) {
 		if (arr1.length !== arr2.length) {
 			return false;
 		} else {
-			return arr1.some(item => arr2.includes(item)) 
+			return arr1.every(item => arr2.includes(item)) 
 		}
 	};
 	const checkAnswers = (e) => {
@@ -58,13 +62,15 @@ function Quiz(props) {
 		if (atLeastOne) {
 		
 			if (IfMultiAnswer()) {
-				var userAnswers = Object.entries(checkboxState).reduce(function(filtered, option, index) {
+				const userAnswers = Object.entries(checkboxState).reduce(function(filtered, option, index) {
 					if (option[1]) {
 					   filtered.push(index);
 					}
 					return filtered;
-				  }, []);
+				}, []);
+
 				const result = isEqual(userAnswers, answers);
+				console.log(result);
 				if (result) {
 					alert('Correct');
 					dispatch({ type: 'UPDATE_SCORE', points: points });
