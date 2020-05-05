@@ -12,6 +12,7 @@ import CreateCategory from './components/Category/CreateCategory';
 /** Quiz List component */
 import CreateQuiz from './components/Quiz/CreateQuiz';
 import QuizList from "./components/Quiz/QuizList";
+import QuizResult from './components/Quiz/QuizResult';
 
 /** Questions */
 import QuestionList from './components/Questions/QuestionList';
@@ -63,6 +64,7 @@ function App() {
 					<Route exact path='/category/:id' component={QuizList} />
 					<Route exact path='/quiz/create' component={CreateQuiz} />
 					<Route exact path='/quiz/:id' component={QuestionList} />
+					<Route exact path='/result' component={QuizResult} />
 					<Route path='/create' component={CreateQuestion} />
 					<Route path='/about' component={About} />
 				</Switch>

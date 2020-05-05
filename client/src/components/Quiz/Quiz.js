@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import Checkbox from './Checkbox';
 
 function Quiz(props) {
@@ -6,6 +7,9 @@ function Quiz(props) {
 	const { options, answers, question } = questions;
 
 	const [checkboxState, setCheckbox] = useState({});
+	const dispatch = useDispatch();
+
+	console.log('evo ga dispatch', dispatch);
 
 	const showAdditionalInfo = () => {
 		if (answers.length > 1) {
@@ -51,46 +55,37 @@ function Quiz(props) {
 	};
 	const checkAnswers = (e) => {
 		e.preventDefault();
-		const atLeastOne = Object.values(checkboxState).some(e => !!e);
-		if (atLeastOne) {
+		// const atLeastOne = Object.values(checkboxState).some(e => !!e);
+		// if (atLeastOne) {
 		
-			if (IfMultiAnswer()) {
-				var userAnswers = Object.entries(checkboxState).reduce(function(filtered, option, index) {
-					if (option[1]) {
-					   filtered.push(index);
-					}
-					return filtered;
-				  }, []);
-				const result = isEqual(userAnswers, answers);
-				if (result) {
-					alert('Correct');
-				} else {
-					alert('Not correct');
-				}
+		// 	if (IfMultiAnswer()) {
+		// 		var userAnswers = Object.entries(checkboxState).reduce(function(filtered, option, index) {
+		// 			if (option[1]) {
+		// 			   filtered.push(index);
+		// 			}
+		// 			return filtered;
+		// 		  }, []);
+		// 		const result = isEqual(userAnswers, answers);
+		// 		if (result) {
+		// 			alert('Correct');
+		// 		} else {
+		// 			alert('Not correct');
+		// 		}
 
-			} else {
-				const userAnswer = parseInt(Object.keys(checkboxState)[0].slice(-1));
-				const correctAnswer = answers[0];
-				if (userAnswer !== correctAnswer) {
-					alert('Not correct');
-				} else {
-					alert('Correct');
-				}
-			}
-
-		} else {
-			alert('Chooose at least one answer');
-		}
-		// if (answers.length > 1) {
+		// 	} else {
+		// 		const userAnswer = parseInt(Object.keys(checkboxState)[0].slice(-1));
+		// 		const correctAnswer = answers[0];
+		// 		if (userAnswer !== correctAnswer) {
+		// 			alert('Not correct');
+		// 		} else {
+		// 			alert('Correct');
+		// 		}
+		// 	}
 
 		// } else {
-		// 	console.log('Ovde proveravaj ');
-		// 	const [ correctAnswer ] = answers;
-		// 	const index = checkboxState
-			
-		// 	console.log(correctAnswer); 
-		// 	console.log(Object.keys(checkboxState)[0]);
+		// 	alert('Chooose at least one answer');
 		// }
+		dispatch({ type: 'UPDATE_SCORE' });
 	};
 
 	const buildCheckbox = () => {
