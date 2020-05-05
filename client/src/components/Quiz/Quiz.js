@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import Checkbox from './Checkbox';
+import QuizImage from './QuestionImage';
 
 function Quiz(props) {
 	const { questions } = props;
-	const { options, answers, question } = questions;
+	const { options, answers, question, image } = questions;
 
 	const [checkboxState, setCheckbox] = useState({});
 	const dispatch = useDispatch();
-
-	console.log('evo ga dispatch', dispatch);
 
 	const showAdditionalInfo = () => {
 		if (answers.length > 1) {
@@ -106,6 +105,7 @@ function Quiz(props) {
 		<div className='quiz-wrapper'>
 			<h3 className='question'>{question}</h3>
 			{ showAdditionalInfo() }
+			<QuizImage image={image}></QuizImage>
 			<div className='answers'>
 				<form onSubmit={checkAnswers}>
 					{buildCheckbox()}
