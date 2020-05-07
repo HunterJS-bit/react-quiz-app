@@ -3,7 +3,9 @@ import { useDispatch } from 'react-redux';
 
 const CheckQuestionAnswers = (props) => {
 
-    const { userAnswers, correctAnswers, setFormState } = props;
+    const { userAnswers, correctAnswers, setFormState, points } = props;
+
+    const dispatch = useDispatch();
 
     const isMultiAnswer = () => {
         return correctAnswers.length > 1;
@@ -34,7 +36,7 @@ const CheckQuestionAnswers = (props) => {
 
 				if (isUserMultiAnswerCorrect(userAnswers, correctAnswers)) {
 					alert('Correct');
-					// dispatch({ type: 'UPDATE_SCORE', points: points });
+					dispatch({ type: 'UPDATE_SCORE', points: points });
 				} else {
 					alert('Not correct');
 				}
@@ -47,7 +49,7 @@ const CheckQuestionAnswers = (props) => {
 					alert('Not correct');
 				} else {
 					alert('Correct');
-					// dispatch({ type: 'UPDATE_SCORE', points: points });
+					dispatch({ type: 'UPDATE_SCORE', points: points });
 				}
             }
             setFormState(true);

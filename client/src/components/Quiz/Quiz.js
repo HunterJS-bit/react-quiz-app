@@ -7,7 +7,7 @@ import QuestionNavigation from './QuestionNavigation';
 
 
 function Quiz(props) {
-	const { questions, changeQuestion } = props;
+	const { questions, changeQuestion, currentIndex, totalQuestions } = props;
 	const { options, answers, question, image, points } = questions;
 
 	const [checkboxState, setCheckbox] = useState({});
@@ -73,6 +73,9 @@ function Quiz(props) {
 						{buildCheckbox()}
 				</fieldset>
 				<QuestionNavigation 
+					currentIndex={currentIndex}
+					totalQuestions={totalQuestions}
+					points={points}
 					nextQuestion={changeQuestion}
 					answerSubmited={formSubmited}
 					setFormState={setFormState}
