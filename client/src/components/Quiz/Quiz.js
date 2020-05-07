@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import Checkbox from './Checkbox';
 import QuizImage from './QuestionImage';
 import QuestionInfo from './QuestionInfo';
+import AnswerChecker from './AnswerChecker';
 
 function Quiz(props) {
 	const { questions } = props;
@@ -65,6 +66,7 @@ function Quiz(props) {
 				}, []);
 
 				const result = isEqual(userAnswers, answers);
+
 				if (result) {
 					alert('Correct');
 					dispatch({ type: 'UPDATE_SCORE', points: points });
@@ -75,6 +77,8 @@ function Quiz(props) {
 			} else {
 				const userAnswer = parseInt(Object.keys(checkboxState));
 				const correctAnswer = answers[0];
+				console.log(answers);
+				console.log(checkboxState);
 				if (userAnswer !== correctAnswer) {
 					alert('Not correct');
 				} else {
@@ -98,9 +102,12 @@ function Quiz(props) {
 						checked={checkboxState[`${index}`]}
 						label={label}
 					/>
-					<div className="correct">
-						<span>Y</span><span>X</span>
-					</div>
+					<AnswerChecker 
+						index={index} 
+						visible={fieldset} 
+						state={checkboxState} 
+						answers={answers}>
+					</AnswerChecker>
 				</div>
 			);
 		});
