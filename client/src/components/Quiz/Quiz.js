@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import Checkbox from './Checkbox';
 import QuizImage from './QuestionImage';
+import QuestionInfo from './QuestionInfo';
 
 function Quiz(props) {
 	const { questions } = props;
@@ -11,15 +12,9 @@ function Quiz(props) {
 	const [fieldset, setFieldset] = useState(false);
 	const dispatch = useDispatch();
 
-	const showAdditionalInfo = () => {
-		if (answers.length > 1) {
-			return <p>{answers.length} odgovora su tacna </p>
-		}
-	}
-
 	useEffect(() => {
 		// todo check logic later
-		const initState = props.questions.options.reduce((a,b, index)=> (a[`check-${index}`]=false,a),{});
+		const initState = props.questions.options.reduce((a,b, index)=> (a[`${index}`]=false,a),{});
 		setCheckbox(initState);
 		setFieldset(false);
 	}, [props.questions]);
@@ -61,6 +56,7 @@ function Quiz(props) {
 			setFieldset(true); // disable all fields
 		
 			if (IfMultiAnswer()) {
+				// todo maybe simplify this 
 				const userAnswers = Object.entries(checkboxState).reduce(function(filtered, option, index) {
 					if (option[1]) {
 					   filtered.push(index);
@@ -69,7 +65,6 @@ function Quiz(props) {
 				}, []);
 
 				const result = isEqual(userAnswers, answers);
-				console.log(result);
 				if (result) {
 					alert('Correct');
 					dispatch({ type: 'UPDATE_SCORE', points: points });
@@ -78,7 +73,7 @@ function Quiz(props) {
 				}
 
 			} else {
-				const userAnswer = parseInt(Object.keys(checkboxState)[0].slice(-1));
+				const userAnswer = parseInt(Object.keys(checkboxState));
 				const correctAnswer = answers[0];
 				if (userAnswer !== correctAnswer) {
 					alert('Not correct');
@@ -96,13 +91,17 @@ function Quiz(props) {
 	const buildCheckbox = () => {
 		return options.map((label, index) => {
 			return (
-				<Checkbox
-					onChange={handleChange}
-					key={index}
-					name={`check-${index}`}
-					checked={checkboxState[`check-${index}`]}
-					label={label}
-				/>
+				<div key={index}>
+					<Checkbox
+						onChange={handleChange}
+						name={`${index}`}
+						checked={checkboxState[`${index}`]}
+						label={label}
+					/>
+					<div className="correct">
+						<span>Y</span><span>X</span>
+					</div>
+				</div>
 			);
 		});
 	};
@@ -110,7 +109,7 @@ function Quiz(props) {
 	return (
 		<div className='quiz-wrapper'>
 			<h3 className='question'>{question}</h3>
-			{ showAdditionalInfo() }
+			<QuestionInfo info={answers}></QuestionInfo>
 			<QuizImage image={image}></QuizImage>
 			<div className='answers'>
 				<form onSubmit={checkAnswers}>
