@@ -7,8 +7,6 @@ const AnswerChecker = (props) => {
 
 
     const compareAnswers = (index) => {
-        console.log(state[index]);
-        console.log(answers);
         if (state[index] && answers.includes(index)) {
             return '\u2713';
         } else if (state[index] && !answers.includes(index)) {

@@ -13,8 +13,8 @@ const QuizCard = (props) => {
     }; 
 
     return (<div className="card card-1" onClick={goToQuestions}>
-        <p>{ quiz.name }</p>
-    </div>);
+                <p>{ quiz.name }</p>
+            </div>);
 };
 
 export default QuizCard;

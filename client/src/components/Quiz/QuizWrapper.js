@@ -27,7 +27,7 @@ const QuizWrapper = (props) => {
 			<p>
 				{qIndex + 1} / {totalQuestions}
 			</p>
-			<Quiz questions={question} />
+			<Quiz questions={question} changeQuestion={changeQuestion} />
 			{qIndex + 1 < totalQuestions ? (
 				<button onClick={changeQuestion}> Sledece pitanje</button>
 			) : (

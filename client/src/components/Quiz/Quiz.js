@@ -6,8 +6,11 @@ import QuestionInfo from './QuestionInfo';
 import AnswerChecker from './AnswerChecker';
 
 function Quiz(props) {
-	const { questions } = props;
+	const { questions, changeQuestion } = props;
 	const { options, answers, question, image, points } = questions;
+
+
+	console.log('Change question', changeQuestion);
 
 	const [checkboxState, setCheckbox] = useState({});
 	const [fieldset, setFieldset] = useState(false);
@@ -41,7 +44,7 @@ function Quiz(props) {
 
 	const IfMultiAnswer = () => {
 		return answers.length > 1;
-	}
+	};
 
 	const isEqual = (arr1, arr2) => {
 		if (arr1.length !== arr2.length) {
@@ -50,6 +53,7 @@ function Quiz(props) {
 			return arr1.every(item => arr2.includes(item)) 
 		}
 	};
+
 	const checkAnswers = (e) => {
 		e.preventDefault();
 		const atLeastOne = Object.values(checkboxState).some(e => !!e);
@@ -77,8 +81,6 @@ function Quiz(props) {
 			} else {
 				const userAnswer = parseInt(Object.keys(checkboxState));
 				const correctAnswer = answers[0];
-				console.log(answers);
-				console.log(checkboxState);
 				if (userAnswer !== correctAnswer) {
 					alert('Not correct');
 				} else {
@@ -86,7 +88,6 @@ function Quiz(props) {
 					dispatch({ type: 'UPDATE_SCORE', points: points });
 				}
 			}
-
 		} else {
 			alert('Chooose at least one answer');
 		}
@@ -122,7 +123,7 @@ function Quiz(props) {
 				<form onSubmit={checkAnswers}>
 					<fieldset disabled={fieldset}>
 						{buildCheckbox()}
-						<input type='submit' value='Check answer' />
+						<button type="submit">Submit </button>
 					</fieldset>
 				</form>
 			</div>
