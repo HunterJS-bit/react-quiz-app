@@ -8,13 +8,15 @@ const QuestionList = (props) => {
 
     const { location } = props;
     const id = location.state['_id'];
-    const [questions, setQuestions ] = useState([]);
+    const [questions, setQuestions] = useState([]);
+    const [totalPoints, setTotalPoints] = useState(0);
 
     useEffect(() => {
         const fetchData = async () => {
             const result = await axiosInstance.get(`quiz/${props.location.state['_id']}`);
-            const { questions } = result.data;
+            const { questions, totalPoints } = result.data;
             setQuestions(questions);
+            setTotalPoints(totalPoints);
         }
         fetchData();
     }, [])
@@ -22,7 +24,7 @@ const QuestionList = (props) => {
     const renderComponent = () => {
         if (questions.length > 0) {
 
-            return <QuizWrapper questions={questions}></QuizWrapper>
+            return <QuizWrapper questions={questions} totalPoints={totalPoints}></QuizWrapper>
         }
         return <p>Loading ....</p>
     }

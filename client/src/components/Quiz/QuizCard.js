@@ -8,7 +8,6 @@ const QuizCard = (props) => {
     const history = useHistory();
     
     const goToQuestions = () => {
-        console.log('go to quistion list');
         history.push(`/quiz/${quiz.slug}`, quiz);
     }; 
 

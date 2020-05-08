@@ -54,7 +54,14 @@ export class QuizService {
   }
 
   async loadQuestions(id: number) {
-    return this.quizModel.findById(id);
+    const data = await this.quizModel.findById(id);
+        // todo add aggregation func & fetch all data from db
+    const totalPoints = data.questions.map((e) => e.points).reduce((acumulator, value) => acumulator + value);
+
+    return {
+      totalPoints: totalPoints,
+      questions: data.questions
+    };
   }
 
   async createMultiple(quizData) {
