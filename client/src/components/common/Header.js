@@ -1,34 +1,55 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import AppBar from '@material-ui/core/AppBar';
+import Link from '@material-ui/core/Link';
+import styled, { css } from 'styled-components';
 
+const StyledTypography = styled(Typography)`
+    flex-grow: 1;
+    text-align: left;
+`;
+
+const StyledAppBar = styled(AppBar)`
+    border-bottom-style: solid; 
+    border-bottom-width: 1px;
+    border-bottom-color: ${props =>
+        props.theme.palette.divider};
+`;
+
+const StyledLink = styled(Link)`
+    margin: ${props =>
+        props.theme.spacing(1, 1.5)};
+`;
 const Header = () => {
 
     return (
-        <AppBar position="static" color="default" elevation={0} >
+        <StyledAppBar position="static" color="default" elevation={0}>
             <Toolbar>
-                <Typography variant="h6" color="inherit" noWrap >
-                    Company name
-                </Typography>
+                <StyledTypography variant="h6" color="inherit" noWrap>
+                    Car Test App
+                </StyledTypography>
                 <nav>
-                    <Link variant="button" color="textPrimary" to={'/'} >
+                    <StyledLink component={RouterLink} variant="button" color="textPrimary" to={'/'}>
                         Home
-                    </Link>
-                    <Link variant="button" color="textPrimary" to={'/category'} >
+                    </StyledLink>
+                    <StyledLink component={RouterLink} variant="button" color="textPrimary" to={'/category'}>
                         Kategorije
-                    </Link>
-                    <Link variant="button" color="textPrimary" href="#" >
-                    Support
-                    </Link>
+                    </StyledLink>
+                    <StyledLink component={RouterLink} variant="button" color="textPrimary" to={'/category/create'}>
+                        Create Kategory
+                    </StyledLink>
+                    <StyledLink component={RouterLink} variant="button" color="textPrimary" to={'/about'}>
+                        About
+                    </StyledLink>
                 </nav>
                 <Button href="#" color="primary" variant="outlined" >
                     Login
                 </Button>
             </Toolbar>
-        </AppBar>
+        </StyledAppBar>
         // <nav className='navbar navbar-expand-lg navbar-light bg-light'>
         //     <ul className='navbar-nav mr-auto'>
         //         <li>

@@ -23,7 +23,6 @@ function App() {
 		<div className='App'>
 			<Router>
 				<Header></Header>
-				<hr />
 				<Switch>
 					<Route exact path='/' component={Home} />
 					<Route exact path='/category' component={CategoryList} />
