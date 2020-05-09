@@ -59,8 +59,8 @@ export class QuizService {
     const totalPoints = data.questions.map((e) => e.points).reduce((acumulator, value) => acumulator + value);
 
     return {
-      totalPoints: totalPoints,
-      questions: data.questions
+        totalPoints: totalPoints,
+        questions: data.questions
     };
   }
 

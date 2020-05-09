@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import Quiz from './Quiz';
 
 const QuizWrapper = (props) => {
-	const { questions, totalPoints } = props;
+	const { questions } = props;
 	const [questionIndex, setIndex] = useState(0);
 	const question = questions[questionIndex];
 	const totalQuestions = questions.length;
 
-	
+
 	const changeQuestion = () => {
 		setIndex((prev) => {
 			return prev + 1;

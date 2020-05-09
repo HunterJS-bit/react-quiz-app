@@ -3,12 +3,13 @@ import { useSelector } from 'react-redux';
 
 const QuizResult = () => {
 
-    const finalResult = useSelector(state => state.quiz.result);
-    
+    const { userScore, maxPoints } = useSelector(state => state.quiz);
+
+    const percentage = ((100 * userScore) / maxPoints).toFixed(0);
 
     return (<div>
             <h1>Showing results</h1>
-            <p>Total score is { finalResult }</p>
+            <p>You scored {percentage}%</p>
         </div>);
 }
 

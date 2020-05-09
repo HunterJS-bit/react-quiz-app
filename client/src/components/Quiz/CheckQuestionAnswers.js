@@ -11,7 +11,7 @@ const CheckQuestionAnswers = (props) => {
         return correctAnswers.length > 1;
     };
 
-    const isUserMultiAnswerCorrect = (userA, correctA) => {
+    const isUserMultiAnswerCorrect = (correctA, userA) => {
 		if (userA.length !== correctA.length) {
 			return false;
 		} else {
@@ -26,17 +26,16 @@ const CheckQuestionAnswers = (props) => {
     const checkUserAnswer = () => {
         if (ifAtLeastOneSelected()) {
             if (isMultiAnswer()) {
-                const correctAnswers = Object.entries(userAnswers).reduce(function(filtered, option, index) {
+                const checkedUserAnswers = Object.entries(userAnswers).reduce(function(filtered, option, index) {
 					if (option[1]) {
 					   filtered.push(index);
 					}
 					return filtered;
                 }, []);
-                
 
-				if (isUserMultiAnswerCorrect(userAnswers, correctAnswers)) {
+				if (isUserMultiAnswerCorrect(correctAnswers, checkedUserAnswers)) {
 					alert('Correct');
-					dispatch({ type: 'UPDATE_SCORE', points: points });
+					dispatch({ type: 'UPDATE_USER_SCORE', points: points });
 				} else {
 					alert('Not correct');
 				}
@@ -49,7 +48,7 @@ const CheckQuestionAnswers = (props) => {
 					alert('Not correct');
 				} else {
 					alert('Correct');
-					dispatch({ type: 'UPDATE_SCORE', points: points });
+					dispatch({ type: 'UPDATE_USER_SCORE', points: points });
 				}
             }
             setFormState(true);
