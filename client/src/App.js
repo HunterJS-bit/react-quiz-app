@@ -2,7 +2,11 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './components/Home';
+/** Common Components */
 import Header from './components/common/Header';
+import Footer from './components/common/Footer';
+
+
 import CategoryList from './components/Category/CategoryList';
 import About from './components/About';
 import CreateQuestion from './components/Questions/CreateQuestion';
@@ -34,6 +38,7 @@ function App() {
 					<Route path='/create' component={CreateQuestion} />
 					<Route path='/about' component={About} />
 				</Switch>
+				<Footer></Footer>
 			</Router>
 		</div>
 	);

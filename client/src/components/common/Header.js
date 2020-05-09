@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import AppBar from '@material-ui/core/AppBar';
 import Link from '@material-ui/core/Link';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 const StyledTypography = styled(Typography)`
     flex-grow: 1;
