@@ -10,6 +10,7 @@ const QuizResult = () => {
     return (<div>
             <h1>Showing results</h1>
             <p>You scored {percentage}%</p>
+            <button>Review </button>
         </div>);
 }
 
