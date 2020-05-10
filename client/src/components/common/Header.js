@@ -26,7 +26,7 @@ const StyledLink = styled(Link)`
 const Header = () => {
 
     return (
-        <StyledAppBar position="static" color="default" elevation={0}>
+        <StyledAppBar position="static" color="transparent" elevation={0}>
             <Toolbar>
                 <StyledTypography variant="h6" color="inherit" noWrap>
                     Car Test App

@@ -4,7 +4,7 @@ import QuizImage from './QuestionImage';
 import QuestionInfo from './QuestionInfo';
 import AnswerChecker from './AnswerChecker';
 import QuestionNavigation from './QuestionNavigation';
-
+import Button from '@material-ui/core/Button';
 
 function Quiz(props) {
 	const { questions, changeQuestion, currentIndex, totalQuestions } = props;
