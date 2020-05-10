@@ -14,7 +14,6 @@ ul {
 
 .quiz-wrapper {
   margin: 0 auto;
-  max-width: 60%;
   min-height: 60vh;
   background: #fff;
   box-shadow: -2px 0px 21px -2px rgba(0, 0, 0, 0.4);
@@ -68,4 +67,48 @@ ul {
   background: #eee;
   max-width: 30%;
   margin: 0 auto;
+}
+
+.ck-button {
+  display: block;
+  margin: 12px;
+  padding: 1em 1.8em;
+  overflow:auto;
+  float:left;
+  font-size: 17px;
+  color: #5c5568;
+  letter-spacing: 1px;
+  line-height: 15px;
+  border: 1px solid rgba(235, 236, 235, 0.75);
+  border-radius: 40px;
+  cursor: pointer;
+  background: transparent;
+  transition: all 0.3s ease 0s;
+}
+
+.ck-button:hover {
+  color: #FFF;
+  background: #fbb233;
+  border-color: #fbb233;
+}
+
+.ck-button label {
+  float:left;
+  cursor: pointer;
+}
+
+.ck-button label span {
+  text-align:center;
+  padding:3px 0px;
+  display:block;
+}
+
+.ck-button label input {
+  position:absolute;
+  top:-20px;
+}
+
+.ck-button input:checked + span {
+  background-color:#911;
+  color:#fff;
 }
