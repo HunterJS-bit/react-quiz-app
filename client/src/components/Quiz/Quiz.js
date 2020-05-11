@@ -4,7 +4,10 @@ import QuizImage from './QuestionImage';
 import QuestionInfo from './QuestionInfo';
 import AnswerChecker from './AnswerChecker';
 import QuestionNavigation from './QuestionNavigation';
-import Button from '@material-ui/core/Button';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
 
 function Quiz(props) {
 	const { questions, changeQuestion, currentIndex, totalQuestions } = props;
@@ -45,44 +48,57 @@ function Quiz(props) {
 	const buildCheckbox = () => {
 		return options.map((label, index) => {
 			return (
-				<div key={index}>
+				// <div key={index}>
 					<Checkbox
+						key={index}
 						onChange={handleChange}
 						name={`${index}`}
 						checked={checkboxState[`${index}`]}
 						label={label}
 					/>
-					<AnswerChecker 
+					/*{ <AnswerChecker 
 						index={index} 
 						visible={formSubmited} 
 						state={checkboxState} 
 						answers={answers}>
-					</AnswerChecker>
-				</div>
+					</AnswerChecker> } */
+				// </div>
 			);
 		});
 	};
 
 	return (
 		<div className='quiz-wrapper'>
-			<h3 className='question'>{question}</h3>
-			<QuestionInfo info={answers}></QuestionInfo>
-			<QuizImage image={image}></QuizImage>
-			<div className='answers'>
-				<fieldset disabled={formSubmited}>
-						{buildCheckbox()}
-				</fieldset>
+			<Paper elevation={1} >
+				<Box p={3}>
+					<Typography variant="h5" component="h5">
+						{question}
+					</Typography>
+					<QuestionInfo info={answers}></QuestionInfo>
+					<QuizImage image={image}></QuizImage>
+				</Box>
+			</Paper>
+			<Paper elevation={2} >
+				<Box p={2} mt={3} >
+					<div className='answers'>
+						<fieldset disabled={formSubmited}>
+								{buildCheckbox()}
+						</fieldset>
+					</div>
+				</Box>
+			</Paper>
+			<Box p={3} mt={2} >
 				<QuestionNavigation 
-					currentIndex={currentIndex}
-					totalQuestions={totalQuestions}
-					points={points}
-					nextQuestion={changeQuestion}
-					answerSubmited={formSubmited}
-					setFormState={setFormState}
-					userAnswers={checkboxState} 
-					correctAnswers={answers}>
+						currentIndex={currentIndex}
+						totalQuestions={totalQuestions}
+						points={points}
+						nextQuestion={changeQuestion}
+						answerSubmited={formSubmited}
+						setFormState={setFormState}
+						userAnswers={checkboxState} 
+						correctAnswers={answers}>
 				</QuestionNavigation>
-			</div>
+			</Box>
 		</div>
 	);
 }

@@ -9,7 +9,7 @@ function Checkbox({
 	onChange,
 }) {
 	return (
-		<div className='ck-button'>
+		<div className={`ck-button ${checked ? 'active' : '' }`}>
 			<label>
 				{label}
 				<input type={type} name={name} checked={checked} onChange={onChange} />

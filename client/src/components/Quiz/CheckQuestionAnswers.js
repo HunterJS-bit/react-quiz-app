@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '@material-ui/core/Button';
 import { useDispatch } from 'react-redux';
 
 const CheckQuestionAnswers = (props) => {
@@ -57,7 +58,12 @@ const CheckQuestionAnswers = (props) => {
         }
     };
 
-    return (<button onClick={checkUserAnswer}>Check answers</button>)
+    return (<Button
+        variant="contained"
+        color="secondary"
+        onClick={checkUserAnswer}>
+       Check answers
+      </Button>)
 };
 
 export default CheckQuestionAnswers;

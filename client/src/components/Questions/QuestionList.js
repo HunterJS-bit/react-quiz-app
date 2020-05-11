@@ -31,7 +31,7 @@ const QuestionList = (props) => {
         return <p>Loading ....</p>
     }
 
-    return (<div className="quiz-wrapper">
+    return (<div>
             { renderComponent() }
         </div>);
 };

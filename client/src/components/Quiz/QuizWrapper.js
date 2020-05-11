@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Quiz from './Quiz';
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 const QuizWrapper = (props) => {
 	const { questions } = props;
@@ -17,7 +18,7 @@ const QuizWrapper = (props) => {
 
 	return (
 		<div className='quiz'>
-			<h2>quiz wrapper </h2>
+			{/* <h2>quiz wrapper </h2> */}
 			<p>
 				{questionIndex + 1} / {totalQuestions}
 			</p>

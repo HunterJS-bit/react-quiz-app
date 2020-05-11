@@ -10,6 +10,7 @@ import styled from 'styled-components';
 const StyledTypography = styled(Typography)`
     flex-grow: 1;
     text-align: left;
+    color: #fff;
 `;
 
 const StyledAppBar = styled(AppBar)`
@@ -17,6 +18,7 @@ const StyledAppBar = styled(AppBar)`
     border-bottom-width: 1px;
     border-bottom-color: ${props =>
         props.theme.palette.divider};
+    background-color: #0b2239;
 `;
 
 const StyledLink = styled(Link)`
