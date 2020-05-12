@@ -19,19 +19,26 @@ fieldset {
   align-items: center;
 }
 
-.App > div {
+/* .App > div {
+  background-image: url("./assets/pattern.png");
+  background-repeat: repeat-y;
+  background-repeat-x: repeat;
+  padding: 4em 2em;
+} */
+.quiz {
+  background: #fff;
   background-image: url("./assets/pattern.png");
   background-repeat: repeat-y;
   background-repeat-x: repeat;
   padding: 4em 2em;
 }
-.quiz {
+
+.quiz-wrapper {
   margin: 57px auto;
   width: 800px;
   min-height: 60vh;
   padding: 1em 3em;
-  border-radius: 40px;
-  background: #fff;
+  border-radius: 40px; 
 }
 
 .cardList {

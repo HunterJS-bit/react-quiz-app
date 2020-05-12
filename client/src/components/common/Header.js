@@ -24,6 +24,8 @@ const StyledAppBar = styled(AppBar)`
 const StyledLink = styled(Link)`
     margin: ${props =>
         props.theme.spacing(1, 1.5)};
+    color: #fff;
+    font-weight: 700;
 `;
 const Header = () => {
 
@@ -34,16 +36,16 @@ const Header = () => {
                     Car Test App
                 </StyledTypography>
                 <nav>
-                    <StyledLink component={RouterLink} variant="button" color="textPrimary" to={'/'}>
+                    <StyledLink component={RouterLink} variant="button" to={'/'}>
                         Home
                     </StyledLink>
-                    <StyledLink component={RouterLink} variant="button" color="textPrimary" to={'/category'}>
+                    <StyledLink component={RouterLink} variant="button"  to={'/category'}>
                         Kategorije
                     </StyledLink>
-                    <StyledLink component={RouterLink} variant="button" color="textPrimary" to={'/category/create'}>
+                    <StyledLink component={RouterLink} variant="button" to={'/category/create'}>
                         Create Kategory
                     </StyledLink>
-                    <StyledLink component={RouterLink} variant="button" color="textPrimary" to={'/about'}>
+                    <StyledLink component={RouterLink} variant="button" to={'/about'}>
                         About
                     </StyledLink>
                 </nav>

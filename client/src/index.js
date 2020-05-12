@@ -7,6 +7,7 @@ import { createStore } from 'redux';
 import rootReducer from './store';
 import { createMuiTheme, StylesProvider, ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 import { ThemeProvider } from 'styled-components';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 import * as serviceWorker from './serviceWorker';
 
@@ -20,6 +21,7 @@ ReactDOM.render(
 			<StylesProvider injectFirst>
 				<MuiThemeProvider theme={theme}>
 					<ThemeProvider theme={theme}>
+						<CssBaseline />	
 						<App />
 					</ThemeProvider>
 				</MuiThemeProvider>
