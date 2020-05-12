@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import CategoryCard from './CategoryCard';
+import Grid from '@material-ui/core/Grid';
 import { axiosInstance } from '../../util/axios';
+import styled from 'styled-components';
 
+
+const StyledGrid = styled(Grid)`
+	width: 1200px;
+	margin-top: 40px;
+`;
 
 const CategoryList = ({ history }) => {
 
@@ -25,9 +32,18 @@ const CategoryList = ({ history }) => {
 
 	return (
 		<div className='cardList'>
-			{categoryList.map((cat, i) => {
-				return <CategoryCard key={i} index={i + 1} category={cat} navigate={goToPage}></CategoryCard>;
-			})}
+			<Grid container justify="center">
+				<StyledGrid
+				spacing={4}
+				alignItems="center"
+				justify="center"
+				container
+				>
+				{categoryList.map((cat, i) => {
+					return <CategoryCard key={i} index={i + 1} category={cat} navigate={goToPage}></CategoryCard>;
+				})}
+				</StyledGrid>
+			</Grid>
 		</div>
 	);
 };

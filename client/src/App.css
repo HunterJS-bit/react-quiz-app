@@ -19,12 +19,10 @@ fieldset {
   align-items: center;
 }
 
-/* .App > div {
-  background-image: url("./assets/pattern.png");
-  background-repeat: repeat-y;
-  background-repeat-x: repeat;
+main.main-container {
   padding: 4em 2em;
-} */
+}
+
 .quiz {
   background: #fff;
   background-image: url("./assets/pattern.png");
@@ -138,4 +136,15 @@ fieldset {
 .ck-button label input {
   position:absolute;
   top:-20px;
+}
+
+
+
+/** Categories **/
+
+.category-image {
+  flex-basis: 25%;
+  flex-grow: 0;
+  cursor: pointer;
+
 }
