@@ -143,8 +143,20 @@ main.main-container {
 /** Categories **/
 
 .category-image {
-  flex-basis: 25%;
+  flex-basis: 50%;
   flex-grow: 0;
+  min-width: 125px;
   cursor: pointer;
+}
 
+.category-image:hover {
+  animation: wiggle 1s infinite;
+}
+
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+  30% { transform: rotate(0deg); }
+  45% { transform: rotate(5deg); }
+  65% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
 }

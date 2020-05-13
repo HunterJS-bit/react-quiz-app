@@ -28,9 +28,7 @@ const Boxed = styled.div`
 const CategoryCard = (props) => {
 	const { navigate, category } = props;
 
-	const { name } = category;
-
-	const imageSrc = '';
+	const { name, description } = category;
 
 	const getImageSrc = (catName) => {
 		switch (catName) {
@@ -60,7 +58,7 @@ const CategoryCard = (props) => {
 						{ name }
 					</Typography>
 					<Typography variant="body2" gutterBottom>
-						A first title style <br /> with two lines
+						{ description }
 					</Typography>
 				</Boxed>
 			</Box>
