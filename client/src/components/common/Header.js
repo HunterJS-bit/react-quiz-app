@@ -1,94 +1,213 @@
-import React from 'react';
-import { Link as RouterLink } from 'react-router-dom';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import AppBar from '@material-ui/core/AppBar';
-import Link from '@material-ui/core/Link';
-import styled from 'styled-components';
+import React, { Component } from "react";
+import withStyles from "@material-ui/styles/withStyles";
+import { Link, withRouter } from "react-router-dom";
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import Toolbar from "@material-ui/core/Toolbar";
+import AppBar from "@material-ui/core/AppBar";
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
+import IconButton from "@material-ui/core/IconButton";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
+import { Link as MaterialLink } from "@material-ui/core";
+import Menu from "./Menu";
 
-const StyledTypography = styled(Typography)`
-    flex-grow: 1;
-    text-align: left;
-    color: #fff;
-`;
 
-const StyledAppBar = styled(AppBar)`
-    border-bottom-style: solid; 
-    border-bottom-width: 1px;
-    border-bottom-color: ${props =>
-        props.theme.palette.divider};
-    background-color: #0b2239;
-`;
+const styles = theme => ({
+  appBar: {
+    position: "relative",
+    boxShadow: "none",
+    borderBottom: `1px solid ${theme.palette.grey["100"]}`,
+    backgroundColor: "white"
+  },
+  inline: {
+    display: "inline"
+  },
+  flex: {
+    display: "flex",
+    [theme.breakpoints.down("sm")]: {
+      display: "flex",
+      justifyContent: "space-evenly",
+      alignItems: "center"
+    }
+  },
+  link: {
+    textDecoration: "none",
+    color: "inherit"
+  },
+  productLogo: {
+    display: "inline-block",
+    borderLeft: `1px solid ${theme.palette.grey["A100"]}`,
+    marginLeft: 32,
+    paddingLeft: 24,
+    [theme.breakpoints.up("md")]: {
+      paddingTop: "1.5em"
+    }
+  },
+  tagline: {
+    display: "inline-block",
+    marginLeft: 10,
+    [theme.breakpoints.up("md")]: {
+      paddingTop: "0.8em"
+    }
+  },
+  iconContainer: {
+    display: "none",
+    [theme.breakpoints.down("sm")]: {
+      display: "block"
+    }
+  },
+  iconButton: {
+    float: "right"
+  },
+  tabContainer: {
+    marginLeft: 32,
+    [theme.breakpoints.down("sm")]: {
+      display: "none"
+    }
+  },
+  tabItem: {
+    paddingTop: 20,
+    paddingBottom: 20,
+    minWidth: "auto"
+  }
+});
 
-const StyledLink = styled(Link)`
-    margin: ${props =>
-        props.theme.spacing(1, 1.5)};
-    color: #fff;
-    font-weight: 700;
-`;
-const Header = () => {
+class Topbar extends Component {
+  state = {
+    value: 0,
+    menuDrawer: false
+  };
+
+  handleChange = (event, value) => {
+    this.setState({ value });
+  };
+
+  mobileMenuOpen = event => {
+    this.setState({ menuDrawer: true });
+  };
+
+  mobileMenuClose = event => {
+    this.setState({ menuDrawer: false });
+  };
+
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
+  current = () => {
+    if (this.props.currentPath === "/home") {
+      return 0;
+    }
+    if (this.props.currentPath === "/category") {
+      return 1;
+    }
+    if (this.props.currentPath === "/tests") {
+      return 2;
+    }
+    if (this.props.currentPath === "/blog") {
+      return 3;
+    }
+    if (this.props.currentPath === "/about") {
+      return 4;
+    }
+  };
+
+  render() {
+    const { classes } = this.props;
 
     return (
-        <StyledAppBar position="static" color="transparent" elevation={0}>
-            <Toolbar>
-                <StyledTypography variant="h6" color="inherit" noWrap>
-                    Car Test App
-                </StyledTypography>
-                <nav>
-                    <StyledLink component={RouterLink} variant="button" to={'/'}>
-                        Home
-                    </StyledLink>
-                    <StyledLink component={RouterLink} variant="button"  to={'/category'}>
-                        Kategorije
-                    </StyledLink>
-                    <StyledLink component={RouterLink} variant="button" to={'/category/create'}>
-                        Create Kategory
-                    </StyledLink>
-                    <StyledLink component={RouterLink} variant="button" to={'/about'}>
-                        About
-                    </StyledLink>
-                </nav>
-                <Button href="#" color="primary" variant="outlined" >
-                    Login
-                </Button>
-            </Toolbar>
-        </StyledAppBar>
-        // <nav className='navbar navbar-expand-lg navbar-light bg-light'>
-        //     <ul className='navbar-nav mr-auto'>
-        //         <li>
-        //             <Link to={'/'} className='nav-link'>
-        //                 Home{' '}
-        //             </Link>
-        //         </li>
-        //         <li>
-        //             <Link to={'/category'} className='nav-link'>
-        //                 Category
-        //             </Link>
-        //         </li>
-        //         <li>
-        //             <Link to={'/create'} className='nav-link'>
-        //                 Create Question
-        //             </Link>
-        //         </li>
-        //         <li>
-        //             <Link to={'/category/create'} className='nav-link'>
-        //                 Create Category
-        //             </Link>
-        //         </li>
-        //         <li>
-        //             <Link to={'/quiz/create'} className='nav-link'>
-        //                 Create Quiz
-        //             </Link>
-        //         </li>
-        //         <li>
-        //             <Link to={'/about'} className='nav-link'>
-        //                 About
-        //             </Link>
-        //         </li>
-        //     </ul>
-        // </nav>
-    );
-};
+      <AppBar position="absolute" color="default" className={classes.appBar}>
+        <Toolbar>
+          <Grid container spacing={10} alignItems="baseline">
+            <Grid item xs={12} className={classes.flex}>
+              <div className={classes.inline}>
+                <Typography variant="h6" color="inherit" noWrap>
+                  <Link to="/" className={classes.link}>
 
-export default Header;
+                    <span className={classes.tagline}>Company logo</span>
+                  </Link>
+                </Typography>
+              </div>
+              {!this.props.noTabs && (
+                <React.Fragment>
+                  <div className={classes.productLogo}>
+                    <Typography>additional info</Typography>
+                  </div>
+                  <div className={classes.iconContainer}>
+                    <IconButton
+                      onClick={this.mobileMenuOpen}
+                      className={classes.iconButton}
+                      color="inherit"
+                      aria-label="Menu"
+                    > Icon
+                    </IconButton>
+                  </div>
+                  <div className={classes.tabContainer}>
+                    <SwipeableDrawer
+                      anchor="right"
+                      open={this.state.menuDrawer}
+                      onClose={this.mobileMenuClose}
+                      onOpen={this.mobileMenuOpen}
+                    >
+                      <AppBar title="Menu" />
+                      <List>
+                        {Menu.map((item, index) => (
+                          <ListItem
+                            component={item.external ? MaterialLink : Link}
+                            href={item.external ? item.pathname : null}
+                            to={
+                              item.external
+                                ? null
+                                : {
+                                    pathname: item.pathname,
+                                    search: this.props.location.search
+                                  }
+                            }
+                            button
+                            key={item.label}
+                          >
+                            <ListItemText primary={item.label} />
+                          </ListItem>
+                        ))}
+                      </List>
+                    </SwipeableDrawer>
+                    <Tabs
+                      value={this.current() || this.state.value}
+                      indicatorColor="primary"
+                      textColor="primary"
+                      onChange={this.handleChange}
+                    >
+                      {Menu.map((item, index) => (
+                        <Tab
+                          key={index}
+                          component={item.external ? MaterialLink : Link}
+                          href={item.external ? item.pathname : null}
+                          to={
+                            item.external
+                              ? null
+                              : {
+                                  pathname: item.pathname,
+                                  search: this.props.location.search
+                                }
+                          }
+                          classes={{ root: classes.tabItem }}
+                          label={item.label}
+                        />
+                      ))}
+                    </Tabs>
+                  </div>
+                </React.Fragment>
+              )}
+            </Grid>
+          </Grid>
+        </Toolbar>
+      </AppBar>
+    );
+  }
+}
+
+export default withRouter(withStyles(styles)(Topbar));
