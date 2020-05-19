@@ -160,3 +160,20 @@ main.main-container {
   65% { transform: rotate(-5deg); }
   100% { transform: rotate(0deg); }
 }
+
+.nav-icon {
+  margin: 0.2em;
+  width: 30px;
+}
+
+.nav-icon:after, 
+.nav-icon:before, 
+.nav-icon div {
+  background-color: rgb(61, 61, 61);
+  border-radius: 3px;
+  content: '';
+  display: block;
+  height: 5px;
+  margin: 4px 0;
+  transition: all .2s ease-in-out;
+}

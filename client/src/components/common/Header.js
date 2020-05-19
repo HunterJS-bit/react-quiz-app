@@ -30,7 +30,7 @@ const styles = theme => ({
     display: "flex",
     [theme.breakpoints.down("sm")]: {
       display: "flex",
-      justifyContent: "space-evenly",
+      justifyContent: "space-between",
       alignItems: "center"
     }
   },
@@ -134,16 +134,16 @@ class Topbar extends Component {
               </div>
               {!this.props.noTabs && (
                 <React.Fragment>
-                  <div className={classes.productLogo}>
-                    <Typography>additional info</Typography>
-                  </div>
                   <div className={classes.iconContainer}>
                     <IconButton
                       onClick={this.mobileMenuOpen}
                       className={classes.iconButton}
                       color="inherit"
                       aria-label="Menu"
-                    > Icon
+                    > 
+                    <div className="nav-icon">
+                      <div></div>
+                    </div>
                     </IconButton>
                   </div>
                   <div className={classes.tabContainer}>

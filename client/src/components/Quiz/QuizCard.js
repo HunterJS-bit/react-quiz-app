@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
+import Grid from '@material-ui/core/Grid';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
@@ -30,11 +31,16 @@ const QuizCard = (props) => {
         history.push(`/quiz/${quiz.slug}`, quiz);
     }; 
 
-    return ( <Card className={classes.root} onClick={goToQuestions}>
+    return ( 
+           <Grid item xs={3}>
+              <Card className={classes.root} onClick={goToQuestions}>
                  <CardHeader
                         title={ quiz.name }
                     />
-            </Card>);
+
+                    asdasd
+              </Card>
+            </Grid>);
 };
 
 export default QuizCard;
