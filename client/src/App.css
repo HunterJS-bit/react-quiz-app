@@ -25,7 +25,7 @@ main.main-container {
 
 .quiz {
   background: #fff;
-  background-image: url("./assets/pattern.png");
+  /* background-image: url("./assets/pattern.png"); */
   background-repeat: repeat-y;
   background-repeat-x: repeat;
   padding: 4em 2em;
