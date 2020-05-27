@@ -28,6 +28,7 @@ const styles = theme => ({
   },
   flex: {
     display: "flex",
+    justifyContent: "space-between",
     [theme.breakpoints.down("sm")]: {
       display: "flex",
       justifyContent: "space-between",
@@ -149,6 +150,7 @@ class Topbar extends Component {
                   <div className={classes.tabContainer}>
                     <SwipeableDrawer
                       anchor="right"
+                      width={100}
                       open={this.state.menuDrawer}
                       onClose={this.mobileMenuClose}
                       onOpen={this.mobileMenuOpen}

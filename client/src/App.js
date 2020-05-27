@@ -22,6 +22,9 @@ import QuizResult from './components/Quiz/QuizResult';
 /** Questions */
 import QuestionList from './components/Questions/QuestionList';
 
+/** Not Found (404 page) */
+import NotFoundPage from './components/404';
+
 function App() {
 	return (
 		<div className='App'>
@@ -38,6 +41,7 @@ function App() {
 						<Route exact path='/result' component={QuizResult} />
 						<Route path='/create' component={CreateQuestion} />
 						<Route path='/about' component={About} />
+						<Route component={NotFoundPage} />
 					</Switch>
 				</main>
 				<Footer></Footer>

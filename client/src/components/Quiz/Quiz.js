@@ -82,7 +82,9 @@ function Quiz(props) {
 				<Box p={2} mt={3} >
 					<div className='answers'>
 						<fieldset disabled={formSubmited}>
+							<div className="question-options">
 								{buildCheckbox()}
+							</div>
 						</fieldset>
 					</div>
 				</Box>

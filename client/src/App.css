@@ -18,17 +18,17 @@ fieldset {
   justify-content: center;
   align-items: center;
 }
-
+/* 
 main.main-container {
   padding: 4em 2em;
-}
+} */
 
 .quiz {
-  background: #fff;
   /* background-image: url("./assets/pattern.png"); */
   background-repeat: repeat-y;
   background-repeat-x: repeat;
   padding: 4em 2em;
+  background-color: #f5f5f5;
 }
 
 .quiz-wrapper {
@@ -91,8 +91,7 @@ main.main-container {
 
 .ck-button {
   display: block;
-  margin: 12px;
-  padding: 1em 1.8em;
+  padding: 0.8em 1.4em;
   overflow:auto;
   float:left;
   font-size: 17px;
@@ -105,6 +104,7 @@ main.main-container {
   background: transparent;
   transition: all 0.3s ease 0s;
   max-width: 352px;
+  margin: 10px auto;
 }
 
 .ck-button.active {
@@ -176,4 +176,101 @@ main.main-container {
   height: 5px;
   margin: 4px 0;
   transition: all .2s ease-in-out;
+}
+
+
+/*** HEADER ***/
+
+.MuiDrawer-paper {
+  min-width: 150px;
+  background-color: #1b277d;
+  color: #fff;
+}
+
+.hero  {
+  background-color: #1b277d;
+  padding: 120px 50px;
+  color: #fff;
+}
+
+
+.hero > div {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.hero h1 {
+  color: #fff;
+}
+
+.hero p {
+  color: #eee;
+  font-size: 17px;
+  color: beige;
+  line-height: 25px;
+}
+
+.MuiBox-root.MuiBox-root-252 {
+  max-width: 380px;
+}
+.MuiButton-containedPrimary {
+  margin-top: 15px;
+  background-color: #0d8f4f;
+}
+
+
+.circle-sb {
+  width: 250px;
+  border: 5px solid #00bfb6;
+  padding: 80px 0px;
+  margin: 30px auto;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 900;
+  font-family: arial;
+  position: relative;
+  color: #00bfb6;
+}
+
+.dcircle {
+  border: 5px solid #00bfb6;
+  position: absolute;
+  width: 25px;
+  padding: 20px;
+  border-radius: 50%;
+  right: -15px;
+  bottom: 15px;
+}
+
+.dcircle:before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  padding: 20px;
+  border-radius: 50%;
+  right: 0px;
+  bottom: 0px;
+  background: #fff;
+}
+
+.dcircle1 {
+  border: 5px solid #00bfb6;
+  position: absolute;
+  width: 5px;
+  padding: 10px 15px;
+  border-radius: 50%;
+  right: -35px;
+  bottom: 13px;
+}
+
+.dcircle1:before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  padding: 10px 15px;
+  border-radius: 50%;
+  right: 0px;
+  bottom: 0px;
+  background: #fff;
 }
