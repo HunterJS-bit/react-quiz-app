@@ -177,11 +177,11 @@ fieldset {
 
 
 /*** HEADER ***/
-header {
+/* header {
   background-color: #1b277d!important;
   color: #fff !important;
   border-bottom: none !important;
-};
+}; */
 
 .MuiDrawer-paper {
   min-width: 150px;
@@ -190,7 +190,7 @@ header {
 }
 
 .hero  {
-  background-color: #1b277d;
+  /* background-color: #1b277d; */
   padding: 120px 50px;
   color: #fff;
 }
@@ -297,4 +297,82 @@ footer h6 {
 footer ul li a{
   color: #dedede!important;
   font-size: 1.1em !important;
+}
+
+
+/***** Trying something ****/
+
+.container {
+  margin: 0 auto;
+  padding: 0px 1rem;
+  max-width: 1170px;
+}
+
+.max-w-400 {
+  max-width: 400px !important;
+}
+
+.mb-16 {
+  margin-bottom: 4rem !important;
+}
+
+.text-44 {
+  font-size: 44px !important;
+}
+
+.mx-4 {
+  margin-left: 1rem !important;
+  margin-right: 1rem !important;
+}
+.relative {
+  position: relative;
+}
+
+.jss169 {
+  /* display: inline-block; */
+  position: relative;
+}
+
+.mt-6 {
+  margin-top: 1.5rem !important;
+}
+
+.mb-0 {
+  margin-bottom: 0rem !important;
+}
+
+.jss168 {
+  display: block;
+}
+
+.jss168 {
+  position: relative;
+  text-align: right;
+}
+
+.jss168::before {
+  top: 14%;
+  left: 0;
+  right: 0;
+  height: 72%;
+  margin: 0 -2000px 0 -80px;
+  content: " ";
+  display: block;
+  opacity: 0.1;
+  z-index: -1;
+  position: absolute;
+  background: #3f51b5;
+  border-radius: 300px;
+}
+
+.jss167 {
+  width: 362px;
+} 
+
+.jss166 {
+  text-align: center !important;
+}
+
+section {
+  padding: 5rem 0;
 }
