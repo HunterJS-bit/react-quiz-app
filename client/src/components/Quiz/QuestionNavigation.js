@@ -11,6 +11,7 @@ const QuestionNavigation = (props) => {
     const goToResult = () => {
         history.push('/result');
     }
+    console.log()
 
     if (answerSubmited && currentIndex === totalQuestions) {
         return <button onClick={goToResult}>Proverite Rezultat</button>;

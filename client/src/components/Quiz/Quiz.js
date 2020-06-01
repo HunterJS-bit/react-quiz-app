@@ -5,9 +5,11 @@ import QuestionInfo from './QuestionInfo';
 import AnswerChecker from './AnswerChecker';
 import QuestionNavigation from './QuestionNavigation';
 import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import Divider from '@material-ui/core/Divider';
+import styled from 'styled-components';
+
 
 function Quiz(props) {
 	const { questions, changeQuestion, currentIndex, totalQuestions } = props;
@@ -69,16 +71,15 @@ function Quiz(props) {
 
 	return (
 		<div className='quiz-wrapper'>
-			<Paper elevation={1} >
+			<Paper elevation={2} >
 				<Box p={3}>
-					<Typography variant="h5" component="h5">
+					<Typography variant="h5" className="question-header" component="h5">
 						{question}
 					</Typography>
 					<QuestionInfo info={answers}></QuestionInfo>
 					<QuizImage image={image}></QuizImage>
 				</Box>
-			</Paper>
-			<Paper elevation={2} >
+				<Divider />
 				<Box p={2} mt={3} >
 					<div className='answers'>
 						<fieldset disabled={formSubmited}>
@@ -88,19 +89,19 @@ function Quiz(props) {
 						</fieldset>
 					</div>
 				</Box>
+				<Box p={3} mt={2} >
+					<QuestionNavigation 
+							currentIndex={currentIndex}
+							totalQuestions={totalQuestions}
+							points={points}
+							nextQuestion={changeQuestion}
+							answerSubmited={formSubmited}
+							setFormState={setFormState}
+							userAnswers={checkboxState} 
+							correctAnswers={answers}>
+					</QuestionNavigation>
+				</Box>
 			</Paper>
-			<Box p={3} mt={2} >
-				<QuestionNavigation 
-						currentIndex={currentIndex}
-						totalQuestions={totalQuestions}
-						points={points}
-						nextQuestion={changeQuestion}
-						answerSubmited={formSubmited}
-						setFormState={setFormState}
-						userAnswers={checkboxState} 
-						correctAnswers={answers}>
-				</QuestionNavigation>
-			</Box>
 		</div>
 	);
 }

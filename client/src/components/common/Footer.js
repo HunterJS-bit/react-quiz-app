@@ -14,7 +14,7 @@ const StyledFooter = styled.footer`
     margin-top: ${props => props.theme.spacing(8)},
     padding-top: ${props => props.theme.spacing(3)};
     padding-bottom: ${props => props.theme.spacing(3)};
-    background-color: ${props => props.theme.palette.grey[300]}
+    background-color: ${props => '#1b277d' }
 `;
 
 const footers = [

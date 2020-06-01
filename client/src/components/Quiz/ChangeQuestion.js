@@ -6,7 +6,6 @@ import { purple } from '@material-ui/core/colors';
 const StyledNextButton = styled(Button)`
     color: ${props =>
         props.theme.palette.getContrastText(purple[500])};
-    background-color: ${purple[500]};
     &:hover {
         background-color: purple[700],
     }
@@ -19,7 +18,7 @@ const ChangeQuestion = (props) => {
     const { nextQuestion } = props; 
 
     return (<StyledNextButton
-                variant="contained"
+                variant="outlined" 
                 color="default"
                 onClick={nextQuestion} >
                 Next Question ->

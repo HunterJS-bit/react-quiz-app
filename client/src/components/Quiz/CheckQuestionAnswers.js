@@ -59,7 +59,6 @@ const CheckQuestionAnswers = (props) => {
     };
 
     return (<Button
-        variant="contained"
         color="secondary"
         onClick={checkUserAnswer}>
        Check answers

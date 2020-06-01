@@ -18,22 +18,19 @@ fieldset {
   justify-content: center;
   align-items: center;
 }
-/* 
-main.main-container {
-  padding: 4em 2em;
-} */
+
 
 .quiz {
   /* background-image: url("./assets/pattern.png"); */
   background-repeat: repeat-y;
   background-repeat-x: repeat;
   padding: 4em 2em;
-  background-color: #f5f5f5;
+  background-color: #1e1f26;
 }
 
 .quiz-wrapper {
   margin: 57px auto;
-  width: 800px;
+  max-width: 800px;
   min-height: 60vh;
   padding: 1em 3em;
   border-radius: 40px; 
@@ -91,7 +88,6 @@ main.main-container {
 
 .ck-button {
   display: block;
-  padding: 0.8em 1.4em;
   overflow:auto;
   float:left;
   font-size: 17px;
@@ -125,6 +121,7 @@ main.main-container {
 .ck-button label {
   float:left;
   cursor: pointer;
+  padding: 0.8em 1.4em;
 }
 
 .ck-button label span {
@@ -169,7 +166,7 @@ main.main-container {
 .nav-icon:after, 
 .nav-icon:before, 
 .nav-icon div {
-  background-color: rgb(61, 61, 61);
+  background-color:#fff;
   border-radius: 3px;
   content: '';
   display: block;
@@ -180,6 +177,11 @@ main.main-container {
 
 
 /*** HEADER ***/
+header {
+  background-color: #1b277d!important;
+  color: #fff !important;
+  border-bottom: none !important;
+};
 
 .MuiDrawer-paper {
   min-width: 150px;
@@ -273,4 +275,26 @@ main.main-container {
   right: 0px;
   bottom: 0px;
   background: #fff;
+}
+
+
+.question-header {
+  font-weight: 900;
+    letter-spacing: 1px;
+    margin-top: 0;
+    font-size: 2.2em;
+    margin-bottom: 35px;;
+}
+
+
+/**** FOOTER ***/
+
+footer h6 {
+  color: #fff !important;
+  letter-spacing: 1px !important;
+}
+
+footer ul li a{
+  color: #dedede!important;
+  font-size: 1.1em !important;
 }
