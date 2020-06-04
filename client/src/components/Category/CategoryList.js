@@ -31,19 +31,41 @@ const CategoryList = ({ history }) => {
 	}, [])
 
 	return (
-		<div className='cardList'>
-			<Grid container justify="center">
-				<StyledGrid
-				spacing={4}
-				alignItems="center"
-				justify="center"
-				container
-				>
-				{categoryList.map((cat, i) => {
-					return <CategoryCard key={i} index={i + 1} category={cat} navigate={goToPage}></CategoryCard>;
-				})}
-				</StyledGrid>
-			</Grid>
+		<div className='categories'>
+			<section class="page-banner bg-contain bg-bottom d-flex align-items-center">
+				<Grid container spacing={3}>
+					<Grid item xs={12} md={12}>
+						<div class="container">
+							<div class="banner-text">
+								<span>Odaberite vasu kategoriju</span>
+								<h2>Kategorije</h2>
+							</div>
+						</div>
+					</Grid>
+				</Grid>
+			</section>
+			<section id="choose-category">
+				<div class="container">	
+					<Grid container justify="center">
+						<Grid item>
+							<div class="previewSectionTitle">
+								<p>Our Awesome Feature</p>
+								<h2>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</h2>
+							</div>
+						</Grid>
+						<StyledGrid
+						spacing={4}
+						alignItems="center"
+						justify="center"
+						container
+						>
+						{categoryList.map((cat, i) => {
+							return <CategoryCard key={i} index={i + 1} category={cat} navigate={goToPage}></CategoryCard>;
+						})}
+						</StyledGrid>
+					</Grid>
+				</div>
+			</section>
 		</div>
 	);
 };

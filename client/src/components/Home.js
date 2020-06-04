@@ -1,10 +1,7 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Hero from './common/Hero';
-import Container from '@material-ui/core/Container';
 import BlogCard from './Blog/BlogCard';
-import Fab from '@material-ui/core/Fab';
-import ScrollTop from './common/ScrollTop';
 
 const Home = (props) => {
 
@@ -74,11 +71,12 @@ const Home = (props) => {
           </Grid>
        </div>
     </section>
-    <ScrollTop {...props}>
-        <Fab color="secondary" size="small" aria-label="scroll back to top">
-          Up
-        </Fab>
-    </ScrollTop>
+    <section id="testemonials">
+      <div className="container">
+
+      </div>
+
+    </section>
   </div>);
 };
 
