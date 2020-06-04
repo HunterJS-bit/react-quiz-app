@@ -14,6 +14,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import { Link as MaterialLink } from "@material-ui/core";
 import Menu from "./Menu";
+import logo from '../../assets/car_drive.svg'
 
 
 const styles = theme => ({
@@ -37,15 +38,6 @@ const styles = theme => ({
   link: {
     textDecoration: "none",
     color: "inherit"
-  },
-  productLogo: {
-    display: "inline-block",
-    borderLeft: `1px solid ${theme.palette.grey["A100"]}`,
-    marginLeft: 32,
-    paddingLeft: 24,
-    [theme.breakpoints.up("md")]: {
-      paddingTop: "1.5em"
-    }
   },
   tagline: {
     display: "inline-block",
@@ -127,8 +119,10 @@ class Topbar extends Component {
               <div className={classes.inline}>
                 <Typography variant="h6" color="inherit" noWrap>
                   <Link to="/" className={classes.link}>
-
-                    <span className={classes.tagline}>Company logo</span>
+                    <div className="logo-container">
+                      <img className="logo" src={logo} /> 
+                      <span className="logo-text">Auto Testovi</span>
+                    </div>
                   </Link>
                 </Typography>
               </div>

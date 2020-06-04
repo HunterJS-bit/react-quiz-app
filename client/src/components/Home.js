@@ -56,7 +56,7 @@ const Home = (props) => {
     </section>
     <section id="blog">
       <div className="container">
-          <div className="section__header mb-16">
+          <div className="mb-16">
             <h1 className="mt-0 font-normal text-44">Our Blog</h1>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat unde inventore molestias ab adipisci eius nisi placeat at.</p>
           </div>

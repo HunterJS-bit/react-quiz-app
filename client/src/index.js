@@ -13,7 +13,11 @@ import * as serviceWorker from './serviceWorker';
 
 const store = createStore(rootReducer);
 
-const theme = createMuiTheme();
+const theme = createMuiTheme({
+	palette: {
+    	primary: { 500: '#5392f9' },
+	}
+});
 
 ReactDOM.render(
 	<React.StrictMode>

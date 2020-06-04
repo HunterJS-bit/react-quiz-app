@@ -177,11 +177,6 @@ fieldset {
 
 
 /*** HEADER ***/
-/* header {
-  background-color: #1b277d!important;
-  color: #fff !important;
-  border-bottom: none !important;
-}; */
 
 .MuiDrawer-paper {
   min-width: 150px;
@@ -189,36 +184,53 @@ fieldset {
   color: #fff;
 }
 
-.hero  {
-  /* background-color: #1b277d; */
-  padding: 120px 50px;
-  color: #fff;
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  padding-top: 15px;
 }
 
+.logo  {
+  width: 32px;
+}
 
-.hero > div {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+span.logo-text {
+  color: #5392f9;
+  padding-left: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 24px;
+}
+
+.hero {
+  padding: 45px 0px;
 }
 .hero h1 {
-  color: #fff;
+  color: #5392f9;
+  font-weight: 700;
+  font-size: 75px;
 }
 
 .hero p {
-  color: #eee;
-  font-size: 17px;
-  color: beige;
+  font-size: 15px;
+  color: #333;
   line-height: 25px;
 }
+
+.MuiTab-wrapper {
+  font-size: 13px;
+  color: #333;
+}
+
 
 .MuiBox-root.MuiBox-root-252 {
   max-width: 380px;
 }
-.MuiButton-containedPrimary {
+/* .MuiButton-containedPrimary {
   margin-top: 15px;
-  background-color: #0d8f4f;
-}
+  background-color: #5392f9;
+} */
 
 
 .circle-sb {
@@ -350,7 +362,7 @@ footer ul li a{
   text-align: right;
 }
 
-.jss168::before {
+/* .jss168::before {
   top: 14%;
   left: 0;
   right: 0;
@@ -363,7 +375,7 @@ footer ul li a{
   position: absolute;
   background: #3f51b5;
   border-radius: 300px;
-}
+} */
 
 .jss167 {
   width: 362px;
