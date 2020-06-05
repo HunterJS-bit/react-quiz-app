@@ -16,7 +16,7 @@ import CreateCategory from './components/Category/CreateCategory';
 
 /** Quiz List component */
 import CreateQuiz from './components/Quiz/CreateQuiz';
-import QuizList from "./components/Quiz/QuizList";
+import QuizList from "./components/TestList/QuizList";
 import QuizResult from './components/Quiz/QuizResult';
 
 /** Questions */

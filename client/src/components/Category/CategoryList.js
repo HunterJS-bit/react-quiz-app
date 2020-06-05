@@ -37,7 +37,7 @@ const CategoryList = ({ history }) => {
 					<Grid item xs={12} md={12}>
 						<div class="container">
 							<div class="banner-text">
-								<span>Odaberite vasu kategoriju</span>
+								<span>Lista kategorija</span>
 								<h2>Kategorije</h2>
 							</div>
 						</div>
@@ -49,7 +49,7 @@ const CategoryList = ({ history }) => {
 					<Grid container justify="center">
 						<Grid item>
 							<div class="previewSectionTitle">
-								<p>Our Awesome Feature</p>
+								<p>Odaberite vasu kategoriju</p>
 								<h2>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</h2>
 							</div>
 						</Grid>
