@@ -10,7 +10,7 @@ import logo from '../../assets/car_main.svg';
 
 const Hero = () => {
 
-    return (<div className="hero">
+    return (<section className="hero">
           <div className="container">
           <Grid container spacing={3}>
               <Grid item xs={12} md={7} lg={8}>
@@ -41,7 +41,7 @@ const Hero = () => {
               </Grid>
         </Grid>
           </div>
-      </div>)
+      </section>)
 };
 
 export default Hero;
