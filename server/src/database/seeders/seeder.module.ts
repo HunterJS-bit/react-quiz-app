@@ -7,7 +7,7 @@ import { ConfigModule } from '@nestjs/config';
 import config from 'src/config/config';
 
 @Module({
-  imports: [MongooseModule.forRoot('mongodb://localhost:27017'), ConfigModule.forRoot({ load: [config], isGlobal: true }), CategoryModule, QuizModule],
+  imports: [MongooseModule.forRoot('mongodb://localhost:27017/docker-mongo'), ConfigModule.forRoot({ load: [config], isGlobal: true }), CategoryModule, QuizModule],
   providers: [Seeder],
 })
 export class SeederModule {}

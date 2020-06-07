@@ -9,7 +9,7 @@ import config from './config/config';
 
 @Module({
   imports: [  
-              MongooseModule.forRoot('mongodb://localhost:27017'),
+              MongooseModule.forRoot('mongodb://localhost:27017/docker-mongo'),
               ConfigModule.forRoot({ load: [config], isGlobal: true }), 
               CategoryModule,
               QuizModule
