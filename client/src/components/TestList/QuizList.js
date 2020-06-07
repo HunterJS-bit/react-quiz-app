@@ -42,8 +42,10 @@ const QuizList = (props) => {
                   <p>Our Awesome Feature</p>
                   <h2>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</h2>
                 </div>
-              </Grid>
-                  {
+              </Grid >
+            </Grid>
+            <Grid container spacing={3}>
+              {
                     quizList.map((quiz) => {
                       return (<QuizCard key={quiz._id} quiz={quiz} ></QuizCard>)
                     })

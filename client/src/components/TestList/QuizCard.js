@@ -8,9 +8,6 @@ import Grid from '@material-ui/core/Grid';
 
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-      maxWidth: 345,
-    },
     media: {
       height: 0,
       paddingTop: '56.25%', // 16:9
@@ -30,14 +27,11 @@ const QuizCard = (props) => {
     }; 
 
     return ( 
-           <Grid item xs={3}>
-              <Card className={classes.root} onClick={goToQuestions}>
-                 <CardHeader
-                        title={ quiz.name }
-                    />
-
-                    asdasd
-              </Card>
+           <Grid item xs={3} md={3}>
+               <Grid container className="featuredItem2">
+               { quiz.name }
+               
+               </Grid>
             </Grid>);
 };
 

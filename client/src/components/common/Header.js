@@ -14,7 +14,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import { Link as MaterialLink } from "@material-ui/core";
 import Menu from "./Menu";
-import logo from '../../assets/car_drive.svg'
+import logo from '../../assets/car_drive.svg';
 
 
 const styles = theme => ({

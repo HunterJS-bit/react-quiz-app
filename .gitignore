@@ -42,3 +42,4 @@ yarn-error.log*
 /server/node_modules/
 
 # Hiden files
+data/
