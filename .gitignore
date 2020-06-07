@@ -40,3 +40,5 @@ yarn-error.log*
 !.vscode/launch.json
 !.vscode/extensions.json
 /server/node_modules/
+
+# Hiden files
