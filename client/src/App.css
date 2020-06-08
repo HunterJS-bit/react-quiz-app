@@ -361,6 +361,10 @@ section#testemonials p {
   margin-top: 15px;
 }
 
+.MuiGrid-root.avatar {
+  display: inline-block;
+}
+
 .MuiGrid-root.avatar img {
   border-radius: 50%;
   border: 1px solid #dadada;

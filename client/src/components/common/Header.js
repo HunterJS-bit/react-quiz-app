@@ -120,7 +120,7 @@ class Topbar extends Component {
                 <Typography variant="h6" color="inherit" noWrap>
                   <Link to="/" className={classes.link}>
                     <div className="logo-container">
-                      <img className="logo" src={logo} /> 
+                      <img className="logo" src={logo} alt="auto testovi logo"/> 
                       <span className="logo-text">Auto Testovi</span>
                     </div>
                   </Link>
