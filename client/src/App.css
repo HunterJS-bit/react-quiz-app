@@ -21,9 +21,6 @@ fieldset {
 
 
 .quiz {
-  /* background-image: url("./assets/pattern.png"); */
-  /* background-repeat: repeat-y;
-  background-repeat-x: repeat; */
   padding: 4em 2em;
   background-color: #1e1f26;
 }
@@ -209,8 +206,10 @@ div#back-to-top {
 }
 
 .hero {
-  padding: 45px 0px;
+  padding-top: 7.5em;
 }
+
+
 .hero h1 {
   color: #5392f9;
   font-weight: 700;
@@ -362,13 +361,20 @@ section#testemonials p {
 }
 
 .MuiGrid-root.avatar {
-  display: inline-block;
+  display: block;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
 }
 
 .MuiGrid-root.avatar img {
   border-radius: 50%;
   border: 1px solid #dadada;
   padding: 5px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
 }
 .MuiGrid-root.tstAuthor h4 {
   font-size: 17px;
@@ -450,5 +456,10 @@ section.contact {
 
 /** Test list page ***/
 .featuredItem2 {
-  padding: 13px;
+  padding: 20px 15px;
+  margin-top: 4.5em;
+}
+.rounded {
+  overflow: hidden;
+  border-radius: 256px;
 }
