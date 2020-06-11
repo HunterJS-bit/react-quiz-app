@@ -113,6 +113,7 @@ class Topbar extends Component {
 
     return (
       <AppBar position="absolute" color="default" className={classes.appBar}>
+         <div class="wave"></div>
         <Toolbar  id="back-to-top">
           <Grid container spacing={10} alignItems="baseline">
             <Grid item xs={12} className={classes.flex}>

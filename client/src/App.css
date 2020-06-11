@@ -174,6 +174,38 @@ fieldset {
 
 
 /*** HEADER ***/
+.wave { 
+  position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 78px;
+    width: 100%;
+    background: dodgerblue;
+    z-index: -1;
+} 
+.wave::before { 
+  content: "";
+    display: block;
+    position: absolute;
+    border-radius: 100% 98%;
+    width: 58%;
+    height: 49px;
+    background-color: white;
+    right: -37px;
+    top: 59px;
+} 
+.wave::after { 
+  content: "";
+    display: block;
+    position: absolute;
+    border-radius: 100% 90%;
+    width: 52%;
+    height: 78px;
+    background-color: dodgerblue;
+    left: -47px;
+    top: 19px;
+}
 
 .MuiDrawer-paper {
   min-width: 150px;
@@ -193,17 +225,20 @@ fieldset {
 }
 
 span.logo-text {
-  color: #5392f9;
+  color: #ffffff;
   padding-left: 13px;
   font-weight: 700;
   letter-spacing: 1px;
   font-size: 24px;
 }
 
-div#back-to-top {
-  padding-left: 120px;
-  padding-right: 120px;
+@media screen and (min-width: 992px) {
+  div#back-to-top {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
 }
+
 
 .hero {
   padding-top: 7.5em;
@@ -230,7 +265,7 @@ div#back-to-top {
 
 .MuiTab-wrapper {
   font-size: 13px;
-  color: #333;
+  color: #fff;
 }
 
 
