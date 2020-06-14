@@ -13,7 +13,7 @@ const Hero = () => {
           <div className="container">
           <Grid container spacing={3}>
               <Grid item xs={12} md={7} lg={8}>
-                <div class="hero-image">
+                <div className="hero-image">
                    <img src={logo} alt="auto-testovi-logo" />
                 </div>
               </Grid>

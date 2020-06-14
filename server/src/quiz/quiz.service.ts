@@ -66,8 +66,7 @@ export class QuizService {
     };
   }
 
-  async paginateQuestions(category, slug, page) {
-    const perPage = 9; 
+  async paginateQuestions(category, slug) {
     const { _id: id } = await this.categoryService.findByName(category);
     return this.quizModel.findOne({ category: id, slug: slug });
   }

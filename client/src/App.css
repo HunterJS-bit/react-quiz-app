@@ -498,3 +498,12 @@ section.contact {
   overflow: hidden;
   border-radius: 256px;
 }
+
+/*** Question list page **/
+.question-wrapper {
+  border: 1px solid rgba(0,0,0,0.14);
+  display: flex;
+  padding: 1.5rem 3rem;
+  transition: all 250ms ease;
+  border-radius: 12px;
+}

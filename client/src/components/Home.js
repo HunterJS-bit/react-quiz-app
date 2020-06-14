@@ -82,18 +82,18 @@ const Home = (props) => {
         </div>
         <Grid container spacing={3}>
           <Grid item  xs={12} md={4}>
-            <div class="MuiGrid-root avatar"><img src={Person1} alt="person male thumb" /></div>
-            <div class="MuiGrid-root tstAuthor"><h4>Mihajlo Radivojevic</h4><strong>Student</strong></div>
+            <div className="MuiGrid-root avatar"><img src={Person1} alt="person male thumb" /></div>
+            <div className="MuiGrid-root tstAuthor"><h4>Mihajlo Radivojevic</h4><strong>Student</strong></div>
             <p className="testemon-text">Želim da se zahvalim cjelom Timu koji su ispunili mom srcu želju ,obavili svoj posao kao niko do sada što uspio nije ,niti će.</p>
           </Grid>
           <Grid item  xs={12} md={4}>
-            <div class="MuiGrid-root avatar"><img src={Person2} alt="person female thumb" /></div>
-            <div class="MuiGrid-root tstAuthor">  <h4>Jovana Stojiljkovic</h4><strong>Medicinski radnik</strong></div>
+            <div className="MuiGrid-root avatar"><img src={Person2} alt="person female thumb" /></div>
+            <div className="MuiGrid-root tstAuthor">  <h4>Jovana Stojiljkovic</h4><strong>Medicinski radnik</strong></div>
             <p className="testemon-text">Veoma pouzdani u radu a naročito bih istakao efikasno poslovanje elektronskim putem što je velika ušteda vremena meni kao klijentu.</p>
           </Grid>
           <Grid item  xs={12} md={4}>
-            <div class="MuiGrid-root avatar"><img src={Person3} alt="person young thumb" /></div>
-            <div class="MuiGrid-root tstAuthor"><h4>Srdjan Stojanovic</h4><strong>Gimnazijalac</strong></div>
+            <div className="MuiGrid-root avatar"><img src={Person3} alt="person young thumb" /></div>
+            <div className="MuiGrid-root tstAuthor"><h4>Srdjan Stojanovic</h4><strong>Gimnazijalac</strong></div>
             <p className="testemon-text">Odlicna podrska,odlicana usluga,samo tako naprijed..</p>
           </Grid>
 

@@ -56,8 +56,8 @@ export class QuizController {
 
   @Post('/:category/:id/questions/')
   @HttpCode(200)
-  async paginateQuestionList(@Param('category') category, @Param('id') testId, @Body() data) {
-    const paginatedQuestions = await this.quizService.paginateQuestions(category, testId, data.page);
+  async paginateQuestionList(@Param('category') category, @Param('id') testId) {
+    const paginatedQuestions = await this.quizService.paginateQuestions(category, testId);
     return paginatedQuestions;
   }
 }

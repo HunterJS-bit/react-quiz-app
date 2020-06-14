@@ -24,19 +24,19 @@ const CategoryList = ({ history }) => {
 	useEffect(() => {
 		console.log('inside use effect');
 		const fetchData = async () => {
-			const response = await axiosInstance.get('/category/main');
-			setCategoryList(response.data);
+			const { data } = await axiosInstance.get('/category/main');
+			setCategoryList(data);
 		}
 		fetchData();
 	}, [])
 
 	return (
 		<div className='categories'>
-			<section class="page-banner bg-contain bg-bottom d-flex align-items-center">
+			<section className="page-banner bg-contain bg-bottom d-flex align-items-center">
 				<Grid container spacing={3}>
 					<Grid item xs={12} md={12}>
-						<div class="container">
-							<div class="banner-text">
+						<div className="container">
+							<div className="banner-text">
 								<span>Lista kategorija</span>
 								<h2>Kategorije</h2>
 							</div>
@@ -45,10 +45,10 @@ const CategoryList = ({ history }) => {
 				</Grid>
 			</section>
 			<section id="choose-category">
-				<div class="container">	
+				<div className="container">	
 					<Grid container justify="center">
 						<Grid item>
-							<div class="previewSectionTitle">
+							<div className="previewSectionTitle">
 								<p>Odaberite vasu kategoriju</p>
 								<h2>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</h2>
 							</div>

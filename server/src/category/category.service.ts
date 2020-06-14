@@ -15,7 +15,7 @@ export class CategoryService {
   }
 
   async getMainCategories() {
-    return this.categoryModel.findOne( { parent: null } );
+    return this.categoryModel.find( { parent: null } );
   }
 
   async findByName(name): Promise<CategoryInterface> {

@@ -21,7 +21,7 @@ const styles = theme => ({
   appBar: {
     position: "relative",
     boxShadow: "none",
-    backgroundColor: "white"
+    backgroundColor: "dodgerblue"
   },
   inline: {
     display: "inline"
@@ -108,12 +108,20 @@ class Topbar extends Component {
     }
   };
 
+
+
   render() {
     const { classes } = this.props;
 
+    const renderWave = () => {
+       if (this.props.location.pathname === '/') {
+         return  <div className="wave"></div>;
+       }
+    };
+
     return (
       <AppBar position="absolute" color="default" className={classes.appBar}>
-         <div className="wave"></div>
+         { renderWave() }
         <Toolbar  id="back-to-top">
           <Grid container spacing={10} alignItems="baseline">
             <Grid item xs={12} className={classes.flex}>
