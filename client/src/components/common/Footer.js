@@ -56,7 +56,7 @@ const Footer = (props) => {
 
   return (
     <div>
-      <section class="contact">
+      <section className="contact">
         <div className="container">
           <Paper elevation={2} p={3}>
             <form className="contact-form" noValidate autoComplete="off">
@@ -105,7 +105,7 @@ const Footer = (props) => {
       </section>
       <ScrollTop {...props}>
         <Fab color="secondary" size="small" aria-label="scroll back to top">
-          <i class="arrow up"></i>
+          <i className="arrow up"></i>
         </Fab>
       </ScrollTop>
       <StyledFooter>

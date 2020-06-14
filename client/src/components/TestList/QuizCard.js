@@ -30,8 +30,6 @@ const QuizCard = (props) => {
 
     const { quiz } = props;
 
-    console.log('evo ga quiz ', props.category);
-
     const category = props.category;
 
     const history = useHistory();
@@ -41,9 +39,12 @@ const QuizCard = (props) => {
     }; 
 
     const goToListQuestions = () => {
-      console.log('evo sammm');
-      const nameOftest = quiz.name;
-      history.push(`/category/${nameOftest}/list`);
+      const nameOftest = quiz.slug;
+      console.log('evo sammm', quiz);
+      history.push({
+        pathname: `/category/${nameOftest}/list`,
+        state: { detail: quiz.slug, category: category }
+      })
     }
 
     const getCategoryImage = (category) => {

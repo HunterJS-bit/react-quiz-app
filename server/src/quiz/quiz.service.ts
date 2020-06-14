@@ -64,6 +64,10 @@ export class QuizService {
     };
   }
 
+  async paginateQuestions(category, testId, page) {
+    const perPage = 9; 
+    return this.quizModel.find({ category: category }).limit(perPage);
+  }
   async createMultiple(quizData) {
     return this.quizModel.insertMany(quizData);
   }

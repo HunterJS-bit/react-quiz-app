@@ -48,7 +48,7 @@ const CategoryCard = (props) => {
 		<StyledPaper >
 			<Box display="flex" alignItems="center" justifyContent="space-around">
 				<div className="category-image">
-					<img src={getImageSrc(name)} />
+					<img src={getImageSrc(name)} alt="img" />
 				</div>
 				<Boxed>
 					<Typography

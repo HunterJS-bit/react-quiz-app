@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
     };
   
     return (
-      <Zoom in={trigger}>
+      <Zoom>
         <div onClick={handleClick} role="presentation" className={classes.root}>
           {children}
         </div>

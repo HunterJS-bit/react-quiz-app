@@ -14,7 +14,7 @@ const Hero = () => {
           <Grid container spacing={3}>
               <Grid item xs={12} md={7} lg={8}>
                 <div class="hero-image">
-                   <img src={logo} />
+                   <img src={logo} alt="auto-testovi-logo" />
                 </div>
               </Grid>
               <Grid item xs={12}  md={5} lg={4}>
