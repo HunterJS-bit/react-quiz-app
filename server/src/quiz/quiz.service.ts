@@ -3,12 +3,14 @@ import { QuizInterface } from '../interfaces/quiz.interface';
 import { ConfigService } from '@nestjs/config';
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
+import { CategoryService } from '../category/category.service';
 
 @Injectable()
 export class QuizService {
   constructor(
     @InjectModel('Quiz') private quizModel: Model<QuizInterface>,
     private configService: ConfigService,
+    private readonly categoryService: CategoryService,
   ) {}
 
   async createQuiz(quizDTO) {
@@ -64,9 +66,10 @@ export class QuizService {
     };
   }
 
-  async paginateQuestions(category, testId, page) {
+  async paginateQuestions(category, slug, page) {
     const perPage = 9; 
-    return this.quizModel.find({ category: category }).limit(perPage);
+    const { _id: id } = await this.categoryService.findByName(category);
+    return this.quizModel.findOne({ category: id, slug: slug });
   }
   async createMultiple(quizData) {
     return this.quizModel.insertMany(quizData);

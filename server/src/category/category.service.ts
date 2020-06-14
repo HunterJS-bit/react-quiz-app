@@ -7,6 +7,7 @@ import { InjectModel } from '@nestjs/mongoose';
 export class CategoryService {
   constructor(@InjectModel('Category') private categoryModel: Model<CategoryInterface>) {}
 
+
   async create(category){
     const createdQuestion = new this.categoryModel(category);
 
@@ -14,7 +15,11 @@ export class CategoryService {
   }
 
   async getMainCategories() {
-    return this.categoryModel.find( { parent: null } );
+    return this.categoryModel.findOne( { parent: null } );
+  }
+
+  async findByName(name): Promise<CategoryInterface> {
+    return this.categoryModel.findOne({ name });
   }
 
   async createMultipleCategories(categories) {

@@ -8,7 +8,7 @@ import QuizCard from './QuizCard';
 const QuizList = (props) => {
   const historyState = props.location.state;
 
-  const { name: catName } = historyState;
+  const { name: catName, _id: id } = historyState;
 
   const [quizList, setQuizList] = useState([]);
 
@@ -24,8 +24,8 @@ const QuizList = (props) => {
     <section class="page-banner bg-contain bg-bottom d-flex align-items-center">
 				<Grid container spacing={3}>
 					<Grid item xs={12} md={12}>
-						<div class="container">
-							<div class="banner-text">
+						<div className="container">
+							<div className="banner-text">
 								<span>Odabrali ste</span>
 								<h2>Testove iz {catName}</h2>
 							</div>
@@ -34,11 +34,11 @@ const QuizList = (props) => {
 				</Grid>
 			</section>
       <section id="list-tests">
-          <div class="container">
+          <div className="container">
             <Grid container 
                   justify="center">
               <Grid item>
-                <div class="previewSectionTitle">
+                <div className="previewSectionTitle">
                   <p>Our Awesome Feature</p>
                   <h2>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form.</h2>
                 </div>
@@ -47,7 +47,7 @@ const QuizList = (props) => {
             <Grid container spacing={3}>
               {
                     quizList.map((quiz) => {
-                      return (<QuizCard key={quiz._id} quiz={quiz} category={catName} ></QuizCard>)
+                      return (<QuizCard key={quiz._id} quiz={quiz} category={catName} categoryId={id} ></QuizCard>)
                     })
                   }
             </Grid>

@@ -28,9 +28,7 @@ const StyledAvatar = styled(Avatar)`
 
 const QuizCard = (props) => {
 
-    const { quiz } = props;
-
-    const category = props.category;
+    const { category, categoryId, quiz } = props;
 
     const history = useHistory();
     
@@ -40,7 +38,7 @@ const QuizCard = (props) => {
 
     const goToListQuestions = () => {
       const nameOftest = quiz.slug;
-      console.log('evo sammm', quiz);
+
       history.push({
         pathname: `/category/${nameOftest}/list`,
         state: { detail: quiz.slug, category: category }
@@ -57,8 +55,7 @@ const QuizCard = (props) => {
        }
     }
 
-    return ( 
-           <Grid item xs={2} md={4}>
+    return (<Grid item xs={2} md={4}>
                <StyledCard container className="featuredItem2">
                 <StyledAvatar alt="Remy Sharp" src={getCategoryImage(category)} />
                 <CardContent>

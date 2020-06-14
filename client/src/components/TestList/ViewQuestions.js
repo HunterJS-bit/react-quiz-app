@@ -19,9 +19,9 @@ const ViewQuestions = (props) => {
         console.log('test id', testId);
         async function fetchMyAPI() {
             let { data } = await axiosInstance.post(`/quiz/${category}/${testId}/questions`, {
-                page: 1
+                page: 1,
             });
-            setList(data)
+            setList(data.questions)
         }
       
         fetchMyAPI();

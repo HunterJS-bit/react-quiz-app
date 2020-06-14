@@ -57,10 +57,7 @@ export class QuizController {
   @Post('/:category/:id/questions/')
   @HttpCode(200)
   async paginateQuestionList(@Param('category') category, @Param('id') testId, @Body() data) {
-      console.log('idemo da uzmemo pitanja');
-      console.log('cat', category, testId, data);
     const paginatedQuestions = await this.quizService.paginateQuestions(category, testId, data.page);
-    console.log('evo ga response ');
-    console.log(paginatedQuestions);
+    return paginatedQuestions;
   }
 }
