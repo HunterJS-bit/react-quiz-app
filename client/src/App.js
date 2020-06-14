@@ -21,7 +21,7 @@ import QuizResult from './components/Quiz/QuizResult';
 
 /** Questions */
 import QuestionList from './components/Questions/QuestionList';
-
+import ViewQuestions from './components/TestList/ViewQuestions';
 /** Not Found (404 page) */
 import NotFoundPage from './components/404';
 
@@ -36,6 +36,7 @@ function App() {
 						<Route exact path='/category' component={CategoryList} />
 						<Route exact path='/category/create' component={CreateCategory}></Route>
 						<Route exact path='/category/:id' component={QuizList} />
+						<Route exact path="/category/:testName/list" component={ViewQuestions} />
 						<Route exact path='/quiz/create' component={CreateQuiz} />
 						<Route exact path='/quiz/:id' component={QuestionList} />
 						<Route exact path='/result' component={QuizResult} />

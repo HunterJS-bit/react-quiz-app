@@ -53,4 +53,10 @@ export class QuizController {
     const data = await this.quizService.loadQuestions(quizId);
     return data;
   }
+
+  @Get('/:id/questions')
+  @HttpCode(200)
+  async paginatedQuestionList() {
+    
+  }
 }

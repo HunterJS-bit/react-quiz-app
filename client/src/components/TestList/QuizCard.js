@@ -40,6 +40,12 @@ const QuizCard = (props) => {
         history.push(`/quiz/${quiz.slug}`, quiz);
     }; 
 
+    const goToListQuestions = () => {
+      console.log('evo sammm');
+      const nameOftest = quiz.name;
+      history.push(`/category/${nameOftest}/list`);
+    }
+
     const getCategoryImage = (category) => {
        if (category === 'A kategorija') {
          return bike;
@@ -62,7 +68,7 @@ const QuizCard = (props) => {
                 </CardContent>
                 <Grid container spacing={2}>
                     <Grid item xs={12} md={6}>
-                      <Button variant="outlined" fullWidth  className="rounded">Download </Button>
+                      <Button variant="outlined" fullWidth  className="rounded" onClick={goToListQuestions}>Download </Button>
                     </Grid>
                     <Grid item xs={12}  md={6}>
                       <Button variant="contained" color="primary" className="rounded" fullWidth>Do quiz </Button>
