@@ -163,7 +163,7 @@ fieldset {
 .nav-icon:after, 
 .nav-icon:before, 
 .nav-icon div {
-  background-color:#6d6d6d;
+  background-color:#fff;
   border-radius: 3px;
   content: '';
   display: block;
@@ -506,4 +506,14 @@ section.contact {
   padding: 1.5rem 3rem;
   transition: all 250ms ease;
   border-radius: 12px;
+}
+
+.question-wrapper .title{
+  font-size: 21px;
+}
+
+img.check-mark {
+  display: inline;
+  width: 20px;
+  height: 100%;
 }

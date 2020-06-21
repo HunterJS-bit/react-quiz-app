@@ -56,8 +56,8 @@ const ViewQuestions = (props) => {
                 <p>View questions</p>
                     <div className="container">
                         <Grid container spacing={3}>
-                        { questionsOnPage.map((item) => {
-                            return <Question question={item}></Question>;
+                        { questionsOnPage.map((item, index) => {
+                            return <Question key={index} question={item}></Question>;
                         }) }
                         </Grid>
                         <Box mt={7}>

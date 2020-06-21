@@ -55,7 +55,7 @@ const QuizCard = (props) => {
        }
     }
 
-    return (<Grid item xs={2} md={4}>
+    return (<Grid item xs={6} md={4}>
                <StyledCard container className="featuredItem2">
                 <StyledAvatar alt="Remy Sharp" src={getCategoryImage(category)} />
                 <CardContent>
@@ -66,7 +66,7 @@ const QuizCard = (props) => {
                 </CardContent>
                 <Grid container spacing={2}>
                     <Grid item xs={12} md={6}>
-                      <Button variant="outlined" fullWidth  className="rounded" onClick={goToListQuestions}>Download </Button>
+                      <Button variant="outlined" fullWidth  className="rounded" onClick={goToListQuestions}>Lista Pitanja </Button>
                     </Grid>
                     <Grid item xs={12}  md={6}>
                       <Button variant="contained" color="primary" className="rounded" fullWidth>Do quiz </Button>
