@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button';
 import { Pagination } from '@material-ui/lab';
 import { axiosInstance } from '../../util/axios';
 import Question from './Question';
@@ -39,6 +40,21 @@ const ViewQuestions = (props) => {
         setQuestionsOnPage(slicedItems);
     };
 
+    const downloadPdf = async () => {
+        console.log('download pdf');
+        let { data } = await axiosInstance.post(`/quiz/${category}/${testId}/pdf`);
+        const buffer = Buffer.from(data.data, 'binary');
+        const blob = new Blob([buffer], { type: "application/pdf", encoding: 'UTF-8' });
+        const a = document.createElement('a');
+        a.style = 'display: none';
+        document.body.appendChild(a);
+        const url = window.URL.createObjectURL(blob);
+        a.href = url;
+        a.download = `Test_${testId}.pdf`;
+        a.click();
+        window.URL.revokeObjectURL(url);
+    }
+
     return (<div className="question-list">
              <section className="page-banner bg-contain bg-bottom d-flex align-items-center">
 				<Grid container spacing={3}>
@@ -54,6 +70,7 @@ const ViewQuestions = (props) => {
 			</section>
             <section id="view-questions">
                 <p>View questions</p>
+                <Button variant="contained" color="primary" onClick={downloadPdf}>Download as PDF</Button>
                     <div className="container">
                         <Grid container spacing={3}>
                         { questionsOnPage.map((item, index) => {

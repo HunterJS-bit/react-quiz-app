@@ -60,4 +60,13 @@ export class QuizController {
     const paginatedQuestions = await this.quizService.paginateQuestions(category, testId);
     return paginatedQuestions;
   }
+
+  @Post('/:category/:id/pdf/')
+  @HttpCode(200)
+  async downloadQuestions(@Param('category') category, @Param('id') testId) {
+      console.log('download questions');
+      const pdf = await this.quizService.createPDF(category, testId);
+      console.log('pdf', pdf);
+      return pdf;
+  }
 }

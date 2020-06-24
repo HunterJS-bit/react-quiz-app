@@ -4,6 +4,7 @@ import { ConfigService } from '@nestjs/config';
 import { Model } from 'mongoose';
 import { InjectModel } from '@nestjs/mongoose';
 import { CategoryService } from '../category/category.service';
+import pdfBuilder from './utils/pdfBilder';
 
 @Injectable()
 export class QuizService {
@@ -75,5 +76,13 @@ export class QuizService {
   }
   async removeAll() {
     return this.quizModel.deleteMany({});
+  }
+
+  async createPDF(category, slug) {
+    // const data = await this.quizModel.findById(id);
+    const { _id: id } = await this.categoryService.findByName(category);
+    const data = await this.quizModel.findOne({ category: id, slug: slug });
+    const pdf = await pdfBuilder(data);
+    return pdf;
   }
 }
