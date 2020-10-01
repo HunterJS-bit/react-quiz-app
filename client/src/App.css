@@ -19,7 +19,6 @@ fieldset {
   align-items: center;
 }
 
-
 .quiz {
   padding: 4em 2em;
   background-color: #1e1f26;
@@ -30,7 +29,7 @@ fieldset {
   max-width: 800px;
   min-height: 60vh;
   padding: 1em 3em;
-  border-radius: 40px; 
+  border-radius: 40px;
 }
 
 .cardList {
@@ -52,10 +51,9 @@ fieldset {
 }
 
 .card-1 {
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-
 
 .search-list {
   list-style: none;
@@ -85,8 +83,8 @@ fieldset {
 
 .ck-button {
   display: block;
-  overflow:auto;
-  float:left;
+  overflow: auto;
+  float: left;
   font-size: 17px;
   color: #5c5568;
   letter-spacing: 1px;
@@ -101,7 +99,7 @@ fieldset {
 }
 
 .ck-button.active {
-  color: #FFF;
+  color: #fff;
   background: #fbb233;
   border-color: #fbb233;
   transform: scale(1.03);
@@ -109,30 +107,28 @@ fieldset {
 }
 
 .ck-button:hover {
-  color: #FFF;
+  color: #fff;
   background: #fbb233;
   border-color: #fbb233;
   font-weight: 700;
 }
 
 .ck-button label {
-  float:left;
+  float: left;
   cursor: pointer;
   padding: 0.8em 1.4em;
 }
 
 .ck-button label span {
-  text-align:center;
-  padding:3px 0px;
-  display:block;
+  text-align: center;
+  padding: 3px 0px;
+  display: block;
 }
 
 .ck-button label input {
-  position:absolute;
-  top:-20px;
+  position: absolute;
+  top: -20px;
 }
-
-
 
 /** Categories **/
 
@@ -148,11 +144,21 @@ fieldset {
 }
 
 @keyframes wiggle {
-    0% { transform: rotate(0deg); }
-  30% { transform: rotate(0deg); }
-  45% { transform: rotate(5deg); }
-  65% { transform: rotate(-5deg); }
-  100% { transform: rotate(0deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(0deg);
+  }
+  45% {
+    transform: rotate(5deg);
+  }
+  65% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .nav-icon {
@@ -160,51 +166,50 @@ fieldset {
   width: 30px;
 }
 
-.nav-icon:after, 
-.nav-icon:before, 
+.nav-icon:after,
+.nav-icon:before,
 .nav-icon div {
-  background-color:#fff;
+  background-color: #fff;
   border-radius: 3px;
-  content: '';
+  content: "";
   display: block;
   height: 5px;
   margin: 4px 0;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
-
 /*** HEADER ***/
-.wave { 
+.wave {
   position: absolute;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    height: 78px;
-    width: 100%;
-    background: dodgerblue;
-    z-index: -1;
-} 
-.wave::before { 
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  height: 78px;
+  width: 100%;
+  background: dodgerblue;
+  z-index: -1;
+}
+.wave::before {
   content: "";
-    display: block;
-    position: absolute;
-    border-radius: 100% 98%;
-    width: 58%;
-    height: 49px;
-    background-color: white;
-    right: -37px;
-    top: 59px;
-} 
-.wave::after { 
+  display: block;
+  position: absolute;
+  border-radius: 100% 98%;
+  width: 58%;
+  height: 49px;
+  background-color: white;
+  right: -37px;
+  top: 59px;
+}
+.wave::after {
   content: "";
-    display: block;
-    position: absolute;
-    border-radius: 100% 90%;
-    width: 52%;
-    height: 78px;
-    background-color: dodgerblue;
-    left: -47px;
-    top: 19px;
+  display: block;
+  position: absolute;
+  border-radius: 100% 90%;
+  width: 52%;
+  height: 78px;
+  background-color: dodgerblue;
+  left: -47px;
+  top: 19px;
 }
 
 .MuiDrawer-paper {
@@ -213,14 +218,13 @@ fieldset {
   color: #fff;
 }
 
-
 .logo-container {
   display: flex;
   align-items: center;
   padding-top: 15px;
 }
 
-.logo  {
+.logo {
   width: 32px;
 }
 
@@ -239,11 +243,9 @@ span.logo-text {
   }
 }
 
-
 .hero {
   padding-top: 7.5em;
 }
-
 
 .hero h1 {
   color: #5392f9;
@@ -257,7 +259,6 @@ span.logo-text {
   line-height: 25px;
 }
 
-
 .hero-image img {
   max-width: 320px;
   margin: 0 auto;
@@ -268,21 +269,17 @@ span.logo-text {
   color: #fff;
 }
 
-
 .MuiBox-root.MuiBox-root-252 {
   max-width: 380px;
 }
 
-
-
 .question-header {
   font-weight: 900;
-    letter-spacing: 1px;
-    margin-top: 0;
-    font-size: 2.2em;
-    margin-bottom: 35px;;
+  letter-spacing: 1px;
+  margin-top: 0;
+  font-size: 2.2em;
+  margin-bottom: 35px;
 }
-
 
 /**** FOOTER ***/
 
@@ -291,11 +288,10 @@ footer h6 {
   letter-spacing: 1px !important;
 }
 
-footer ul li a{
-  color: #dedede!important;
+footer ul li a {
+  color: #dedede !important;
   font-size: 1.1em !important;
 }
-
 
 .arrow {
   border: solid #fff;
@@ -343,8 +339,14 @@ footer ul li a{
 
 .jss169 {
   position: relative;
+  width: 150px;
+  height: auto;
+  margin: 0px auto;
 }
 
+.jss169 img {
+  width: inherit;
+}
 .mt-6 {
   margin-top: 1.5rem !important;
 }
@@ -362,10 +364,9 @@ footer ul li a{
   text-align: right;
 }
 
-
 .jss167 {
   width: 362px;
-} 
+}
 
 .jss166 {
   text-align: center !important;
@@ -386,7 +387,7 @@ section#testemonials p {
   font-weight: 400;
   font-size: 16px;
   line-height: 25px;
-  color: rgba(24,37,56,.8);
+  color: rgba(24, 37, 56, 0.8);
 }
 
 .testemon-text {
@@ -437,7 +438,6 @@ section.contact {
   align-items: center;
 }
 
-
 /** Category Styles & Banner Styles  **/
 .page-banner {
   background-image: url(./assets/pattern.png);
@@ -456,7 +456,7 @@ section.contact {
   content: "";
   left: 0;
   top: 0;
-  opacity: .7;
+  opacity: 0.7;
   z-index: -1;
 }
 
@@ -467,7 +467,7 @@ section.contact {
   color: #565969;
 }
 
-.banner-text h2 { 
+.banner-text h2 {
   font-size: 60px;
   line-height: 0.5;
   text-transform: capitalize;
@@ -488,7 +488,6 @@ section.contact {
   line-height: 1;
 }
 
-
 /** Test list page ***/
 .featuredItem2 {
   padding: 20px 15px;
@@ -501,14 +500,14 @@ section.contact {
 
 /*** Question list page **/
 .question-wrapper {
-  border: 1px solid rgba(0,0,0,0.14);
+  border: 1px solid rgba(0, 0, 0, 0.14);
   display: flex;
   padding: 1.5rem 3rem;
   transition: all 250ms ease;
   border-radius: 12px;
 }
 
-.question-wrapper .title{
+.question-wrapper .title {
   font-size: 21px;
 }
 
