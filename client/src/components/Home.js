@@ -1,9 +1,8 @@
 import React from "react";
-import Grid from "@material-ui/core/Grid";
 import Hero from "./common/Hero";
 import Features from "../components/Home/FeaturesSection/Features";
 import Testemonials from "../components/Home/Testemonials";
-import BlogSection from "../components/Home/BlogSection/BlogSection";
+import BlogSection from './Home/BlogSection/BlogSection';
 
 const Home = (props) => {
   return (
@@ -202,7 +201,8 @@ const Home = (props) => {
           </Grid>
         </div>
       </section> */}
-      <BlogSection />
+      <BlogSection></BlogSection>
+      {/* <BlogSection /> */}
       <Testemonials />
     </div>
   );
