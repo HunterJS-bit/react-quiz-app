@@ -93,7 +93,7 @@ const BottomFooter = () => {
 
           </Grid>
         </InfoSection>
-        <SocialSection xs={12} sm={12} md={12} alignItems="center" justify="center">
+        <SocialSection item xs={12} sm={12} md={12} alignItems="center" justify="center">
           <Icon>
             <img class="social-icon" src={InstagramIcon} />
           </Icon>

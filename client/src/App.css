@@ -420,22 +420,10 @@ section#testemonials p {
   color: #bdbdbd;
 }
 
-/*** Contact Form ***/
+/*** Contact Section ***/
 
 section.contact {
-  background: #f5f5f5;
-}
-
-.contact-form {
-  padding: 2em 1em;
-  width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 100px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background: #fff;
 }
 
 /** Category Styles & Banner Styles  **/
@@ -541,150 +529,7 @@ img.check-mark {
   text-align: left;
 }
 
-/*** Blog **/
 
-.jss1270 {
-  margin: 80px 0px;
-  z-index: 10;
-  position: relative;
-}
-
-.jss1274 {
-  display: flex;
-}
-
-.jss1273 {
-  flex-direction: column;
-}
-
-.jss1273 .jss1275 {
-  padding: 24px;
-  margin-top: -200px;
-  padding-top: 230px;
-}
-
-.jss1275 {
-  flex: 1;
-}
-
-.MuiGrid-spacing-xs-6 > .MuiGrid-item {
-  padding: 24px;
-}
-
-.jss1274 figure {
-  z-index: 1;
-  overflow: hidden;
-  box-shadow: 0px 5px 5px -3px rgba(128, 128, 128, 0.2), 0px 8px 10px 1px rgba(128, 128, 128, 0.14),
-    0px 3px 14px 2px rgba(128, 128, 128, 0.12);
-  border-radius: 15px;
-}
-
-.jss1273 figure {
-  width: 93%;
-  height: 250px;
-  margin: 0 auto;
-}
-
-.jss1274 figure img {
-  transform: translateX(-50%);
-  margin-left: 50%;
-}
-
-.jss1273 figure img {
-  width: 100%;
-}
-
-.jss1276 {
-  padding: 0px 12px;
-}
-
-.jss1278 {
-  color: #673ab7;
-  margin-top: 8px;
-  text-transform: none;
-}
-
-.jss1277 {
-  color: rgba(0, 0, 0, 0.54);
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.MuiTypography-caption {
-  font-size: 0.75rem;
-  font-family: Open Sans, sans-serif;
-  font-weight: 400;
-  line-height: 1.66;
-}
-
-.jss1274 p {
-  font-size: 18px;
-  margin-top: 16px;
-  font-weight: 600;
-}
-
-.jss1274 {
-  display: flex;
-}
-
-.jss1272 {
-  align-items: center;
-  margin-bottom: 40px;
-  flex-direction: row;
-}
-
-.jss1274 figure {
-  z-index: 1;
-  overflow: hidden;
-  box-shadow: 0px 5px 5px -3px rgba(128, 128, 128, 0.2), 0px 8px 10px 1px rgba(128, 128, 128, 0.14),
-    0px 3px 14px 2px rgba(128, 128, 128, 0.12);
-  border-radius: 15px;
-}
-
-.jss1272 figure {
-  width: 150px;
-  height: 150px;
-  margin: 0;
-}
-
-.jss1272 figure img {
-  height: 100%;
-}
-.jss1276 {
-  padding: 0px 12px;
-}
-.jss1278 {
-  color: #673ab7;
-  margin-top: 8px;
-  text-transform: none;
-}
-
-.jss1277 {
-  color: rgba(0, 0, 0, 0.54);
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.jss1274 p {
-  font-size: 18px;
-  margin-top: 16px;
-  font-weight: 600;
-}
-
-.jss1272 .jss1275 {
-  padding: 24px;
-  margin-left: -96px;
-  padding-left: 104px;
-}
-
-.jss1272 .jss1275 {
-  height: 185px;
-  /* padding: 24px 8px; */
-}
-
-.jss1275 {
-  flex: 1;
-}
 
 /*** Footer bottom */
 
@@ -748,4 +593,47 @@ footer {
   height: 100%;
   transform: translateX(-50%);
     margin-left: 50%;
+}
+
+/* Title **/
+
+.jss1216 {
+  display: block;
+  position: relative;
+  margin-bottom: 80px;
+}
+
+.jss1216 h3 {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 46px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.jss1216.jss1214:after {
+  left: 50%;
+  margin-left: -35px;
+}
+
+.jss1216:after {
+  width: 70px;
+  bottom: -32px;
+  height: 12px;
+  content: "";
+  position: absolute;
+  border-radius: 12px;
+  background-image: linear-gradient(-20deg, #D1C4E9, #B2EBF2);
+}
+
+/**** Contact **/
+
+.contactUsWrapper {
+  position: relative;
+  z-index: 4;
+  padding: 50px 0;
+}
+
+.main-contact-form {
+  margin-top: 25px;
+  margin: 0 auto;
 }

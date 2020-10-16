@@ -57,14 +57,15 @@ const BlogPart = () => {
 
     return (<BlogSection>
         <Container container={true} fixed={true} maxWidth="lg">
+            <div className="jss1216 jss1214"><Typography variant="h3"> Our Blog </Typography></div>
             <Grid container={true} spacing={6}>
                 <Grid item md={6}>
                     <MainPost>
-                        <figure class="big-image">
+                        <figure className="big-image">
                             <img src="https://res.cloudinary.com/walden-global-services/image/upload/v1544584575/dandelion/34.jpg" alt="thumb" />
                         </figure>
                         <MainPostWrapper>
-                            <div class="summary">
+                            <div className="summary">
                                 <Headline variant="caption" display="block" gutterBottom>Headlineee</Headline>
                                 <Typography variant="body1" gutterBottom>Sed imperdiet enim ligula, vitae viverra justo.</Typography>
                             </div>
@@ -74,11 +75,11 @@ const BlogPart = () => {
                 </Grid>
                 <Grid item md={6}>
                     <PostWrapper>
-                        <figure class="small-image">
+                        <figure className="small-image">
                             <img src="https://res.cloudinary.com/walden-global-services/image/upload/v1544584529/dandelion/3.jpg" alt="thumb" />
                         </figure>
                         <SidePostWrapper>
-                            <div class="summary">
+                            <div className="summary side-summary">
                                 <Headline variant="caption" display="block" gutterBottom>Headlineee</Headline>
                                 <Typography variant="body1" gutterBottom>Sed imperdiet enim ligula, vitae viverra justo.</Typography>
                             </div>
@@ -86,11 +87,11 @@ const BlogPart = () => {
                         </SidePostWrapper>
                     </PostWrapper>
                     <PostWrapper>
-                        <figure class="small-image">
+                        <figure className="small-image">
                             <img src="https://res.cloudinary.com/walden-global-services/image/upload/v1544584529/dandelion/4.jpg" alt="thumb" />
                         </figure>
                         <SidePostWrapper>
-                            <div class="summary">
+                            <div className="summary side-summary">
                                 <Headline variant="caption" display="block" gutterBottom>Headlineee</Headline>
                                 <Typography variant="body1" gutterBottom>Sed imperdiet enim ligula, vitae viverra justo.</Typography>
                             </div>

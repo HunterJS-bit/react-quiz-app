@@ -42,63 +42,78 @@ const Contact = () => {
 
 
   const handleChange = name => event => {
-    console.log('evo ga change ', name, event);
+    setContactFields({
+      ...contactField,
+      [name]: event.target.value
+    })
   };
 
 
   const sendEmail = (e) => {
     e.preventDefault();
     console.log('submit form');
+    console.log(contactField);
   };
 
 
   return (
     <section id="contact-section" className="contact">
       <Container container={true} fixed={true} maxWidth="lg">
-        <div class="jss1216 jss1214">
+        <div className="jss1216 jss1214">
           <Typography variant="h3">
             Contact Us
           </Typography>
         </div>
         <Grid container={true} spacing={6}>
           <Grid item xs={2} md={2}></Grid>
-          <Grid item xs={12} sm={12} md={7}>
+          <Grid item xs={12} sm={12} md={8}>
             <div className="main-contact-form">
               <form onSubmit={sendEmail} noValidate autoComplete="off">
                 <Grid container={true} spacing={2}>
                   <Grid item xs={12} md={6}>
                     <ContactTextField label="Your Name"
+                      required
                       value={contactField.name}
-                      size="md"
-                      fullWidth="true"
+                      onChange={handleChange('name')}
+                      size="medium"
+                      fullWidth={true}
                       variant="outlined"
                     ></ContactTextField>
                   </Grid>
                   <Grid item xs={12} md={6}>
                     <ContactTextField label="E-mail address"
+                      required
                       value={contactField.email}
-                      fullWidth="true"
-                      size="md"
+                      onChange={handleChange('email')}
+                      fullWidth={true}
+                      size="medium"
                       variant="outlined"
                     ></ContactTextField>
                   </Grid>
                   <Grid item xs={12} md={6}>
                     <ContactTextField label="Phone Number"
-                      fullWidth="true"
-                      size="md"
+                      value={contactField.phone}
+                      onChange={handleChange('phone')}
+                      fullWidth={true}
+                      size="medium"
                       variant="outlined"
                     ></ContactTextField>
                   </Grid>
                   <Grid item xs={12} md={6}>
                     <ContactTextField label="Company Name"
-                      fullWidth="true"
-                      size="md"
+                      value={contactField.company}
+                      onChange={handleChange('company')}
+                      fullWidth={true}
+                      size="medium"
                       variant="outlined"
                     ></ContactTextField>
                   </Grid>
                   <Grid item xs={12} md={12}>
                     <ContactTextField
-                      fullWidth="true"
+                      required
+                      value={contactField.message}
+                      onChange={handleChange('message')}
+                      fullWidth={true}
                       placeholder="Message *"
                       variant="outlined"
                       multiline
