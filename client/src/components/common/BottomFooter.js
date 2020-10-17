@@ -6,6 +6,8 @@ import Link from '@material-ui/core/Link';
 import Container from '@material-ui/core/Container';
 import IconButton from '@material-ui/core/IconButton'
 import InstagramIcon from "../../assets/instagram.svg";
+import FaceBookIcon from "../../assets/twitter.svg";
+import TwitterIcon from "../../assets/facebook.svg";
 import SvgIcon from '@material-ui/core/SvgIcon';
 import Icon from '@material-ui/core/Icon';
 
@@ -98,18 +100,15 @@ const BottomFooter = () => {
             <img class="social-icon" src={InstagramIcon} />
           </Icon>
           <Icon>
-            <img class="social-icon" src={InstagramIcon} />
+            <img class="social-icon" src={FaceBookIcon} />
           </Icon>
           <Icon>
-            <img class="social-icon" src={InstagramIcon} />
-          </Icon>
-          <Icon>
-            <img class="social-icon" src={InstagramIcon} />
+            <img class="social-icon" src={TwitterIcon} />
           </Icon>
         </SocialSection>
-        <Typography variant="body2">  © 2020 Auto Theme</Typography>
+        <Typography variant="body2" style={{ 'margin-top': '20px' }}>  © 2020 Auto Theme</Typography>
       </Container>
-    </footer>
+    </footer >
   );
 };
 
