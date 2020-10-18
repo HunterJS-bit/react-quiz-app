@@ -18,12 +18,6 @@ import logo from "../../assets/car_drive.svg";
 import styled from 'styled-components';
 
 const styles = (theme) => ({
-  appBar: {
-    position: "relative",
-    boxShadow: "none",
-    backgroundColor: "#fff",
-    paddingTop: '15px'
-  },
   flex: {
     display: "flex",
     justifyContent: "space-between",
@@ -55,13 +49,20 @@ const styles = (theme) => ({
   },
 });
 
+const StyledAppBar = styled(AppBar)`
+box-shadow: none;
+background-color: transparent;
+padding-top: 15px;
+position: absolute;
+`;
+
 const HeaderItem = styled(ListItem)`
 display: inline-block;
     width: auto;
     padding: 15px 0;
     text-transform: capitalize;
     font-size: 17px;
-    color: #282828;
+    color: #e8e8e8;
     letter-spacing: 0;
     margin-right: 34px;
     font-weight: 500;`;
@@ -125,7 +126,7 @@ class Topbar extends Component {
     const { classes } = this.props;
 
     return (
-      <AppBar position="absolute" color="default" className={classes.appBar}>
+      <StyledAppBar>
         <Toolbar id="back-to-top">
           <Container container fixed maxWidth="lg">
             <Grid container spacing={10} alignItems="baseline">
@@ -197,7 +198,7 @@ class Topbar extends Component {
             </Grid>
           </Container>
         </Toolbar>
-      </AppBar>
+      </StyledAppBar>
     );
   }
 }

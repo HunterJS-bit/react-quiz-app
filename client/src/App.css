@@ -179,39 +179,6 @@ fieldset {
 }
 
 /*** HEADER ***/
-.wave {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  height: 78px;
-  width: 100%;
-  background: dodgerblue;
-  z-index: -1;
-}
-.wave::before {
-  content: "";
-  display: block;
-  position: absolute;
-  border-radius: 100% 98%;
-  width: 58%;
-  height: 49px;
-  background-color: white;
-  right: -37px;
-  top: 59px;
-}
-.wave::after {
-  content: "";
-  display: block;
-  position: absolute;
-  border-radius: 100% 90%;
-  width: 52%;
-  height: 78px;
-  background-color: dodgerblue;
-  left: -47px;
-  top: 19px;
-}
-
 .MuiDrawer-paper {
   min-width: 150px;
   background-color: #1b277d;
@@ -243,36 +210,40 @@ span.logo-text {
   }
 }
 
-.hero {
-  padding-top: 7.5em;
+/********** HERO ***************/
+
+#hero {
+  background: linear-gradient(60deg, rgba(84, 58, 183, 1) 0%, rgba(0, 172, 193, 1) 100%);
+  padding-top: 150px;
 }
 
-.hero h1 {
-  color: #5392f9;
-  font-weight: 700;
-  font-size: 75px;
+.parallax>use {
+  animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
 }
-
-.hero p {
-  font-size: 15px;
-  color: #333;
-  line-height: 25px;
+.parallax>use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
 }
-
-.hero-image img {
-  max-width: 320px;
-  margin: 0 auto;
+.parallax>use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
 }
-
-.MuiTab-wrapper {
-  font-size: 13px;
-  color: #fff;
+.parallax>use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
 }
-
-.MuiBox-root.MuiBox-root-252 {
-  max-width: 380px;
+.parallax>use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
 }
-
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
 .question-header {
   font-weight: 900;
   letter-spacing: 1px;
@@ -281,17 +252,18 @@ span.logo-text {
   margin-bottom: 35px;
 }
 
+.waves {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  top: -70px;
+  margin-bottom: -7px;
+  min-height: 80px;
+  max-height: 120px;
+}
+
 /**** FOOTER ***/
 
-footer h6 {
-  color: #fff !important;
-  letter-spacing: 1px !important;
-}
-
-footer ul li a {
-  color: #dedede !important;
-  font-size: 1.1em !important;
-}
 
 .arrow {
   border: solid #fff;
@@ -545,13 +517,19 @@ img.check-mark {
 
 .social-icon {
   width: 50px;
-  color: #fff;
-  height: 40px;
+  height: 30px;
 }
 
+.wave-block{
+  display: block;
+}
+
+.wave-block svg{
+  display: block;
+}
 
 footer {
-  background: #5000ca;
+  background: #187cd2;
   padding-top: 50px;
   padding-bottom: 70px;
 }
@@ -610,6 +588,9 @@ footer {
   text-transform: capitalize;
 }
 
+.text-left {
+  text-align: left;
+}
 .jss1216.jss1214:after {
   left: 50%;
   margin-left: -35px;

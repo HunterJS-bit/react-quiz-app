@@ -12,14 +12,15 @@ const HeroTitle = styled(Typography)`
 display: inline-block;
 font-weight: 900;
 font-size: 48px;
-    line-height: 72px;
+line-height: 72px;
+color: #fff;
 `;
 
 const HeroSubTitle = styled(Typography)`
 font-size: 19px;
 font-weight: 300;
 line-height: 37px;
-color: rgba(0,0,0,0.54);
+color: #d2d2d2;
 margin: 32px 0px;
 `;
 
@@ -55,8 +56,8 @@ const Hero = () => {
           <img src="https://res.cloudinary.com/imajin/image/upload/v1573808069/saas/desktop_illustration_ykznmj.png" alt="illustration" />
         </Grid>
       </Grid>
-    </Container>
-  </section>)
+    </Container >
+  </section >)
 };
 
 export default Hero;

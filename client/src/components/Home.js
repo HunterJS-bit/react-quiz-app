@@ -8,201 +8,21 @@ const Home = (props) => {
   return (
     <div className="main">
       <Hero></Hero>
+      <div>
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+          <defs>
+            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+          </defs>
+          <g class="parallax">
+            <use xlinkHref="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7"></use>
+            <use xlinkHref="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)"></use>
+            <use xlinkHref="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)"></use>
+            <use xlinkHref="#gentle-wave" x="48" y="7" fill="#fff"></use>
+          </g >
+        </svg >
+      </div>
       <Features></Features>
-      {/* <section id="features">
-        <div className="container">
-          <Grid container spacing={10} alignItems="center">
-            <Grid container item xs={12} spacing={3} sm={6} md={6} lg={8}>
-              <div className="max-w-400 mb-16">
-                <h1 className="mt-0 font-normal text-44">App Features</h1>
-                <p>
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-                  tempor
-                </p>
-              </div>
-              <Grid container spacing={5}>
-                <Grid item xs={12} sm={6} md={6} lg={4}>
-                  <div className="relative mx-4">
-                    <div className="jss169">
-                      <svg
-                        className="MuiSvgIcon-root text-54 MuiSvgIcon-colorPrimary"
-                        focusable="false"
-                        viewBox="0 0 68.92 49.54"
-                        aria-hidden="true"
-                      >
-                        <rect
-                          id="Rectangle_848"
-                          data-name="Rectangle 848"
-                          width="66"
-                          height="42"
-                          rx="3"
-                          transform="translate(1.291 2)"
-                        ></rect>
-                        <path
-                          id="Path_2426"
-                          data-name="Path 2426"
-                          d="M64.617,17H4.308A4.313,4.313,0,0,0,0,21.308V57.924a4.313,4.313,0,0,0,4.308,4.308H26.385v2.154H21a1.077,1.077,0,0,0,0,2.154H47.924a1.077,1.077,0,0,0,0-2.154H42.539V62.232H64.617a4.313,4.313,0,0,0,4.308-4.308V21.308A4.313,4.313,0,0,0,64.617,17ZM40.385,64.386H28.539V62.232H40.385Zm24.231-4.308H4.308a2.154,2.154,0,0,1-2.154-2.154H66.771A2.154,2.154,0,0,1,64.617,60.078Zm2.154-4.308H2.154V21.308a2.154,2.154,0,0,1,2.154-2.154H64.617a2.154,2.154,0,0,1,2.154,2.154Z"
-                          transform="translate(0 -17)"
-                        ></path>
-                      </svg>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="mt-6 font-normal mb-0">Use on Any Device</h4>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
-                  </div>
-                </Grid>
-                <Grid item xs={12} sm={6} md={6} lg={4}>
-                  <div className="relative mx-4">
-                    <div className="jss169">
-                      <svg
-                        className="MuiSvgIcon-root text-54 MuiSvgIcon-colorPrimary"
-                        focusable="false"
-                        viewBox="0 0 68.92 49.54"
-                        aria-hidden="true"
-                      >
-                        <rect
-                          id="Rectangle_848"
-                          data-name="Rectangle 848"
-                          width="66"
-                          height="42"
-                          rx="3"
-                          transform="translate(1.291 2)"
-                        ></rect>
-                        <path
-                          id="Path_2426"
-                          data-name="Path 2426"
-                          d="M64.617,17H4.308A4.313,4.313,0,0,0,0,21.308V57.924a4.313,4.313,0,0,0,4.308,4.308H26.385v2.154H21a1.077,1.077,0,0,0,0,2.154H47.924a1.077,1.077,0,0,0,0-2.154H42.539V62.232H64.617a4.313,4.313,0,0,0,4.308-4.308V21.308A4.313,4.313,0,0,0,64.617,17ZM40.385,64.386H28.539V62.232H40.385Zm24.231-4.308H4.308a2.154,2.154,0,0,1-2.154-2.154H66.771A2.154,2.154,0,0,1,64.617,60.078Zm2.154-4.308H2.154V21.308a2.154,2.154,0,0,1,2.154-2.154H64.617a2.154,2.154,0,0,1,2.154,2.154Z"
-                          transform="translate(0 -17)"
-                        ></path>
-                      </svg>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="mt-6 font-normal mb-0">Material Design Icon</h4>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
-                  </div>
-                </Grid>
-                <Grid item xs={12} sm={6} md={6} lg={4}>
-                  <div className="relative mx-4">
-                    <div className="jss169">
-                      <svg
-                        className="MuiSvgIcon-root text-54 MuiSvgIcon-colorPrimary"
-                        focusable="false"
-                        viewBox="0 0 68.92 49.54"
-                        aria-hidden="true"
-                      >
-                        <rect
-                          id="Rectangle_848"
-                          data-name="Rectangle 848"
-                          width="66"
-                          height="42"
-                          rx="3"
-                          transform="translate(1.291 2)"
-                        ></rect>
-                        <path
-                          id="Path_2426"
-                          data-name="Path 2426"
-                          d="M64.617,17H4.308A4.313,4.313,0,0,0,0,21.308V57.924a4.313,4.313,0,0,0,4.308,4.308H26.385v2.154H21a1.077,1.077,0,0,0,0,2.154H47.924a1.077,1.077,0,0,0,0-2.154H42.539V62.232H64.617a4.313,4.313,0,0,0,4.308-4.308V21.308A4.313,4.313,0,0,0,64.617,17ZM40.385,64.386H28.539V62.232H40.385Zm24.231-4.308H4.308a2.154,2.154,0,0,1-2.154-2.154H66.771A2.154,2.154,0,0,1,64.617,60.078Zm2.154-4.308H2.154V21.308a2.154,2.154,0,0,1,2.154-2.154H64.617a2.154,2.154,0,0,1,2.154,2.154Z"
-                          transform="translate(0 -17)"
-                        ></path>
-                      </svg>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="mt-6 font-normal mb-0">New & enhanced tests</h4>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
-                  </div>
-                </Grid>
-                <Grid item xs={12} sm={6} md={6} lg={4}>
-                  <div className="relative mx-4">
-                    <div className="jss169">
-                      <svg
-                        className="MuiSvgIcon-root text-54 MuiSvgIcon-colorPrimary"
-                        focusable="false"
-                        viewBox="0 0 68.92 49.54"
-                        aria-hidden="true"
-                      >
-                        <rect
-                          id="Rectangle_848"
-                          data-name="Rectangle 848"
-                          width="66"
-                          height="42"
-                          rx="3"
-                          transform="translate(1.291 2)"
-                        ></rect>
-                        <path
-                          id="Path_2426"
-                          data-name="Path 2426"
-                          d="M64.617,17H4.308A4.313,4.313,0,0,0,0,21.308V57.924a4.313,4.313,0,0,0,4.308,4.308H26.385v2.154H21a1.077,1.077,0,0,0,0,2.154H47.924a1.077,1.077,0,0,0,0-2.154H42.539V62.232H64.617a4.313,4.313,0,0,0,4.308-4.308V21.308A4.313,4.313,0,0,0,64.617,17ZM40.385,64.386H28.539V62.232H40.385Zm24.231-4.308H4.308a2.154,2.154,0,0,1-2.154-2.154H66.771A2.154,2.154,0,0,1,64.617,60.078Zm2.154-4.308H2.154V21.308a2.154,2.154,0,0,1,2.154-2.154H64.617a2.154,2.154,0,0,1,2.154,2.154Z"
-                          transform="translate(0 -17)"
-                        ></path>
-                      </svg>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="mt-6 font-normal mb-0">Use on Any Device</h4>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
-                  </div>
-                </Grid>
-                <Grid item xs={12} sm={6} md={6} lg={4}>
-                  <div className="relative mx-4">
-                    <div className="jss169">
-                      <svg
-                        className="MuiSvgIcon-root text-54 MuiSvgIcon-colorPrimary"
-                        focusable="false"
-                        viewBox="0 0 68.92 49.54"
-                        aria-hidden="true"
-                      >
-                        <rect
-                          id="Rectangle_848"
-                          data-name="Rectangle 848"
-                          width="66"
-                          height="42"
-                          rx="3"
-                          transform="translate(1.291 2)"
-                        ></rect>
-                        <path
-                          id="Path_2426"
-                          data-name="Path 2426"
-                          d="M64.617,17H4.308A4.313,4.313,0,0,0,0,21.308V57.924a4.313,4.313,0,0,0,4.308,4.308H26.385v2.154H21a1.077,1.077,0,0,0,0,2.154H47.924a1.077,1.077,0,0,0,0-2.154H42.539V62.232H64.617a4.313,4.313,0,0,0,4.308-4.308V21.308A4.313,4.313,0,0,0,64.617,17ZM40.385,64.386H28.539V62.232H40.385Zm24.231-4.308H4.308a2.154,2.154,0,0,1-2.154-2.154H66.771A2.154,2.154,0,0,1,64.617,60.078Zm2.154-4.308H2.154V21.308a2.154,2.154,0,0,1,2.154-2.154H64.617a2.154,2.154,0,0,1,2.154,2.154Z"
-                          transform="translate(0 -17)"
-                        ></path>
-                      </svg>
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="mt-6 font-normal mb-0">Use on Any Device</h4>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
-                  </div>
-                </Grid>
-                <Grid item xs={12} sm={6} md={6} lg={4}>
-                  <div className="relative mx-4">
-                    <div className="jss169">
-                      <img style={{ width: "32px" }} src={Wifi} />
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="mt-6 font-normal mb-0">Use on Any Device</h4>
-                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
-                  </div>
-                </Grid>
-              </Grid>
-            </Grid>
-            <Grid container item spacing={3} xs={12} sm={6} md={6} lg={4}>
-              <div className="jss168">
-                <img
-                  className="jss167"
-                  src="http://react-landing.angulardashboard.com/assets/images/mobile-2.svg"
-                  alt="mobile-1"
-                />
-              </div>
-            </Grid>
-          </Grid>
-        </div>
-      </section> */}
       <BlogSection></BlogSection>
-      {/* <BlogSection /> */}
       <Testemonials />
     </div>
   );

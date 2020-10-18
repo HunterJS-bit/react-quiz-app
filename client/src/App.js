@@ -27,26 +27,28 @@ import NotFoundPage from './components/404';
 
 function App() {
 	return (
-		<div className='App'>
-			<Router>
-				<Header></Header>
-				<main className="main-container">
-					<Switch>
-						<Route exact path='/' component={Home} />
-						<Route exact path='/category' component={CategoryList} />
-						<Route exact path='/category/create' component={CreateCategory}></Route>
-						<Route exact path='/category/:id' component={QuizList} />
-						<Route exact path="/category/:testName/list" component={ViewQuestions} />
-						<Route exact path='/quiz/create' component={CreateQuiz} />
-						<Route exact path='/quiz/:id' component={QuestionList} />
-						<Route exact path='/result' component={QuizResult} />
-						<Route path='/create' component={CreateQuestion} />
-						<Route path='/about' component={About} />
-						<Route component={NotFoundPage} />
-					</Switch>
-				</main>
-				<Footer></Footer>
-			</Router>
+		<div className="main-wrapp">
+			<div className='App'>
+				<Router>
+					<Header></Header>
+					<main className="main-container">
+						<Switch>
+							<Route exact path='/' component={Home} />
+							<Route exact path='/category' component={CategoryList} />
+							<Route exact path='/category/create' component={CreateCategory}></Route>
+							<Route exact path='/category/:id' component={QuizList} />
+							<Route exact path="/category/:testName/list" component={ViewQuestions} />
+							<Route exact path='/quiz/create' component={CreateQuiz} />
+							<Route exact path='/quiz/:id' component={QuestionList} />
+							<Route exact path='/result' component={QuizResult} />
+							<Route path='/create' component={CreateQuestion} />
+							<Route path='/about' component={About} />
+							<Route component={NotFoundPage} />
+						</Switch>
+					</main>
+					<Footer></Footer>
+				</Router>
+			</div>
 		</div>
 	);
 }
