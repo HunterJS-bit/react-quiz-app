@@ -4,43 +4,59 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import logo from '../../assets/car_main.svg';
+import Container from '@material-ui/core/Container';
+import styled from 'styled-components';
 
 
+const HeroTitle = styled(Typography)`
+display: inline-block;
+font-weight: 900;
+font-size: 48px;
+    line-height: 72px;
+`;
+
+const HeroSubTitle = styled(Typography)`
+font-size: 19px;
+font-weight: 300;
+line-height: 37px;
+color: rgba(0,0,0,0.54);
+margin: 32px 0px;
+`;
+
+const ActionButton = styled(Button)`
+color: #fff;
+    height: 53px;
+    border-radius: 4px;
+    display: inline-block;
+    border: 1px solid #0dc181;
+    padding: 0 38px;
+    line-height: 51px;
+    text-transform: capitalize;
+    letter-spacing: 0;
+    background: -webkit-linear-gradient(45deg,#0dc181,#1bdcae);
+    background: linear-gradient(45deg,#0dc181,#1bdcae);
+
+`;
 
 const Hero = () => {
 
-    return (<section className="hero">
-          <div className="container">
-          <Grid container spacing={3}>
-              <Grid item xs={12} md={7} lg={8}>
-                <div className="hero-image">
-                   <img src={logo} alt="auto-testovi-logo" />
-                </div>
-              </Grid>
-              <Grid item xs={12}  md={5} lg={4}>
-                <Box display="flex" flexDirection="column" justifyContent="center">
-                  <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-                      Auto testovi 
-                    </Typography>
-                    <Typography variant="h5" align="center" color="textSecondary" paragraph>
-                      Something short and leading about the collection below—its contents, the creator, etc.
-                      Make it short and sweet, but not too short so folks don&apos;t simply skip over it
-                      entirely.
-                    </Typography>
-                    <div>
-                      <Grid container spacing={2} justify="center">
-                        <Grid item>
-                          <Button variant="contained" color="primary" className="actionCall">
-                            Probajte Test
-                          </Button>
-                        </Grid>
-                      </Grid>
-                    </div>
-                </Box>
-              </Grid>
-        </Grid>
+  return (<section id="hero" className="hero">
+    <Container container fixed={true} maxWidth="lg">
+      <Grid container spacing={6}>
+        <Grid item xs={12} md={6}>
+          <div className="hero-content">
+            <HeroTitle variant="h3"> Online testovi za Auto škole </HeroTitle>
+            <HeroSubTitle variant="h5">Direktno na sajtu vežbaajte i koristite zvanične testove za polaganje teorijskog dela vozačkog ispita za polaganje svih kategorija u cilju bržeg savladavanja saobraćajnih pravila i propisa.
+            </HeroSubTitle>
+            <ActionButton variant="contained" size='large' disableElevation> Get Started</ActionButton>
           </div>
-      </section>)
+        </Grid>
+        <Grid item md={6}>
+          <img src="https://res.cloudinary.com/imajin/image/upload/v1573808069/saas/desktop_illustration_ykznmj.png" alt="illustration" />
+        </Grid>
+      </Grid>
+    </Container>
+  </section>)
 };
 
 export default Hero;

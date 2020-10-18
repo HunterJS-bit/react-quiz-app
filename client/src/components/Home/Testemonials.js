@@ -1,5 +1,7 @@
 import React from "react";
+import Container from '@material-ui/core/Container';
 import Grid from "@material-ui/core/Grid";
+import Typography from '@material-ui/core/Typography';
 import PersonTestemonial from "./PersonTestemonial";
 
 // icons
@@ -10,13 +12,11 @@ import Person3 from "../../assets/Person_3.png";
 const Testemonials = () => {
   return (
     <section id="testimonials-section">
-      <div className="container">
-        <div className="left mb-16">
-          <h1 className="mt-0 font-normal text-44">Sta kazu o nama </h1>
-          <p>
-            Ako želite i Vi ostaviti Vaš komentar ,kontaktirajte nas. Sve pohvale i/ili kritike su
-            dobrodošle.
-          </p>
+      <Container container={true} fixed={true} maxWidth="lg">
+        <div className="jss1216 jss1214 text-left">
+          <Typography variant="h3"> Sta kazu o nama</Typography>
+          {/* <Typography variant='body1'>Ako želite i Vi ostaviti Vaš komentar ,kontaktirajte nas. Sve pohvale i/ili kritike su
+            dobrodošle.</Typography> */}
         </div>
         <Grid container spacing={3}>
           <PersonTestemonial
@@ -40,7 +40,8 @@ const Testemonials = () => {
             comment="Odlicna podrska, vrlo ljubazni i odlicana usluga."
           />
         </Grid>
-      </div>
+
+      </Container>
     </section>
   );
 };
