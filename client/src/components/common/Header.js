@@ -123,10 +123,12 @@ class Topbar extends Component {
   };
 
   render() {
-    const { classes } = this.props;
+    const { classes, location } = this.props;
+
+    const currentPage = location.pathname;
 
     return (
-      <StyledAppBar>
+      <StyledAppBar style={{ position: currentPage != '/' ? 'relative' : 'absolute' }}>
         <Toolbar id="back-to-top">
           <Container container fixed maxWidth="lg">
             <Grid container spacing={10} alignItems="baseline">
