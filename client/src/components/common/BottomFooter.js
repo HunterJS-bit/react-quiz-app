@@ -4,11 +4,9 @@ import styled from 'styled-components';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 import Container from '@material-ui/core/Container';
-import IconButton from '@material-ui/core/IconButton'
 import InstagramIcon from "../../assets/instagram.svg";
 import FaceBookIcon from "../../assets/twitter.svg";
 import TwitterIcon from "../../assets/facebook.svg";
-import SvgIcon from '@material-ui/core/SvgIcon';
 import Icon from '@material-ui/core/Icon';
 
 const InfoSection = styled(Grid)`
@@ -19,6 +17,16 @@ const SocialSection = styled(Grid)`
   padding-top: 40px;
 `;
 
+
+const FooterLink = styled(Link)`
+color: #dedede;
+text-decoration: none;
+cursor: pointer;
+`;
+
+const FooterSectionTitle = styled(Typography)`
+color: #eee;
+`;
 
 const BottomFooter = () => {
   return (
@@ -36,21 +44,21 @@ const BottomFooter = () => {
         >
           <Grid item xs={12} sm={4}>
             <div>
-              <Typography variant="h6" gutterBottom>
+              <FooterSectionTitle variant="h6" gutterBottom>
                 Company
-              </Typography>
+              </FooterSectionTitle>
               <ul>
                 <li>
-                  <Link variant="subtitle1"> Team</Link>
+                  <FooterLink variant="subtitle1"> Team</FooterLink>
                 </li>
                 <li>
-                  <Link variant="subtitle1"> History</Link>
+                  <FooterLink variant="subtitle1"> History</FooterLink>
                 </li>
                 <li>
-                  <Link variant="subtitle1"> Contact us</Link>
+                  <FooterLink variant="subtitle1"> Contact us</FooterLink>
                 </li>
                 <li>
-                  <Link variant="subtitle1"> Locations</Link>
+                  <FooterLink variant="subtitle1"> Locations</FooterLink>
                 </li>
               </ul>
             </div>
@@ -58,21 +66,21 @@ const BottomFooter = () => {
           </Grid>
           <Grid item xs={12} sm={4}>
             <div>
-              <Typography variant="h6" gutterBottom>
+              <FooterSectionTitle variant="h6" gutterBottom>
                 Resources
-              </Typography>
+              </FooterSectionTitle>
               <ul>
                 <li>
-                  <Link variant="subtitle1"> Resource</Link>
+                  <FooterLink variant="subtitle1"> Resource</FooterLink>
                 </li>
                 <li>
-                  <Link variant="subtitle1">   Resource name</Link>
+                  <FooterLink variant="subtitle1">   Resource name</FooterLink>
                 </li>
                 <li>
-                  <Link variant="subtitle1"> Final resource</Link>
+                  <FooterLink variant="subtitle1"> Final resource</FooterLink>
                 </li>
                 <li>
-                  <Link variant="subtitle1"> another Resource</Link>
+                  <FooterLink variant="subtitle1"> another Resource</FooterLink>
                 </li>
               </ul>
             </div>
@@ -80,15 +88,15 @@ const BottomFooter = () => {
           </Grid>
           <Grid item xs={12} sm={4}>
             <div>
-              <Typography variant="h6" gutterBottom>
+              <FooterSectionTitle variant="h6" gutterBottom>
                 Legal
-              </Typography>
+              </FooterSectionTitle>
               <ul>
                 <li>
-                  <Link variant="subtitle1"> Privacy</Link>
+                  <FooterLink variant="subtitle1"> Privacy</FooterLink>
                 </li>
                 <li>
-                  <Link variant="subtitle1"> Term of use </Link>
+                  <FooterLink variant="subtitle1"> Term of use </FooterLink>
                 </li>
               </ul>
             </div>

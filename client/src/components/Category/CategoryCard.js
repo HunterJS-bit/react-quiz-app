@@ -1,29 +1,50 @@
 import React from 'react';
-import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import styled from 'styled-components';
-import Box from '@material-ui/core/Box';
 import carLogo from '../../assets/car.svg';
 import motoLogo from '../../assets/motor.svg';
 import truckLogo from '../../assets/deliver.svg';
 
-
-const StyledButton = styled(Button)`
-	margin: 30px;
-	min-width: 152px;
+const CategoryWrapper = styled.div`
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(0,0,0,.05);
+  padding: 30px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all .3s ease 0s;
+  &:hover {
+	transform: translateY(-4px);
+    box-shadow: 0 10px 15px rgba(0,0,0,.03);
+  }
 `;
 
-const StyledPaper = styled(Paper)`
-padding:  padding: 20px 0px;
-text-align: left;
-color: ${props => props.theme.palette.text.secondary};
+const CategoryIcon = styled(Grid)`
+  height: 80px;
+  width: 80px;
+  line-height: 80px;
+  border-radius: 50%;
+  margin: auto auto 30px;
+  background: #efefef;
 `;
 
-const Boxed = styled.div`
-
+const CategoryName = styled(Typography)`
+  font-size: 20px;
+  color: #282828;
+  font-weight: 500;
+  line-height: 38px;
 `;
+
+const CategoryInfo = styled(Typography)`
+	display: block;
+	font-size: 15px;
+	color: #767676;
+	letter-spacing: 0;
+	margin-bottom: 10px;
+`;
+
 
 const CategoryCard = (props) => {
 	const { navigate, category } = props;
@@ -33,48 +54,26 @@ const CategoryCard = (props) => {
 	const getImageSrc = (catName) => {
 		switch (catName) {
 			case 'A kategorija':
-			  return motoLogo;
+				return motoLogo;
 			case 'B kategorija':
-			  return carLogo;
+				return carLogo;
 			case 'C kategorija':
-			  return truckLogo;
+				return truckLogo;
 			default:
-			  return null;
+				return null;
 		}
 	}
 
 	return (
 		<Grid item xs={12} md={4} onClick={() => navigate(category)}>
-		<StyledPaper >
-			<Box display="flex" alignItems="center" justifyContent="space-around">
-				<div className="category-image">
+			<CategoryWrapper>
+				<CategoryIcon>
 					<img src={getImageSrc(name)} alt="img" />
-				</div>
-				<Boxed>
-					<Typography
-						style={{ textTransform: "uppercase", color: '#0d47a1' }}
-						gutterBottom
-					>
-						{ name }
-					</Typography>
-					<Typography variant="body2" gutterBottom>
-						{ description }
-					</Typography>
-				</Boxed>
-			</Box>
-
-
-		  <div style={{ display: "flex", justifyContent: "flex-end" }}>
-			<StyledButton
-			  color="primary"
-			  variant="contained"
-			 
-			>
-			  Learn more
-			</StyledButton>
-		  </div>
-		</StyledPaper>
-	  </Grid>
+				</CategoryIcon>
+				<CategoryName> 	{name} </CategoryName>
+				<CategoryInfo>{description}</CategoryInfo>
+			</CategoryWrapper>
+		</Grid>
 	);
 };
 
