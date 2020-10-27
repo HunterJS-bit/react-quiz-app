@@ -10,7 +10,6 @@ import bike from '../../assets/motor.svg';
 import truck from '../../assets/deliver.svg';
 import car from '../../assets/car2.svg';
 import Button from '@material-ui/core/Button';
-import Divider from "@material-ui/core/Divider";
 
 
 const StyledCard = styled(Card)`
@@ -28,52 +27,52 @@ const StyledAvatar = styled(Avatar)`
 
 const QuizCard = (props) => {
 
-    const { category, categoryId, quiz } = props;
+  const { category, categoryId, quiz } = props;
 
-    const history = useHistory();
-    
-    const goToQuestions = () => {
-        history.push(`/quiz/${quiz.slug}`, quiz);
-    }; 
+  const history = useHistory();
 
-    const goToListQuestions = () => {
-      const nameOftest = quiz.slug;
+  const goToQuestions = () => {
+    history.push(`/quiz/${quiz.slug}`, quiz);
+  };
 
-      history.push({
-        pathname: `/category/${nameOftest}/list`,
-        state: { detail: quiz.slug, category: category }
-      })
+  const goToListQuestions = () => {
+    const nameOftest = quiz.slug;
+
+    history.push({
+      pathname: `/category/${nameOftest}/list`,
+      state: { detail: quiz.slug, category: category }
+    })
+  }
+
+  const getCategoryImage = (category) => {
+    if (category === 'A kategorija') {
+      return bike;
+    } else if (category === 'B kategorija') {
+      return car;
+    } else if (category === 'C kategorija') {
+      return truck;
     }
+  }
 
-    const getCategoryImage = (category) => {
-       if (category === 'A kategorija') {
-         return bike;
-       } else if (category === 'B kategorija') {
-         return car;
-       } else if (category === 'C kategorija') {
-         return truck;
-       }
-    }
-
-    return (<Grid item xs={6} md={4}>
-               <StyledCard container className="featuredItem2">
-                <StyledAvatar alt="Remy Sharp" src={getCategoryImage(category)} />
-                <CardContent>
-                 <Typography variant="h6" gutterBottom> { quiz.name } </Typography>
-                  <Typography variant="body2" component="p">
-                  "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore"
+  return (<Grid item xs={6} md={4}>
+    <StyledCard container className="featuredItem2">
+      <StyledAvatar alt="Remy Sharp" src={getCategoryImage(category)} />
+      <CardContent>
+        <Typography variant="h6" gutterBottom> {quiz.name} </Typography>
+        <Typography variant="body2" component="p">
+          "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore"
                   </Typography>
-                </CardContent>
-                <Grid container spacing={2}>
-                    <Grid item xs={12} md={6}>
-                      <Button variant="outlined" fullWidth  className="rounded" onClick={goToListQuestions}>Lista Pitanja </Button>
-                    </Grid>
-                    <Grid item xs={12}  md={6}>
-                      <Button variant="contained" color="primary" className="rounded" fullWidth>Do quiz </Button>
-                    </Grid>
-                </Grid>
-               </StyledCard>
-            </Grid>);
+      </CardContent>
+      <Grid container spacing={2}>
+        <Grid item xs={12} md={6}>
+          <Button variant="outlined" fullWidth className="rounded" onClick={goToListQuestions}>Lista Pitanja </Button>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Button variant="contained" color="primary" className="rounded" fullWidth>Do quiz </Button>
+        </Grid>
+      </Grid>
+    </StyledCard>
+  </Grid>);
 };
 
 export default QuizCard;
