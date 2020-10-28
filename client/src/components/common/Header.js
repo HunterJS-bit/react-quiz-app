@@ -128,7 +128,7 @@ class Topbar extends Component {
     const currentPage = location.pathname;
 
     return (
-      <StyledAppBar style={{ position: currentPage != '/' ? 'relative' : 'absolute' }}>
+      <StyledAppBar className={currentPage != '/' ? 'banner-full' : ''}>
         <Toolbar id="back-to-top">
           <Container container fixed maxWidth="lg">
             <Grid container spacing={10} alignItems="baseline">
