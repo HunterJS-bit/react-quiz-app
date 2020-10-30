@@ -62,7 +62,7 @@ const QuizList = (props) => {
             </Grid >
           </Grid>
           <Grid container spacing={6}>
-            {
+            {/* {
               quizList.map((quiz) => {
                 return (<StyledCard item xs={12} md={4} >
                   <div class="">
@@ -73,13 +73,13 @@ const QuizList = (props) => {
                   </div>
                 </StyledCard>)
               })
-            }
+            } */}
 
-            {/* {
+            {
               quizList.map((quiz) => {
                 return (<QuizCard key={quiz._id} quiz={quiz} category={catName} categoryId={id} ></QuizCard>)
               })
-            } */}
+            }
           </Grid>
         </div>
       </Container>

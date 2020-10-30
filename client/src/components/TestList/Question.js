@@ -7,6 +7,31 @@ import Divider from '@material-ui/core/Divider';
 import CheckIcon from '../../assets/check.svg';
 import Icon from '@material-ui/core/Icon';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
+import Typography from "@material-ui/core/Typography";
+import styled from 'styled-components';
+
+
+const QuestionWrapper = styled.div`
+padding: 15px 20px 15px 15px;
+    background: #FFFFFF;
+    box-shadow: 0 0.5rem 5rem rgba(0, 0, 0, 0.4);
+`;
+
+const QuestionTitle = styled(Typography)`
+font-size: 1.7rem;
+    line-height: 3rem;
+    padding-left: 3rem;
+    color: #313131;
+`;
+
+const QuestionOption = styled(ListItem)`
+position: relative;
+height: 70px;
+font-size: 1.8rem;
+line-height: 7rem;
+padding-left: 3rem;
+border-top: 1px solid #e7e7e7;
+`;
 
 const Question = (props) => {
 
@@ -24,7 +49,7 @@ const Question = (props) => {
                 </div>
             </div>
         } else {
-            return ;
+            return;
         }
     }
 
@@ -32,37 +57,34 @@ const Question = (props) => {
         return answers.includes(key);
     }
 
-    return (<Grid item xs={12} sm={6}>
-        <div className="question-wrapper">
-            { renderImage() }
+    return (<Grid item xs={12} md={6}>
+        <QuestionWrapper>
+            {renderImage()}
+            <QuestionTitle>{question}</QuestionTitle>
             <div>
-                <h4 className="title">{ question }</h4>
                 <div className="mt-4 mb-8 relative">
                     <div className="MuiGrid-root MuiGrid-container">
-                    <List component="nav" aria-label="main mailbox folders">
-                        {
-                            options.map((option, index) => {
-                                // return  <Grid item xs={12} md={12}><span class="font-medium p-2px">{option}</span></Grid>;
-                                return (<div key={index} className="answer">
-                                            <ListItem >
-                                                <ListItemText primary={option} />
-                                                 {
-                                                     shouldShowCheckmark(index) ? <ListItemSecondaryAction>
-                                                       <Icon>
-                                                           <img className="check-mark" src={CheckIcon} />
-                                                       </Icon>
-                                                   </ListItemSecondaryAction> : null
-                                                 }                                                          
-                                            </ListItem>
-                                           <Divider/>
-                                </div>)
-                            })
-                        }
+                        <List component="nav" aria-label="main mailbox folders">
+                            {
+                                options.map((option, index) => {
+                                    return (<QuestionOption>
+                                        <ListItemText primary={option} />
+                                        {
+                                            shouldShowCheckmark(index) ? <ListItemSecondaryAction>
+                                                <Icon>
+                                                    <img className="check-mark" src={CheckIcon} />
+                                                </Icon>
+                                            </ListItemSecondaryAction> : null
+                                        }
+                                        <Divider />
+                                    </QuestionOption>)
+                                })
+                            }
                         </List>
                     </div>
                 </div>
             </div>
-        </div>
+        </QuestionWrapper>
     </Grid>);
 };
 
