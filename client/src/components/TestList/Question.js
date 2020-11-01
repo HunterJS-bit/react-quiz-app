@@ -12,25 +12,34 @@ import styled from 'styled-components';
 
 
 const QuestionWrapper = styled.div`
-padding: 15px 20px 15px 15px;
-    background: #FFFFFF;
-    box-shadow: 0 0.5rem 5rem rgba(0, 0, 0, 0.4);
+padding: 25px 0px 15px 0px;
+background: #FFFFFF;
+box-shadow: 0 0.5rem 3rem rgba(209, 209, 209, 0.7);
 `;
 
 const QuestionTitle = styled(Typography)`
-font-size: 1.7rem;
-    line-height: 3rem;
-    padding-left: 3rem;
-    color: #313131;
+font-size: 1.4rem;
+line-height: 2rem;
+padding-left: 3rem;
+color: #313131;
 `;
 
 const QuestionOption = styled(ListItem)`
+width: 100%;
 position: relative;
 height: 70px;
 font-size: 1.8rem;
 line-height: 7rem;
 padding-left: 3rem;
 border-top: 1px solid #e7e7e7;
+`;
+
+const QuestionList = styled(List)`
+width: 100%;
+`;
+
+const AnswerList = styled(Grid)`
+margin-top: 30px;
 `;
 
 const Question = (props) => {
@@ -61,29 +70,25 @@ const Question = (props) => {
         <QuestionWrapper>
             {renderImage()}
             <QuestionTitle>{question}</QuestionTitle>
-            <div>
-                <div className="mt-4 mb-8 relative">
-                    <div className="MuiGrid-root MuiGrid-container">
-                        <List component="nav" aria-label="main mailbox folders">
-                            {
-                                options.map((option, index) => {
-                                    return (<QuestionOption>
-                                        <ListItemText primary={option} />
-                                        {
-                                            shouldShowCheckmark(index) ? <ListItemSecondaryAction>
-                                                <Icon>
-                                                    <img className="check-mark" src={CheckIcon} />
-                                                </Icon>
-                                            </ListItemSecondaryAction> : null
-                                        }
-                                        <Divider />
-                                    </QuestionOption>)
-                                })
-                            }
-                        </List>
-                    </div>
-                </div>
-            </div>
+            <AnswerList>
+                <QuestionList component="nav" aria-label="main">
+                    {
+                        options.map((option, index) => {
+                            return (<QuestionOption className={shouldShowCheckmark(index) ? 'highlighter' : ''} >
+                                <ListItemText primary={option} />
+                                {
+                                    shouldShowCheckmark(index) ? <ListItemSecondaryAction>
+                                        <Icon>
+                                            <img className="check-mark" src={CheckIcon} />
+                                        </Icon>
+                                    </ListItemSecondaryAction> : null
+                                }
+                                <Divider />
+                            </QuestionOption>)
+                        })
+                    }
+                </QuestionList>
+            </AnswerList>
         </QuestionWrapper>
     </Grid>);
 };

@@ -10,14 +10,14 @@ import truckLogo from '../../assets/deliver.svg';
 const CategoryWrapper = styled.div`
   background: #fff;
   text-align: center;
-  box-shadow: 0 0 25px rgba(0,0,0,.05);
+  box-shadow: 0 0 25px rgba(0,0,0,0.15);
   padding: 30px 15px;
   border-radius: 10px;
   cursor: pointer;
   transition: all .3s ease 0s;
   &:hover {
 	transform: translateY(-4px);
-    box-shadow: 0 10px 15px rgba(0,0,0,.03);
+    box-shadow: 0 10px 15px rgba(0,0,0,0.19);
   }
 `;
 
