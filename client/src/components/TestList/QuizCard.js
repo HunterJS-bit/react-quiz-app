@@ -68,7 +68,7 @@ const QuizCard = (props) => {
           <Button variant="outlined" fullWidth className="rounded" onClick={goToListQuestions}>Lista Pitanja </Button>
         </Grid>
         <Grid item xs={12} md={6}>
-          <Button variant="contained" color="primary" className="rounded" fullWidth>Do quiz </Button>
+          <Button variant="contained" color="primary" className="rounded" fullWidth onClick={goToQuestions}>Do quiz </Button>
         </Grid>
       </Grid>
     </StyledCard>
