@@ -76,9 +76,9 @@ text-transform: uppercase;
     height: 50px;
     border-radius: 4px;
     display: inline-block;
-    border: 1px solid #0dc181;
+    border: 2px solid #eee;
     padding: 0 34px;
-    color:  #0dc181;
+    color:  #eee;
 
     `;
 

@@ -4,11 +4,12 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
-import CheckIcon from '../../assets/check.svg';
+import { ReactComponent as CheckIcon } from '../../assets/tick.svg';
 import Icon from '@material-ui/core/Icon';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import Typography from "@material-ui/core/Typography";
 import styled from 'styled-components';
+import SvgIcon from "@material-ui/core/SvgIcon";
 
 
 const QuestionWrapper = styled.div`
@@ -78,9 +79,13 @@ const Question = (props) => {
                                 <ListItemText primary={option} />
                                 {
                                     shouldShowCheckmark(index) ? <ListItemSecondaryAction>
-                                        <Icon>
+                                        <SvgIcon>
+                                            <CheckIcon></CheckIcon>
+                                        </SvgIcon>
+
+                                        {/* <Icon>
                                             <img className="check-mark" src={CheckIcon} />
-                                        </Icon>
+                                        </Icon> */}
                                     </ListItemSecondaryAction> : null
                                 }
                                 <Divider />
