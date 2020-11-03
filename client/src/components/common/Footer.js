@@ -1,10 +1,8 @@
 import React from "react";
 
-import Copyright from "./Copyright";
 
 import ScrollTop from "./ScrollTop";
 import Fab from "@material-ui/core/Fab";
-import ContactLogo from "../../assets/information.svg";
 import Contact from "../common/Contact";
 import BottomFooter from "../common/BottomFooter";
 
