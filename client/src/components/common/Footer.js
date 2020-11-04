@@ -6,27 +6,6 @@ import Fab from "@material-ui/core/Fab";
 import Contact from "../common/Contact";
 import BottomFooter from "../common/BottomFooter";
 
-
-const footers = [
-  {
-    title: "Company",
-    description: ["Team", "History", "Contact us", "Locations"],
-  },
-  {
-    title: "Features",
-    description: ["Cool stuff", "Random feature", "Team feature", "Developer stuff", "Another one"],
-  },
-  {
-    title: "Resources",
-    description: ["Resource", "Resource name", "Another resource", "Final resource"],
-  },
-  {
-    title: "Legal",
-    description: ["Privacy policy", "Terms of use"],
-  },
-];
-
-
 const Footer = (props) => {
   return (
     <div>
@@ -37,6 +16,11 @@ const Footer = (props) => {
         </svg>
       </div>
       <BottomFooter></BottomFooter>
+      <ScrollTop {...props}>
+        <Fab color="secondary" size="small" aria-label="scroll back to top">
+          Test
+        </Fab>
+      </ScrollTop>
     </div>
   );
 };
