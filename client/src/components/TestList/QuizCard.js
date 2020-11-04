@@ -45,11 +45,12 @@ font-weight: bold;
 line-height: 1.1;
 margin: 0;
 margin-top: 20px;
+padding-bottom: 0.5em;
 `;
 
 const CardSubtitle = styled(Typography)`
   color: hsl(210, 5%, 41%);
-  font-size: 1rem;
+  font-size: 0.9rem;
   margin-top: .33rem;
 `;
 
@@ -97,6 +98,8 @@ const QuizCard = (props) => {
         <div className="cat-image">
           <Avatar src={getCategoryImage(category)}></Avatar>
         </div>
+        <a ><span>32</span><small>Pitanja</small></a>
+        <a><span>12</span><small>Minuta</small></a>
         <div className="bottom-buttons">
           <Grid container spacing={2}>
             <Grid item xs={12} md={6}>
