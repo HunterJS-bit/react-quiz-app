@@ -57,7 +57,7 @@ const BlogPart = () => {
 
     return (<BlogSection>
         <Container container={true} fixed={true} maxWidth="lg">
-            <div className="jss1216 jss1214"><Typography variant="h3"> Our Blog </Typography></div>
+            <div className="jss1216 jss1214"><Typography variant="h3"> Nas Blog </Typography></div>
             <Grid container={true} spacing={6}>
                 <Grid item md={6}>
                     <MainPost>

@@ -6,6 +6,10 @@
   min-height: 100vh;
 }
 
+.hero-img {
+  width: 100%;
+  height: auto;
+}
 ul {
   margin: 0;
   padding: 0;

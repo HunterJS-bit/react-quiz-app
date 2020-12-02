@@ -3,6 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
+import HeroImage from '../../assets/hero_image.svg';
 import styled from 'styled-components';
 
 
@@ -51,7 +52,7 @@ const Hero = () => {
           </div>
         </Grid>
         <Grid item md={6}>
-          <img src="https://res.cloudinary.com/imajin/image/upload/v1573808069/saas/desktop_illustration_ykznmj.png" alt="illustration" />
+          <img className="hero-img" src={HeroImage} alt="illustration" />
         </Grid>
       </Grid>
     </Container >

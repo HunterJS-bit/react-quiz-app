@@ -51,7 +51,7 @@ const Features = () => {
   return (
     <section id="features-section">
       <Container fixed={true} maxWidth="xl">
-        <div className="jss1216 jss1214"><Typography variant="h3"> Features </Typography></div>
+        <div className="jss1216 jss1214"><Typography variant="h3"> Karakteristike </Typography></div>
         <Grid container spacing={3}>
           <Grid item xs={12} md={7}>
             <Grid container={true} spacing={2}>
